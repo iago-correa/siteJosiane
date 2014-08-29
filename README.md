@@ -1,0 +1,1 @@
+O projeto tem como objetivo realizar a implementação de um website para as disciplinas na área da Física ministradas pela professora Josiane Dias no IFRS – Campus Rio Grande, tanto para o Ensino Médio como para o Ensino Superior, como meio de facilitar a comunicação entre aluno e professor, bem como a disponibilização e acesso a informação.
