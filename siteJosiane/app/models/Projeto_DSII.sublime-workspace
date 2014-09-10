@@ -1,0 +1,264 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "class Professor < ActiveRecord::Base\n\nend\n",
+			"file": "professor.rb",
+			"file_size": 43,
+			"file_write_time": 130548467453808394,
+			"settings":
+			{
+				"buffer_size": 42,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/iago/siteJosiane/siteJosiane",
+		"/home/iago/siteJosiane/siteJosiane/app",
+		"/home/iago/siteJosiane/siteJosiane/app/models",
+		"/home/iago/siteJosiane/siteJosiane/config/locales",
+		"/home/iago/siteJosiane/siteJosiane/db",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate"
+	],
+	"file_history":
+	[
+		"/home/iago/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/iago/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/iago/dia29/app/models/professor.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910180337_create_professores.rb",
+		"/home/iago/dia29/db/migrate/20140829134133_create_professors.rb",
+		"/home/iago/projects/Procs/config/initializers/inflections.rb",
+		"/home/iago/siteJosiane/siteJosiane/config/initializers/inflections.rb",
+		"/var/www/pdf/lib/conexao.php",
+		"/var/www/pdf/gera_pdf.php",
+		"/var/www/pdf/index.html",
+		"/media/iago/CAROL/conexao.php",
+		"/media/iago/CAROL/Conexao.php",
+		"/var/www/login/lib/Conexao.php",
+		"/var/www/despesas/php/salvar.php",
+		"/var/www/despesas/lib/Movimentacao.php",
+		"/var/www/index_pdf.php",
+		"/var/www/estacionamento/html/index.html",
+		"/home/iago/aprendendo/Gemfile",
+		"/home/iago/ds2-2014/sinatra/olamundo.rb",
+		"/home/iago/Área de Trabalho/Comandos",
+		"/home/iago/ds2-2014/rails/frases/bin/rake",
+		"/home/iago/siteJosiane/teste",
+		"/home/iago/siteJosiane/iago",
+		"/home/iago/Downloads/Iago - Conta-banco-OO/lib/Pessoa_juridica.php",
+		"/home/iago/Área de Trabalho/aula 6-08/Caminhao.php",
+		"/home/iago/Downloads/Conta_bancaria.php",
+		"/home/iago/Área de Trabalho/aula 6-08/AutoMotor.php",
+		"/home/iago/Área de Trabalho/aula 6-08/Veiculo.php",
+		"/home/iago/Área de Trabalho/aula 6-08/Carro.php",
+		"/home/iago/Downloads/testa.php",
+		"/home/iago/Área de Trabalho/aula 6-08/exercicio.txt",
+		"/home/iago/projects/Celulares/Gemfile",
+		"/home/iago/projects/smartphone/config/routes.rb",
+		"/home/iago/projects/smartphone/bin/bundle",
+		"/home/iago/projects/smartphone/bin/rails",
+		"/home/iago/projects/smartphone/bin/rake",
+		"/home/iago/projects/smartphone/bin/spring",
+		"/home/iago/Documentos/DS II/2º Bimestre/Trabalho Eventos/evento.rb",
+		"/home/iago/projects/smartphones/Gemfile",
+		"/home/iago/Área de Trabalho/aula 6-08/teste.php",
+		"/home/iago/Área de Trabalho/aula 6-08/Contador.php",
+		"/home/iago/Área de Trabalho/aula 6-08/Veleiro.php",
+		"/var/www/html/login/php/testa.php",
+		"/var/www/html/login/html/index.html",
+		"/var/www/html/login/lib/Conexao.php",
+		"/var/www/html/login/lib/conexao.php~",
+		"/var/www/html/login/php/home.php~",
+		"/var/www/test1/index.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\");\n",
+			"include",
+			"cliente",
+			"root",
+			"welcome"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/iago/siteJosiane/siteJosiane"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "professor.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

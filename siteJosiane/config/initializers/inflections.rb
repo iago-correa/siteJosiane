@@ -14,3 +14,10 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections(:en) do |inflect| 
+	inflect.irregular 'professor', 'professores'
+	inflect.irregular 'avaliacao', 'avaliacoes'
+	inflect.irregular 'notificacao', 'notificacoes'
+	inflect.irregular 'nota', 'notas'
+end
