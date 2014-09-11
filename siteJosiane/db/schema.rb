@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911031751) do
+ActiveRecord::Schema.define(version: 20140911034353) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20140911031751) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "professor_id"
+  end
+
+  create_table "notas", force: true do |t|
+    t.float    "nota"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "avaliacao_id"
+    t.integer  "aluno_id"
   end
 
   create_table "professores", force: true do |t|

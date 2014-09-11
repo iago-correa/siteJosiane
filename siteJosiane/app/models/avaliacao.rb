@@ -1,6 +1,7 @@
 class Avaliacao < ActiveRecord::Base
 
 	belongs_to :disciplinas
+	has_many :notas
 
 	validates_presence_of :disciplina_id
 	validates_associated :disciplina
@@ -24,6 +25,5 @@ class Avaliacao < ActiveRecord::Base
   		errors.add("Nota máxima deve ser positiva e maior que zero") 
   		unless maxima > 0 && maxima > 0
   	end
-
 
 end

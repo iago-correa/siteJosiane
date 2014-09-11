@@ -1,5 +1,7 @@
 class Aluno < ActiveRecord::Base
 
+	has_many :notas
+
 	validates_presence_of :nome, message: "Nome não pode ficar em branco"
 	validates_presence_of :matricula, message: "Matrícula não pode ficar em branco"
 	validates_presence_of :senha, message: "Senha não pode ficar em branco"
