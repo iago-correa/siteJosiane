@@ -1,5 +1,6 @@
 class Disciplina < ActiveRecord::Base
 
+	has_many :avaliacoes
 	belongs_to :professores
 
 	validates_presence_of :professor_id
@@ -15,6 +16,5 @@ class Disciplina < ActiveRecord::Base
   		errors.add("Carga horárias devem ser positivas e maiores que zero") 
   		unless chs > 0 && cht > 0
   	end
-
 
 end

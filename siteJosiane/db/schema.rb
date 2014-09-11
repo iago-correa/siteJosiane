@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910192819) do
+ActiveRecord::Schema.define(version: 20140911031751) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140910192819) do
     t.boolean  "confirmado"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "avaliacoes", force: true do |t|
+    t.string   "descricao",     limit: 150
+    t.float    "peso"
+    t.float    "maxima"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "disciplina_id"
   end
 
   create_table "disciplinas", force: true do |t|
