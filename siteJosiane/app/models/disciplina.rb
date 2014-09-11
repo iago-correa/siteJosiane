@@ -1,6 +1,7 @@
 class Disciplina < ActiveRecord::Base
 
 	has_many :avaliacoes
+	has_many :presencas
 	belongs_to :professores
 
 	validates_presence_of :professor_id

@@ -1,6 +1,7 @@
 class Professor < ActiveRecord::Base
 
 	has_many :disciplinas
+	has_many :atendimentos
 
 	validates_presence_of :nome, message: "Nome não pode ficar em branco"
 	validates_presence_of :siape, message: "SIAPE não pode ficar em branco"
