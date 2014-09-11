@@ -1,22 +1,22 @@
+# encoding: UTF-8
+
 class Nota < ActiveRecord::Base
 
 	belongs_to :avaliacoes
 	belongs_to :alunos
 
-	validates_presence_of :avaliacao_id
 	validates_associated :avaliacao
-	validates_presence_of :aluno_id
 	validates_associated :aluno
 
-	validates_presence_of :nota, message: "Nota não pode ficar em branco"
+	validates :avaliacao_id, presence: {message: "Não é possível existir uma nota sem uma avaliacao"}
+	validates :aluno_id, presence: {message: "Não é possível existir uma nota sem um aluno"}
+	validates :nota, presence: {message: "Nota não pode ficar em branco"},
+		numericality: {message: "Nota inválida"}
 
-	validates_numericality_of :nota, message: "Nota inválida"
-
-	validates :positivo?
+	validate :positivo?
 
   	private def positivo?
-  		errors.add("Nota deve ser positiva e maior que zero") 
-  		unless nota > 0 
+  		errors.add("Nota deve ser positiva e maior que zero") unless nota > 0 
   	end
 
 end

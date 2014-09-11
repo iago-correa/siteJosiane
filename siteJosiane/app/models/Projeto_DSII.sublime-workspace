@@ -3,19 +3,29 @@
 	{
 		"selected_items":
 		[
+			[
+				"hor",
+				"hora_inicio"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "class Professor < ActiveRecord::Base\n\nend\n",
-			"file": "professor.rb",
-			"file_size": 43,
-			"file_write_time": 130548467453808394,
+			"file": "atendimento.rb",
 			"settings":
 			{
-				"buffer_size": 42,
+				"buffer_size": 756,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/iago/Área de Trabalho/Rascunhos",
+			"settings":
+			{
+				"buffer_size": 924,
+				"line_ending": "Unix",
+				"name": "disciplinas belongs_to professores"
 			}
 		}
 	],
@@ -49,16 +59,29 @@
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/models",
-		"/home/iago/siteJosiane/siteJosiane/config/locales",
 		"/home/iago/siteJosiane/siteJosiane/db",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911035335_create_presencas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911040847_create_atendimentos.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911024924_create_avaliacoes.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/nota.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911033700_create_notas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910190617_create_disciplinas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
+		"/home/iago/dia29/db/migrate/20140829134158_create_disciplinas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910180337_create_professores.rb",
+		"/home/iago/dia29/db/migrate/20140829134205_create_alunos.rb",
 		"/home/iago/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/iago/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/iago/dia29/app/models/professor.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910180337_create_professores.rb",
 		"/home/iago/dia29/db/migrate/20140829134133_create_professors.rb",
 		"/home/iago/projects/Procs/config/initializers/inflections.rb",
 		"/home/iago/siteJosiane/siteJosiane/config/initializers/inflections.rb",
@@ -149,29 +172,58 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "professor.rb",
+					"file": "atendimento.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42,
+						"buffer_size": 756,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42,
-								42
+								743,
+								743
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/iago/Área de Trabalho/Rascunhos",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"auto_name": "disciplinas belongs_to professores",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -189,7 +241,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -256,7 +308,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 247.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
