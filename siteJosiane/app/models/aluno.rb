@@ -12,14 +12,24 @@ class Aluno < ActiveRecord::Base
 		uniqueness:{message: "Matrícula já cadastrada"},
 		numericality:{message: "Matrícula inválida"}
 	validates :senha, presence: {message: "Senha não pode ficar em branco"}
-	validates :confirmado, presence: {message: "É necessário que o aluno seja ou não confirmado"}
 	validates :email, presence: {message: "Email não pode ficar em branco"},
 		uniqueness:{message: "Email já cadastrado"}
 
 	validate :email?
+	validate :confirmado?
 
-  	private def email?
-		errors.add("Email inválido") unless email =~ /[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/
+ 	private 
+ 	def email?
+  		if not email.blank?
+			errors.add("Email inválido") unless email =~ /[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/
+		end
+  	end
+
+  	private 
+  	def confirmado?
+  		if confirmado.blank?
+			errors.add("É necessário que o aluno seja ou não confirmado")
+		end
   	end
 
 end

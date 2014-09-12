@@ -13,8 +13,10 @@ class Professor < ActiveRecord::Base
 
 	validate :email?
 
-  	private def email?
-  		errors.add("Email inválido") unless email =~ /[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/
+ 	private def email?
+  		if not email.blank?
+			errors.add("Email inválido") unless email =~ /[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/
+		end
   	end
 
 end
