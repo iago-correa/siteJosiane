@@ -12,20 +12,36 @@
 	"buffers":
 	[
 		{
-			"file": "atendimento.rb",
+			"file": "/home/iago/Área de Trabalho/Rascunhos",
 			"settings":
 			{
-				"buffer_size": 756,
+				"buffer_size": 1670,
+				"line_ending": "Unix",
+				"name": "disciplinas belongs_to professores"
+			}
+		},
+		{
+			"file": "post.rb",
+			"settings":
+			{
+				"buffer_size": 670,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/iago/Área de Trabalho/Rascunhos",
+			"file": "/home/iago/siteJosiane/siteJosiane/db/migrate/20140912001647_create_notificacoes.rb",
 			"settings":
 			{
-				"buffer_size": 924,
-				"line_ending": "Unix",
-				"name": "disciplinas belongs_to professores"
+				"buffer_size": 183,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "notificacao.rb",
+			"settings":
+			{
+				"buffer_size": 551,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -64,15 +80,22 @@
 	],
 	"file_history":
 	[
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911035335_create_presencas.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911040847_create_atendimentos.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911024924_create_avaliacoes.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/arquivo.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911235815_create_arquivos.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/comentario.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911233814_create_comentarios.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911234852_add_column_data_to_comentario.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/nota.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911231832_create_posts.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911040847_create_atendimentos.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/atendimento.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911035335_create_presencas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911024924_create_avaliacoes.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911033700_create_notas.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910190617_create_disciplinas.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
@@ -129,7 +152,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -143,6 +166,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"end",
 			"\");\n",
 			"include",
 			"cliente",
@@ -172,24 +196,109 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "atendimento.rb",
+					"file": "/home/iago/Área de Trabalho/Rascunhos",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 756,
+						"buffer_size": 1670,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								743,
-								743
+								1447,
+								1447
+							]
+						],
+						"settings":
+						{
+							"auto_name": "disciplinas belongs_to professores",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "post.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								470,
+								470
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 80.0,
+						"translation.y": -0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/iago/siteJosiane/siteJosiane/db/migrate/20140912001647_create_notificacoes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "notificacao.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								424,
+								424
 							]
 						],
 						"settings":
@@ -201,35 +310,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/iago/Área de Trabalho/Rascunhos",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								59,
-								59
-							]
-						],
-						"settings":
-						{
-							"auto_name": "disciplinas belongs_to professores",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
