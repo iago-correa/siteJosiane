@@ -4,6 +4,8 @@ class Aluno < ActiveRecord::Base
 
 	has_many :notas
 	has_many :presencas
+	has_many :comentarios
+	has_many :notificacoes
 
 	validates :nome, presence: {message: "Nome não pode ficar em branco"}
 	validates :matricula, presence: {message: "Matrícula não pode ficar em branco"}, 

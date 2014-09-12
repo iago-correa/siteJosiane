@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911042545) do
+ActiveRecord::Schema.define(version: 20140912001647) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20140911042545) do
     t.boolean  "confirmado"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "arquivos", force: true do |t|
+    t.string   "nome",       limit: 200
+    t.string   "extensao",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "post_id"
   end
 
   create_table "atendimentos", force: true do |t|
@@ -41,6 +49,15 @@ ActiveRecord::Schema.define(version: 20140911042545) do
     t.integer  "disciplina_id"
   end
 
+  create_table "comentarios", force: true do |t|
+    t.string    "conteudo"
+    t.datetime  "created_at"
+    t.datetime  "updated_at"
+    t.timestamp "data"
+    t.integer   "post_id"
+    t.integer   "aluno_id"
+  end
+
   create_table "disciplinas", force: true do |t|
     t.string   "nome",         limit: 75
     t.integer  "chs"
@@ -56,6 +73,20 @@ ActiveRecord::Schema.define(version: 20140911042545) do
     t.datetime "updated_at"
     t.integer  "avaliacao_id"
     t.integer  "aluno_id"
+  end
+
+  create_table "notificacoes", force: true do |t|
+    t.string   "aviso"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "conteudo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tipo",         limit: 3
+    t.integer  "professor_id"
   end
 
   create_table "presencas", force: true do |t|
