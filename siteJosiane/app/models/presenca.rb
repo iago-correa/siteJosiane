@@ -2,15 +2,14 @@
 
 class Presenca < ActiveRecord::Base
 
-	belongs_to :disciplinas
-	belongs_to :alunos
+	belongs_to :disciplina
+	belongs_to :aluno
 
 	validates_associated :disciplina
 	validates_associated :aluno
 
 	validates :disciplina_id, presence: {message: "Não é possível ter uma presença sem disciplina associada"}
 	validates :aluno_id, presence: {message: "Não é possível ter uma presença sem aluno associada"}
-	validates :data, presence: {message: "Data não pode ficar em branco"}
 
 	validate :justificado?
 

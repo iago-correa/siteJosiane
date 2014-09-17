@@ -11,6 +11,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/iago/Área de Trabalho/Rascunhos",
+			"settings":
+			{
+				"buffer_size": 2011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "notificacao.rb",
+			"settings":
+			{
+				"buffer_size": 431,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -47,28 +63,32 @@
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/models/comentario.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/arquivo.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/post.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/nota.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911033700_create_notas.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/atendimento.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140917025850_drop_disciplinas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910190617_create_disciplinas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140917025434_drop_table.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910192819_add_column_professor_id_to_disciplinas.rb",
+		"/home/iago/aprendendo/db/migrate/20140917023346_add_column_professor_id_to_disciplina.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/notificacao.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140912001647_create_notificacoes.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/post.rb",
 		"/home/iago/Área de Trabalho/Rascunhos",
-		"/home/iago/siteJosiane/siteJosiane/app/models/arquivo.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911235815_create_arquivos.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/comentario.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911233814_create_comentarios.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911234852_add_column_data_to_comentario.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/nota.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911231832_create_posts.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911040847_create_atendimentos.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/atendimento.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911035335_create_presencas.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911024924_create_avaliacoes.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911033700_create_notas.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910190617_create_disciplinas.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
 		"/home/iago/dia29/db/migrate/20140829134158_create_disciplinas.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910180337_create_professores.rb",
@@ -167,8 +187,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/iago/Área de Trabalho/Rascunhos",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2011,
+								2011
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 259.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "notificacao.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								431,
+								431
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -245,7 +322,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 251.0,
+	"side_bar_width": 370.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
