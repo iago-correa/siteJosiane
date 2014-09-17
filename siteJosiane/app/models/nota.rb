@@ -2,8 +2,8 @@
 
 class Nota < ActiveRecord::Base
 
-	belongs_to :avaliacoes
-	belongs_to :alunos
+	belongs_to :avaliacao
+	belongs_to :aluno
 
 	validates_associated :avaliacao
 	validates_associated :aluno

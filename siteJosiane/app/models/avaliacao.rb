@@ -2,7 +2,7 @@
 
 class Avaliacao < ActiveRecord::Base
 
-	belongs_to :disciplinas
+	belongs_to :disciplina
 	has_many :notas
 
 	validates_associated :disciplina
@@ -12,17 +12,17 @@ class Avaliacao < ActiveRecord::Base
 	validates :peso, presence: {message: "Peso não pode ficar em branco"}, 
 		numericality:{message: "Peso inválido"}
 	validates :maxima, presence: {message: "Maxima não pode ficar em branco"}, 
-		numericality:{message: "Nota máxima inválida"
+		numericality:{message: "Nota máxima inválida"}
 
 	validate :peso_valido?
 	validate :positivo?
 
   	private def peso_valido?
-  		errors.add("Peso deve ser entre 0 e 10") unless peso > 0 && peso >= 10
+  		errors.add("Peso deve ser entre 0 e 10") unless peso > 0 && peso <= 10
   	end
 
   	private def positivo?
-  		errors.add("Nota máxima deve ser positiva e maior que zero") unless maxima > 0 && maxima > 0
+  		errors.add("Nota máxima deve ser positiva e maior que zero") unless maxima > 0 
   	end
 
 end

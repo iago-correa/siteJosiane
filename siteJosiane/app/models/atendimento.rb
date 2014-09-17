@@ -2,7 +2,7 @@
 
 class Atendimento < ActiveRecord::Base
 
-	belongs_to :professores
+	belongs_to :professor
 
 	validates_associated :professor
 
