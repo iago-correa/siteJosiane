@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"senha",
+				"senha"
+			],
+			[
 				"hor",
 				"hora_inicio"
 			]
@@ -12,18 +16,26 @@
 	"buffers":
 	[
 		{
-			"file": "/home/iago/Área de Trabalho/Rascunhos",
-			"settings":
-			{
-				"buffer_size": 2011,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "notificacao.rb",
 			"settings":
 			{
 				"buffer_size": 431,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
+			"settings":
+			{
+				"buffer_size": 466,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 357,
 				"line_ending": "Unix"
 			}
 		}
@@ -56,13 +68,16 @@
 	"expanded_folders":
 	[
 		"/home/iago/siteJosiane/siteJosiane",
-		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/models",
-		"/home/iago/siteJosiane/siteJosiane/db",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate"
+		"/home/iago/siteJosiane/siteJosiane/config"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
+		"/home/iago/ds2-2014/rails/crud/app/controllers/application_controller.rb",
+		"/home/iago/ds2-2014/rails/crud/app/controllers/livros_controller.rb",
+		"/home/iago/ds2-2014/rails/crud/app/controllers/alunos_controller.rb",
+		"/home/iago/Área de Trabalho/Rascunhos",
 		"/home/iago/siteJosiane/siteJosiane/app/models/comentario.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/arquivo.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/post.rb",
@@ -81,7 +96,6 @@
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/notificacao.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140912001647_create_notificacoes.rb",
-		"/home/iago/Área de Trabalho/Rascunhos",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911235815_create_arquivos.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911233814_create_comentarios.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911234852_add_column_data_to_comentario.rb",
@@ -187,39 +201,11 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/iago/Área de Trabalho/Rascunhos",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2011,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2011,
-								2011
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 259.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "notificacao.rb",
 					"semi_transient": false,
 					"settings":
@@ -243,7 +229,63 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 357,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -322,7 +364,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 370.0,
+	"side_bar_width": 200.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

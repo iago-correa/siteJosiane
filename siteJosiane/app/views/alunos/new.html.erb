@@ -1,0 +1,19 @@
+<br>
+<h1>Dados cadastrais</h1>
+
+<hr>
+
+<!--<% if @msg %> <%= @msg %> <%end%>-->
+<center>
+
+	<%= form_for @aluno do |f| %>
+		Nome: <%= f.text_field :nome %><br/>
+		E-mail: <%= f.text_field :email %><br/>
+		Matrícula: <%= f.text_field :matricula %><br/>
+		<br>
+		Senha: <%= f.password_field :senha %><br/>
+		<%= submit_tag 'Cadastrar' %>
+	<% end %>
+
+</center>
+
