@@ -13,7 +13,8 @@ class Presenca < ActiveRecord::Base
 
 	validate :justificado?
 
-  	private def justificado?
+  	private
+  	def justificado?
   		if justificado
   			if presente
   				errors.add("Impossivel justificar enquanto presente") 

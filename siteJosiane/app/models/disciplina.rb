@@ -17,7 +17,8 @@ class Disciplina < ActiveRecord::Base
 
 	validate :positivo?
 
-  	private def positivo?
+  	private
+  	def positivo?
   		errors.add("Carga horárias devem ser positivas e maiores que zero") unless chs > 0 && cht > 0
   	end
 
