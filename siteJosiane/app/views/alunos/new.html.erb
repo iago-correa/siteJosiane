@@ -3,7 +3,20 @@
 
 <hr>
 
-<!--<% if @msg %> <%= @msg %> <%end%>-->
+<% if @msg %>
+	<%= @msg %> 
+<%end%>
+
+<% if @aluno.errors.any? %>
+
+    <% @aluno.errors.full_messages.each do |m| %>
+
+        <%= m %>
+
+    <% end %>
+
+<% end %>
+
 <center>
 
 	<%= form_for @aluno do |f| %>
@@ -12,7 +25,8 @@
 		Matrícula: <%= f.text_field :matricula %><br/>
 		<br>
 		Senha: <%= f.password_field :senha %><br/>
-		<%= submit_tag 'Cadastrar' %>
+		Confirmar senha: <%= password_field_tag :senha2 %><br/>
+		<%= link_to "Voltar", alunos_path, class:"button" %> <%= submit_tag 'Cadastrar' %>
 	<% end %>
 
 </center>

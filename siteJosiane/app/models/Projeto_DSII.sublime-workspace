@@ -19,23 +19,15 @@
 			"file": "notificacao.rb",
 			"settings":
 			{
-				"buffer_size": 431,
+				"buffer_size": 450,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
+			"file": "professor.rb",
 			"settings":
 			{
-				"buffer_size": 466,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 357,
+				"buffer_size": 709,
 				"line_ending": "Unix"
 			}
 		}
@@ -68,10 +60,14 @@
 	"expanded_folders":
 	[
 		"/home/iago/siteJosiane/siteJosiane",
-		"/home/iago/siteJosiane/siteJosiane/config"
+		"/home/iago/siteJosiane/siteJosiane/app",
+		"/home/iago/siteJosiane/siteJosiane/app/models"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/models/notificacao.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/ds2-2014/rails/crud/app/controllers/application_controller.rb",
 		"/home/iago/ds2-2014/rails/crud/app/controllers/livros_controller.rb",
@@ -93,7 +89,6 @@
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910192819_add_column_professor_id_to_disciplinas.rb",
 		"/home/iago/aprendendo/db/migrate/20140917023346_add_column_professor_id_to_disciplina.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/notificacao.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140912001647_create_notificacoes.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911235815_create_arquivos.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140911233814_create_comentarios.rb",
@@ -200,7 +195,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -209,43 +204,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 431,
+						"buffer_size": 450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								431,
-								431
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 466,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
+								17,
+								17
 							]
 						],
 						"settings":
@@ -260,25 +227,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "professor.rb",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 357,
+						"buffer_size": 709,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3,
-								3
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

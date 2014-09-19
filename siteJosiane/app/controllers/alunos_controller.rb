@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class AlunosController < ApplicationController
 
 	def new
@@ -6,21 +8,25 @@ class AlunosController < ApplicationController
 
 	def create
 		
-		senha = params.require(:aluno).permit(:senha)
-		senha2 = params.require(:aluno).permit(:senha2)
+		@aluno = Aluno.new params.require(:aluno).permit(:nome, :matricula, :senha, :email)
+		senha2 = params[:senha2]
 		
-		#if senha == senha2
-  		
-	  		@aluno = Aluno.new params.require(:aluno).permit(:nome, :matricula, :senha, :email)
+		if @aluno.senha.eql? senha2
+
 	  		@aluno.confirmado = false
-	  		@aluno.save
+	  		
+	  		if @aluno.save
+	  			redirect_to action: "new"
+	  		else
+	  			render :new
+	  		end
 
-  		#else
+  		else
 
-  		#	@msg = "Senhas não verificam"
-  			redirect_to action: "new"
+  			@msg = "Senhas não verificam"
+  			render :new
 
-  		#end
+  		end
 
 	end
 
