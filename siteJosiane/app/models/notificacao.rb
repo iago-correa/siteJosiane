@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class Notificacao < ActiveRecord::Base
 
 	belongs_to :aluno
