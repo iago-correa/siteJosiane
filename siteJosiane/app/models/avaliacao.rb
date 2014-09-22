@@ -19,11 +19,11 @@ class Avaliacao < ActiveRecord::Base
 
   	private 
   	def peso_valido?
-  		errors.add("Peso deve ser entre 0 e 10") unless peso > 0 && peso <= 10
+  		errors.add(:peso, "Peso deve ser entre 0 e 10") unless peso > 0 && peso <= 10
   	end
 
 	def positivo?
-  		errors.add("Nota máxima deve ser positiva e maior que zero") unless maxima > 0 
+  		errors.add(:maxima, "Nota máxima deve ser positiva e maior que zero") unless maxima > 0 
   	end
 
 end

@@ -16,11 +16,11 @@ class Atendimento < ActiveRecord::Base
 
 	private
 	def duracao?
-		errors.add("O horário do fim deve ser depois do início") unless hora_fim > hora_inicio
+		errors.add(:hora_fim, "O horário do fim deve ser depois do início") unless hora_fim > hora_inicio
 	end
  
   	def dia?
-  		errors.add("Formato de dia inválido") unless dia == "dom" || dia == "seg" ||
+  		errors.add(:dia, "Formato de dia inválido") unless dia == "dom" || dia == "seg" ||
   			dia == "ter" || dia == "qua" ||
   			dia == "qui" || dia == "sex" ||
   			dia == "sab" 

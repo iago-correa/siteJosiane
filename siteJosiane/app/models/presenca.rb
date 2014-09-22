@@ -17,7 +17,7 @@ class Presenca < ActiveRecord::Base
   	def justificado?
   		if justificado
   			if presente
-  				errors.add("Impossivel justificar enquanto presente") 
+  				errors.add(:justificado, "Impossivel justificar enquanto presente") 
   			end
   		end
   	end

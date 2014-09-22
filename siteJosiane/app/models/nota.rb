@@ -17,7 +17,7 @@ class Nota < ActiveRecord::Base
 
   	private
   	def positivo?
-  		errors.add("Nota deve ser positiva e maior que zero") unless nota > 0 
+  		errors.add(:nota, "Nota deve ser positiva e maior que zero") unless nota > 0 
   	end
 
 end

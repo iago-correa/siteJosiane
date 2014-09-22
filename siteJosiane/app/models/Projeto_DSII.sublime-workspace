@@ -16,18 +16,26 @@
 	"buffers":
 	[
 		{
-			"file": "notificacao.rb",
+			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 			"settings":
 			{
-				"buffer_size": 450,
+				"buffer_size": 476,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "professor.rb",
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 			"settings":
 			{
-				"buffer_size": 709,
+				"buffer_size": 588,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aluno.rb",
+			"settings":
+			{
+				"buffer_size": 911,
 				"line_ending": "Unix"
 			}
 		}
@@ -61,7 +69,11 @@
 	[
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
-		"/home/iago/siteJosiane/siteJosiane/app/models"
+		"/home/iago/siteJosiane/siteJosiane/app/assets",
+		"/home/iago/siteJosiane/siteJosiane/app/assets/stylesheets",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers",
+		"/home/iago/siteJosiane/siteJosiane/app/views",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos"
 	],
 	"file_history":
 	[
@@ -195,29 +207,57 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "notificacao.rb",
+					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 450,
+						"buffer_size": 476,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
+								437,
+								437
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -227,20 +267,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "professor.rb",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "aluno.rb",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 709,
+						"buffer_size": 911,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								51,
+								51
 							]
 						],
 						"settings":
