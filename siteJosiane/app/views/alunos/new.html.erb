@@ -1,34 +1,43 @@
-<br>
-<h1>Dados cadastrais</h1>
+<div style="width:70%;padding:10px;">
+	
+	<h1>Dados cadastrais</h1>
 
-<hr>
+	<hr><br>
 
-<% if @msg %>
-	<%= @msg %> 
-<%end%>
+	<% if @msg %>
+		<%= @msg %> 
+	<%end%>
 
-<% if @aluno.errors.any? %>
+	<% if @aluno.errors.any? %>
 
-    <% @aluno.errors.full_messages.each do |m| %>
+	    <% @aluno.errors.full_messages.each do |m| %>
 
-        <%= m %>
+	        <%= m %> <br>
+	        <%= @aluno.turma_id %> <br>
 
-    <% end %>
+	    <% end %>
 
-<% end %>
-
-<center>
-
-	<%= form_for @aluno do |f| %>
-		Nome: <%= f.text_field :nome %><br/>
-		E-mail: <%= f.text_field :email %><br/>
-		Matrícula: <%= f.text_field :matricula %><br/>
-		<br>
-		Senha: <%= f.password_field :senha %><br/>
-		Confirmar senha: <%= password_field_tag :senha2 %><br/>
-		<%= link_to "Cancelar", root_path(:index), class:"button" %> 
-		<%= submit_tag 'Cadastrar' %>
 	<% end %>
 
-</center>
+	<br>
+
+	<center>
+
+		<%= form_for @aluno do |f| %>
+			Nome: <%= f.text_field :nome %><br/>
+			E-mail: <%= f.text_field :email %><br/>
+			Matrícula: <%= f.text_field :matricula %><br/>
+			Turma: <%= collection_select(:turma, :id, Turma.all.order(:codigo), :id, 
+				:codigo ) -%>
+			<br>
+			Senha: <%= f.password_field :senha %><br/>
+			Confirmar senha: <%= password_field_tag :senha2 %><br/>
+			<br>
+			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
+			<%= submit_tag 'Cadastrar' %>
+		<% end %>
+
+	</center>
+
+</div>
 
