@@ -30,5 +30,14 @@ class AlunosController < ApplicationController
 
 	end
 
+	def login
+
+		@aluno = Aluno.new
+
+	end
+
+	def log
+	end
+
 end
 

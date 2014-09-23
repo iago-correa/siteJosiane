@@ -58,6 +58,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get '/alunos/login' => 'alunos#login'
+
+  post '/alunos/login' => 'alunos#log'
+
   resources :alunos
 
 end
