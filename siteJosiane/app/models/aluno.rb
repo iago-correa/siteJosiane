@@ -2,11 +2,15 @@
 
 class Aluno < ActiveRecord::Base
 
+	belongs_to :turma
 	has_many :notas
 	has_many :presencas
 	has_many :comentarios
 	has_many :notificacoes
+	
+	validates_associated :turma
 
+	validates :turma_id, presence: {message: "Todo aluno deve pertencer a uma turma"}
 	validates :nome, presence: {message: "Nome não pode ficar em branco"}
 	validates :matricula, presence: {message: "Matrícula não pode ficar em branco"}, 
 		uniqueness:{message: "Matrícula já cadastrada"},
