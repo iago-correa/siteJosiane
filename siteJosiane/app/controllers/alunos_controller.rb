@@ -47,6 +47,12 @@ class AlunosController < ApplicationController
 
 	end
 
+	def show
+
+		@aluno = Aluno.find(params[:id])
+
+	end
+
 	def login
 
 		@aluno = Aluno.new

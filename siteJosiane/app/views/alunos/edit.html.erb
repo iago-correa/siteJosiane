@@ -26,10 +26,10 @@
 			Nome: <%= f.text_field :nome %><br/>
 			E-mail: <%= f.text_field :email %><br/>
 			Matrícula: <%= f.text_field :matricula %><br/>
-			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
+			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo, {:selected => @aluno.turma_id }) %>
 			<br>
 			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
-			<%= submit_tag 'Cadastrar' %>
+			<%= submit_tag 'Atualizar' %>
 		<% end %>
 
 	</center>
