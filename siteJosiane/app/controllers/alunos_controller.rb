@@ -30,6 +30,23 @@ class AlunosController < ApplicationController
 
 	end
 
+	def edit
+
+		@aluno = Aluno.find(params[:id])
+
+	end
+
+	def update
+
+		@aluno = Aluno.find(params[:id])
+		if @aluno.update(params.require(:aluno).permit(:nome, :matricula, :email, :turma_id))
+            redirect_to action: "edit"
+        else
+            render :edit
+        end
+
+	end
+
 	def login
 
 		@aluno = Aluno.new

@@ -1,6 +1,6 @@
 <div style="width:70%;padding:10px;">
 	
-	<h1>Dados cadastrais</h1>
+	<h1>Editar aluno</h1>
 
 	<hr><br>
 
@@ -27,9 +27,6 @@
 			E-mail: <%= f.text_field :email %><br/>
 			Matrícula: <%= f.text_field :matricula %><br/>
 			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
-			<br>
-			Senha: <%= f.password_field :senha %><br/>
-			Confirmar senha: <%= password_field_tag :senha2 %><br/>
 			<br>
 			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
 			<%= submit_tag 'Cadastrar' %>
