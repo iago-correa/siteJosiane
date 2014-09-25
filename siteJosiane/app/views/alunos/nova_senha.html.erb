@@ -1,0 +1,36 @@
+<div style="width:70%;padding:10px;">
+	
+	<h1>Editar aluno</h1>
+
+	<hr><br>
+
+	<% if @msg %>
+		<%= @msg %> 
+	<%end%>
+
+	<% if @aluno.errors.any? %>
+
+	    <% @aluno.errors.full_messages.each do |m| %>
+
+	        <%= m %> <br>
+
+	    <% end %>
+
+	<% end %>
+
+	<br>
+
+	<center>
+
+		<%= form_for @aluno do |f| %>
+			Antiga senha: <%= password_field_tag :senha_antiga %><br/>
+			Nova senha: <%= f.password_field :senha %><br/>
+			<br>
+			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
+			<%= submit_tag 'Trocar' %>
+		<% end %>
+
+	</center>
+
+</div>
+

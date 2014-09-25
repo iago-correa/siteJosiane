@@ -16,7 +16,7 @@ class AlunosController < ApplicationController
 	  		@aluno.confirmado = false
 	  		
 	  		if @aluno.save
-	  			redirect_to action: "new"
+	  			redirect_to @aluno
 	  		else
 	  			render :new
 	  		end
@@ -39,8 +39,9 @@ class AlunosController < ApplicationController
 	def update
 
 		@aluno = Aluno.find(params[:id])
+		
 		if @aluno.update(params.require(:aluno).permit(:nome, :matricula, :email, :turma_id))
-            redirect_to action: "edit"
+            redirect_to @aluno
         else
             render :edit
         end
@@ -53,13 +54,33 @@ class AlunosController < ApplicationController
 
 	end
 
-	def login
+	def nova_senha
 
-		@aluno = Aluno.new
+		@aluno = Aluno.find(params[:id])
 
 	end
 
-	def log
+	def troca_senha
+
+		@aluno = Aluno.find(params[:id])
+		
+		if @aluno.senha.eql? params[:senha_antiga]
+	  		
+	  		if @aluno.update(params.require(:aluno).permit(:senha))
+	  			#redirect_to @aluno
+	  			render :index
+	  		else
+	  			render :nova_senha
+	  		end
+
+  		else
+
+  			@msg = "Senhas não verificam"
+  			render :nova_senha
+
+  		end
+
+
 	end
 
 end

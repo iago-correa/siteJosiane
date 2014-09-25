@@ -12,7 +12,8 @@
 		
 		<div id="registrar" style="width:30%;font-size:12px;">
 			<hr style="opacity:0.5;">
-			<%= link_to "Editar", edit_aluno_path(@aluno), class:"button" %> 	
+			<%= link_to "Editar", edit_aluno_path(@aluno), class:"button" %>  |  	
+			<%= link_to "Trocar senha", "#{@aluno.id}/nova_senha", class:"button" %>
 		</div>
 
 	</div>
