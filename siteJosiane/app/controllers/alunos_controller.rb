@@ -8,8 +8,8 @@ class AlunosController < ApplicationController
 
 	def create
 		
-		@aluno = Aluno.new params.require(:aluno).permit(:nome, :matricula, :senha, :email)
-		@aluno.turma_id = params[:turma_id]
+		@aluno = Aluno.new params.require(:aluno).permit(:nome, :matricula, :senha, :email, :turma_id)
+		@teste = params[:aluno]
 		senha2 = params[:senha2]
 		
 		if @aluno.senha.eql? senha2

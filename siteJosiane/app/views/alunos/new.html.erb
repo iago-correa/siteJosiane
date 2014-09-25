@@ -4,6 +4,8 @@
 
 	<hr><br>
 
+	<%= @teste %>
+
 	<% if @msg %>
 		<%= @msg %> 
 	<%end%>
@@ -27,8 +29,7 @@
 			Nome: <%= f.text_field :nome %><br/>
 			E-mail: <%= f.text_field :email %><br/>
 			Matrícula: <%= f.text_field :matricula %><br/>
-			Turma: <%= collection_select(:turma, :id, Turma.all.order(:codigo), :id, 
-				:codigo ) -%>
+			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
 			<br>
 			Senha: <%= f.password_field :senha %><br/>
 			Confirmar senha: <%= password_field_tag :senha2 %><br/>
