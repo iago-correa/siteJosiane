@@ -23,7 +23,7 @@
 			"file": "/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 1745,
+				"buffer_size": 1849,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,15 +31,23 @@
 			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 			"settings":
 			{
-				"buffer_size": 569,
+				"buffer_size": 1217,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/nova_senha.html.erb",
 			"settings":
 			{
-				"buffer_size": 820,
+				"buffer_size": 548,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 521,
 				"line_ending": "Unix"
 			}
 		}
@@ -74,10 +82,7 @@
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/assets",
-		"/home/iago/siteJosiane/siteJosiane/app/assets/stylesheets",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
-		"/home/iago/siteJosiane/siteJosiane/app/helpers",
-		"/home/iago/siteJosiane/siteJosiane/app/models",
 		"/home/iago/siteJosiane/siteJosiane/app/views",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home",
@@ -85,10 +90,14 @@
 	],
 	"file_history":
 	[
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/login.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
-		"/home/iago/ds2-2014/web/musicas/web.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/edit.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/home_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+		"/home/iago/ds2-2014/rails/crud/app/controllers/filmes_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/login.html.erb",
+		"/home/iago/ds2-2014/web/musicas/web.rb",
 		"/home/iago/ds2-2014/rails/crud/app/views/filmes/index.html.erb",
 		"/home/iago/ds2-2014/rails/crud/app/views/filmes/show.html.erb",
 		"/home/iago/siteJosiane/Rascunhos das telas/Tela Principal.txt",
@@ -96,7 +105,6 @@
 		"/home/iago/ds2-2014/rails/frases/config/routes.rb",
 		"/home/iago/ds2-2014/rails/frases/app/controllers/application_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 		"/home/iago/ds2-2014/rails/frases/app/controllers/home_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
 		"/home/iago/Área de Trabalho/Rascunhos",
@@ -198,6 +206,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"root_path",
 			"end",
 			"\");\n",
 			"include",
@@ -228,7 +237,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -237,15 +246,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1745,
+						"buffer_size": 1849,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1717,
-								1717
+								1712,
+								1712
 							]
 						],
 						"settings":
@@ -255,10 +264,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 699.0,
+						"translation.y": 1029.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -267,15 +276,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 569,
+						"buffer_size": 1217,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								204,
-								204
+								1135,
+								1135
 							]
 						],
 						"settings":
@@ -284,27 +293,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/nova_senha.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 820,
+						"buffer_size": 548,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								514,
-								514
+								419,
+								419
 							]
 						],
 						"settings":
@@ -312,10 +321,39 @@
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 325.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 521,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

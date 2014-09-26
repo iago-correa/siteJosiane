@@ -2,6 +2,10 @@
 
 class AlunosController < ApplicationController
 
+	def index
+		@alunos = Aluno.all
+	end
+
 	def new
 	  @aluno = Aluno.new
 	end
@@ -51,6 +55,30 @@ class AlunosController < ApplicationController
 	def show
 
 		@aluno = Aluno.find(params[:id])
+
+	end
+
+	def destroy
+
+        @aluno = Aluno.find(params[:id])
+        if @aluno.destroy
+        	redirect_to :alunos, notice: "Aluno #{@aluno.nome} foi excluído"
+        else
+        	redirect_to :alunos, notice: "Falha na exclusão do aluno #{@aluno.nome}"
+        end
+        
+
+    end
+
+	def aprovar
+
+		@aluno = Aluno.find(params[:id])
+
+		if @aluno.update(confirmado: true)
+	  		redirect_to :alunos, notice: "Aluno #{@aluno.nome} teve cadastro confirmado"
+	  	else
+	  		redirect_to :alunos, notice: "Falha na confirmação do cadastro do aluno #{@aluno.nome}"
+	  	end
 
 	end
 

@@ -66,6 +66,8 @@ Rails.application.routes.draw do
 
   post '/alunos/:id/nova_senha' => 'alunos#troca_senha'
 
+  get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
+
   resources :alunos
 
 end

@@ -1,0 +1,37 @@
+<div style="width:70%;padding:10px;">
+	
+	<h2>Alunos</h2>
+
+	<hr>
+	<br>
+
+	<div style="margin-left:20px;">
+
+		<% flash.each do |name, msg| -%>
+			<%= content_tag :div, msg, class: name %><br>
+		<% end %>
+
+		<table>
+
+		<% @alunos.each do |a| %>
+
+			<tr>
+				<td><%= link_to a.nome, aluno_path(a) %></td>
+				<td><%= link_to "Editar", edit_aluno_path(a) %></td>
+				<td><%= link_to "Excluir", a, method: :delete %></td>
+				<% if not a.confirmado%>
+					<td><%= link_to "Aprovar cadastro",
+					aluno_aprova_path(a.id) %></td>
+				<% end %>
+			</tr>
+
+		<% end %>
+
+		</table> 
+
+	</div>
+
+	</center>
+
+</div>
+
