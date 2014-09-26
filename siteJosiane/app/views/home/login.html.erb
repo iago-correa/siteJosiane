@@ -5,11 +5,17 @@
 	
 	<center>
 
-	<hr><br><br>
+	<hr><br>
 
-	<%= form_for @aluno do |f| %>
-		Matrícula: <%= f.text_field :matricula %><br/>
-		Senha: <%= f.password_field :senha %><br/>
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: name %><br>
+	<% end %>
+
+	<br>
+
+	<%= form_for @aluno, :url => url_for(:controller => 'home', :action => 'log') do |f| %>
+		Matrícula: <%= text_field_tag :matricula %><br/>
+		Senha: <%= password_field_tag :senha %><br/>
 		<br>
 		<%= link_to "Voltar", root_path(:index), class:"button" %> <%= submit_tag 'Entrar' %>
 		<br>
