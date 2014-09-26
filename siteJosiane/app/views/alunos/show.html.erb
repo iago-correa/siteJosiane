@@ -2,7 +2,12 @@
 	
 	<h1><%= @aluno.nome %></h1>
 
-	<hr>
+	<hr><br>
+
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: name %><br>
+	<% end %>
+	
 	<br>
 
 	<div style="margin-left:20px;">

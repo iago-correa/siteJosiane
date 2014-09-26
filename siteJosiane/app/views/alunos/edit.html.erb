@@ -4,18 +4,8 @@
 
 	<hr><br>
 
-	<% if @msg %>
-		<%= @msg %> 
-	<%end%>
-
-	<% if @aluno.errors.any? %>
-
-	    <% @aluno.errors.full_messages.each do |m| %>
-
-	        <%= m %> <br>
-
-	    <% end %>
-
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: name %><br>
 	<% end %>
 
 	<br>
@@ -28,7 +18,7 @@
 			Matrícula: <%= f.text_field :matricula %><br/>
 			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo, {:selected => @aluno.turma_id }) %>
 			<br>
-			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
+			<%= link_to "Cancelar", @aluno, class:"button" %> 
 			<%= submit_tag 'Atualizar' %>
 		<% end %>
 

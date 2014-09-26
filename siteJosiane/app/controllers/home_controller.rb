@@ -11,18 +11,18 @@ class HomeController < ApplicationController
 
 	def log
 
-		@aluno = Aluno.find_by(params[:matricula])
+		@aluno = Aluno.find_by(matricula: params[:matricula])
 		senha = params[:senha]
 		
-		if @aluno.senha.eql? senha
-
-	  		redirect_to :root
-
-  		else
-
-  			redirect_to :login, notice: "Senha ou matrícula incorreta"
-
-  		end
+		if @aluno.confirmado
+			if @aluno.senha.eql? senha 
+		  		redirect_to @aluno
+	  		else
+	  			redirect_to :login, notice: "Senha ou matrícula incorreta"
+	  		end
+	  	else
+	  		redirect_to :login, notice: "Ainda em espera de aprovação de cadastro"
+	  	end
 
 	end
 

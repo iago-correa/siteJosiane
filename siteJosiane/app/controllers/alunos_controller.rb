@@ -20,15 +20,22 @@ class AlunosController < ApplicationController
 	  		@aluno.confirmado = false
 	  		
 	  		if @aluno.save
-	  			redirect_to @aluno
+	  			redirect_to @aluno, notice: "Bem vindo #{@aluno.nome}!"
 	  		else
-	  			render :new
+	  			
+	  			message = "Falha no cadastro: "
+
+	  			@aluno.errors.full_messages.each do |m|
+					message += m
+			    end
+
+	  			redirect_to new_aluno_path, notice: message
+
 	  		end
 
   		else
 
-  			@msg = "Senhas não verificam"
-  			render :new
+  			redirect_to new_aluno_path, notice: "Senhas não verificam"
 
   		end
 
@@ -45,9 +52,17 @@ class AlunosController < ApplicationController
 		@aluno = Aluno.find(params[:id])
 		
 		if @aluno.update(params.require(:aluno).permit(:nome, :matricula, :email, :turma_id))
-            redirect_to @aluno
+            redirect_to @aluno, notice: "Alterações efetivadas com sucesso"
         else
-            render :edit
+
+        	message = "Falha nas alterações: "
+
+	  		@aluno.errors.full_messages.each do |m|
+				message += m
+			   end
+
+	  		redirect_to edit_aluno_path, notice: message
+            
         end
 
 	end
@@ -98,7 +113,7 @@ class AlunosController < ApplicationController
 			new_senha = params[:senha]
 
 	  		if @aluno.update(senha: new_senha)
-	  			redirect_to @aluno#, notice: "Troca de senha efetuada com sucesso"
+	  			redirect_to @aluno, notice: "Troca de senha efetuada com sucesso"
 	  		else
 	  			redirect_to :nova_senha, notice: "Falha na troca de senha"
 	  		end

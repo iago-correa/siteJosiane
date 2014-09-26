@@ -4,18 +4,8 @@
 
 	<hr><br>
 
-	<% if @msg %>
-		<%= @msg %> 
-	<%end%>
-
-	<% if @aluno.errors.any? %>
-
-	    <% @aluno.errors.full_messages.each do |m| %>
-
-	        <%= m %> <br>
-
-	    <% end %>
-
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: name %><br>
 	<% end %>
 
 	<br>
@@ -31,7 +21,8 @@
 			Senha: <%= f.password_field :senha %><br/>
 			Confirmar senha: <%= password_field_tag :senha2 %><br/>
 			<br>
-			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
+			<%= link_to "Cancelar", url_for(:controller => 'home', :action => 'login'),
+				class:"button" %> 
 			<%= submit_tag 'Cadastrar' %>
 		<% end %>
 

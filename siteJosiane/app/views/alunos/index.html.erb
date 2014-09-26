@@ -13,11 +13,18 @@
 
 		<table>
 
+		<tr>
+			<td>Nome</td>
+			<td>Matricula</td>
+			<td>Turma</td>
+		</tr>
+
 		<% @alunos.each do |a| %>
 
 			<tr>
-				<td><%= link_to a.nome, aluno_path(a) %></td>
-				<td><%= link_to "Editar", edit_aluno_path(a) %></td>
+				<td><%= a.nome %></td>
+				<td><%= a.matricula %></td>
+				<td><%= Turma.find(a.turma_id).codigo %></td>
 				<td><%= link_to "Excluir", a, method: :delete %></td>
 				<% if not a.confirmado%>
 					<td><%= link_to "Aprovar cadastro",
