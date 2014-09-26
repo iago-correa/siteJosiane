@@ -4,9 +4,9 @@
 
 	<hr><br>
 
-	<% if @msg %>
-		<%= @msg %> 
-	<%end%>
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: name %><br>
+	<% end %>
 
 	<% if @aluno.errors.any? %>
 
@@ -22,9 +22,9 @@
 
 	<center>
 
-		<%= form_for @aluno do |f| %>
+		<%= form_for @aluno, :url => url_for(:controller => 'alunos', :action => 'troca_senha') do |f| %>
 			Antiga senha: <%= password_field_tag :senha_antiga %><br/>
-			Nova senha: <%= f.password_field :senha %><br/>
+			Nova senha: <%= password_field_tag :senha %><br/>
 			<br>
 			<%= link_to "Cancelar", root_path(:index), class:"button" %> 
 			<%= submit_tag 'Trocar' %>

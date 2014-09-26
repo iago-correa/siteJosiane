@@ -58,17 +58,15 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  
-
-  get '/alunos/:id/nova_senha' => 'alunos#nova_senha'
-
-  post '/alunos/:id/nova_senha' => 'alunos#troca_senha'
-
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
 
   get '/home/login' => 'home#login', :as => 'login'
 
   post '/home/log' => 'home#log', :as => 'log'
+
+  get '/alunos/:id/nova_senha' => 'alunos#nova_senha', :as => 'nova_senha'
+
+  patch '/alunos/:id/troca_senha' => 'alunos#troca_senha', :as => 'troca_senha'
 
   resources :alunos
 

@@ -20,9 +20,7 @@ class HomeController < ApplicationController
 
   		else
 
-  			redirect_to :login, notice: "Senha ou matrícula incorreta|
-  			#{params[:matricula]}|#{@aluno.matricula}|#{senha}|
-  			#{@aluno.senha}}"
+  			redirect_to :login, notice: "Senha ou matrícula incorreta"
 
   		end
 

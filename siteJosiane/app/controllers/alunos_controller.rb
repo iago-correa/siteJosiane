@@ -7,7 +7,7 @@ class AlunosController < ApplicationController
 	end
 
 	def new
-	  @aluno = Aluno.new
+		@aluno = Aluno.new
 	end
 
 	def create
@@ -91,20 +91,21 @@ class AlunosController < ApplicationController
 	def troca_senha
 
 		@aluno = Aluno.find(params[:id])
+		old_senha = params[:senha_antiga]
 		
-		if @aluno.senha.eql? params[:senha_antiga]
+		if @aluno.senha.eql? old_senha
 	  		
-	  		if @aluno.update(params.require(:aluno).permit(:senha))
-	  			#redirect_to @aluno
-	  			render :index
+			new_senha = params[:senha]
+
+	  		if @aluno.update(senha: new_senha)
+	  			redirect_to @aluno#, notice: "Troca de senha efetuada com sucesso"
 	  		else
-	  			render :nova_senha
+	  			redirect_to :nova_senha, notice: "Falha na troca de senha"
 	  		end
 
   		else
 
-  			@msg = "Senhas não verificam"
-  			render :nova_senha
+  			redirect_to :nova_senha, notice: "Senha antiga incorreta"
 
   		end
 
