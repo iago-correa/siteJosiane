@@ -1,3 +1,4 @@
+<!doctype html>
 <div style="width:70%;padding:10px;">
 	
 	<h1>Dados cadastrais</h1>
@@ -13,7 +14,7 @@
 	<center>
 
 		<%= form_for @aluno do |f| %>
-			Nome: <%= f.text_field :nome %><br/>
+			<label for="nome">Nome: </label><%= f.text_field :nome %><br/>
 			E-mail: <%= f.text_field :email %><br/>
 			Matrícula: <%= f.text_field :matricula %><br/>
 			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
@@ -29,4 +30,3 @@
 	</center>
 
 </div>
-
