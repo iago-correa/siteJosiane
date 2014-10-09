@@ -18,6 +18,7 @@ class AlunosController < ApplicationController
 		if @aluno.senha.eql? senha2
 
 	  		@aluno.confirmado = false
+	  		@aluno.senha = Digest::MD5.hexdigest(@aluno.senha)
 	  		
 	  		if @aluno.save
 	  			redirect_to @aluno, notice: "Bem vindo #{@aluno.nome}!"

@@ -5,10 +5,10 @@
 	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: name %><br>
+		<%= content_tag :div, msg, class: "bg-danger" %><br>
 	<% end %>
 
-	<%= form_for @aluno, :url => url_for(:controller => 'home', :action => 'log') do |f| %>
+	<%= form_for @aluno, :url => url_for(:controller => 'home', :action => 'log'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="matricula">Matrícula:</label>
 			<%= text_field_tag :matricula, nil,
