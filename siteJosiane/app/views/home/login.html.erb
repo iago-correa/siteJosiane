@@ -1,31 +1,32 @@
-
-<div style="width:70%;padding:10px;">
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
 	
 	<h1>Login</h1>
-	
-	<center>
 
-	<hr><br>
+	<hr>
 
 	<% flash.each do |name, msg| -%>
 		<%= content_tag :div, msg, class: name %><br>
 	<% end %>
 
-	<br>
-
 	<%= form_for @aluno, :url => url_for(:controller => 'home', :action => 'log') do |f| %>
-		Matrícula: <%= text_field_tag :matricula %><br/>
-		Senha: <%= password_field_tag :senha %><br/>
-		<br>
-		<%= link_to "Voltar", root_path(:index), class:"button" %> <%= submit_tag 'Entrar' %>
-		<br>
-		<div id="registrar" style="width:30%;">
-			<hr style="opacity:0.5;">
-			Novo aluno? <%= link_to "Cadastre-se", aluno_path(:new)%>
+		<div class="form-group">
+			<label for="matricula">Matrícula:</label>
+			<%= text_field_tag :matricula, nil,
+			 :class => "form-control" %>
 		</div>
-	<% end %>
-
-	</center>
+		<div class="form-group">
+		<label for="senha">Senha:</label>
+		<%= password_field_tag :senha, nil,
+			 :class => "form-control" %>
+		</div>
+		<%= link_to "Voltar", root_path(:index), 
+			class:"btn btn-default" %> 
+		<%= submit_tag 'Entrar', 
+			class:"btn btn-default" %>
+		<br>
+		<hr style="opacity:0.5;">
+		Novo aluno? <%= link_to "Cadastre-se", aluno_path(:new),class:"btn btn-primary"%>
+	<% end %>	
 
 </div>
 
