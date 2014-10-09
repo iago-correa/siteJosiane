@@ -17,7 +17,8 @@ class HomeController < ApplicationController
 		
 		if !@aluno.nil?
 			if @aluno.confirmado
-			  	redirect_to @aluno
+				session[:usuario] = @aluno.matricula
+				redirect_to root_path
 		  	else
 		  		redirect_to :login, notice: "Ainda em espera de aprovação de cadastro"
 		  	end
@@ -26,5 +27,10 @@ class HomeController < ApplicationController
 		end
 
 	end
+
+	def logout
+	    reset_session
+	    redirect_to root_path
+  	end
 
 end
