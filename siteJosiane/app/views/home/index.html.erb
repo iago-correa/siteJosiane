@@ -4,7 +4,16 @@
 	<%= link_to "Listas", "LACUNA"%> | 
 	<%= link_to "Resoluções", "LACUNA"%>
 	<%= text_field_tag :pesquisa %>
-	<%= link_to "Login", "home/login", class:"btn btn-default" %>
+
+	<% if session[:usuario] %>
+
+	    <%= link_to "Logout", "home/logout", class:"btn btn-default" %>
+
+	<% else %>
+
+		<%= link_to "Login", "home/login", class:"btn btn-default" %>
+
+	<% end %>
 
 	<br><br>
 	<%= image_tag "http://ww1.prweb.com/prfiles/2010/09/20/1875904/fisicaLogo.png", 

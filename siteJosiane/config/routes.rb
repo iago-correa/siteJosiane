@@ -62,6 +62,8 @@ Rails.application.routes.draw do
 
   get '/home/login' => 'home#login', :as => 'login'
 
+  get '/home/logout' => 'home#logout', :as => 'logout'
+
   post '/home/log' => 'home#log', :as => 'log'
 
   get '/alunos/:id/nova_senha' => 'alunos#nova_senha', :as => 'nova_senha'
