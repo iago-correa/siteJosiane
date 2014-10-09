@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 		  		redirect_to :login, notice: "Ainda em espera de aprovação de cadastro"
 		  	end
 		else
-			redirect_to :login, danger: 'Matrícula ou senha incorretas'
+			redirect_to :login, notice: 'Matrícula ou senha incorretas'
 		end
 
 	end
