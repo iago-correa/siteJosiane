@@ -32,12 +32,13 @@
 		</div>
 		<div class="form-group">
 			<label for="confirmar">Confirmar senha: </label>
-			<%= password_field_tag :senha2, :class => "form-control" %><br/>
+			<%= password_field_tag :senha2, nil, :class => "form-control" %><br/>
 		</div>
-		<br>
-			<%= link_to "Cancelar", url_for(:controller => 'home', :action => 'login'),
-				class:"btn btn-default" %> 
-			<%= submit_tag 'Cadastrar', class:"btn btn-default" %>
+		<%= link_to "Cancelar", url_for(:controller => 'home', :action => 'login'),
+			class:"btn btn-default" %> 
+		<%= submit_tag 'Cadastrar', class:"btn btn-default" %>
 		<% end %>
+
+		<hr>
 
 </div>
