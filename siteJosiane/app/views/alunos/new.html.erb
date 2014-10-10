@@ -1,32 +1,43 @@
 <!doctype html>
-<div style="width:70%;padding:10px;">
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
 	
 	<h1>Dados cadastrais</h1>
 
-	<hr><br>
+	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: name %><br>
+		<%= content_tag :div, msg, class: "bg-danger" %><br>
 	<% end %>
 
-	<br>
-
-	<center>
-
-		<%= form_for @aluno do |f| %>
-			<label for="nome">Nome: </label><%= f.text_field :nome %><br/>
-			E-mail: <%= f.text_field :email %><br/>
-			Matrícula: <%= f.text_field :matricula %><br/>
-			Turma: <%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
-			<br>
-			Senha: <%= f.password_field :senha %><br/>
-			Confirmar senha: <%= password_field_tag :senha2 %><br/>
-			<br>
+		<%= form_for @aluno, :class => 'form-signin' do |f| %>
+		<div class="form-group">
+			<label for="nome">Nome: </label>
+			<%= f.text_field :nome, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="email">E-mail: </label>
+			<%= f.text_field :email, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="matricula">Matrícula: </label>
+			<%= f.text_field :matricula, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="turma">Turma: </label>
+			<%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo) %>
+		</div>
+		<div class="form-group">
+			<label for="senha">Senha: </label>
+			<%= f.password_field :senha, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="confirmar">Confirmar senha: </label>
+			<%= password_field_tag :senha2, :class => "form-control" %><br/>
+		</div>
+		<br>
 			<%= link_to "Cancelar", url_for(:controller => 'home', :action => 'login'),
-				class:"button" %> 
-			<%= submit_tag 'Cadastrar' %>
+				class:"btn btn-default" %> 
+			<%= submit_tag 'Cadastrar', class:"btn btn-default" %>
 		<% end %>
-
-	</center>
 
 </div>
