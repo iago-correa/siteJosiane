@@ -36,7 +36,8 @@ class AlunosController < ApplicationController
 
   		else
 
-  			redirect_to new_aluno_path, notice: "Senhas não verificam"
+  			flash[:alert] = "Senhas não verificam"
+        	render 'new'
 
   		end
 
