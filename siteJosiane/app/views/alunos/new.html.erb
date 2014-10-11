@@ -6,7 +6,7 @@
 	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "bg-danger" %><br>
+		<%= content_tag :div, msg, class: "text-danger" %><br>
 	<% end %>
 
 		<%= form_for @aluno, :class => 'form-signin' do |f| %>

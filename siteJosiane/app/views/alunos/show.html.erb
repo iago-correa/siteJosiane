@@ -7,21 +7,20 @@
 	<% flash.each do |name, msg| -%>
 		<%= content_tag :div, msg, class: "text-success" %><br>
 	<% end %>
-	
-	<br>
 
-	<div style="margin-left:20px;">
+	<div style="margin-left:20px;font-size:16px;">
 		E-mail: <%= @aluno.email %><br/>
 		Matrícula: <%= @aluno.matricula %><br/>
 		Turma: <%= Turma.find(@aluno.turma_id).codigo%>
-		
-		<div id="registrar" style="width:30%;font-size:12px;">
-			<hr style="opacity:0.5;">
-			<%= link_to "Editar", edit_aluno_path(@aluno), class:"button" %>  |  	
-			<%= link_to "Trocar senha", "#{@aluno.id}/nova_senha", class:"button" %>
-		</div>
-
 	</div>
+	
+	<hr>
+	<div id="registrar" style="width:30%;font-size:13px;">
+		<%= link_to "Editar", edit_aluno_path(@aluno), class:"button" %>  |  	
+		<%= link_to "Trocar senha", "#{@aluno.id}/nova_senha", class:"button" %>
+	</div>
+
+
 
 	</center>
 
