@@ -21,7 +21,7 @@ class AlunosController < ApplicationController
 	  		@aluno.senha = Digest::MD5.hexdigest(@aluno.senha)
 	  		
 	  		if @aluno.save
-	  			redirect_to @aluno, notice: "Bem vindo #{@aluno.nome}!"
+	  			redirect_to @aluno, notice: "Bem vindo(a) #{@aluno.nome}!"
 	  		else
 	  			
 	  			message = "Falha no cadastro: "
@@ -30,7 +30,8 @@ class AlunosController < ApplicationController
 					message += m
 			    end
 
-	  			redirect_to new_aluno_path, notice: message
+			    flash[:alert] = message
+        		render 'new'
 
 	  		end
 

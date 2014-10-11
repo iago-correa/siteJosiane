@@ -23,7 +23,9 @@ class HomeController < ApplicationController
 		  		redirect_to :login, notice: "Ainda em espera de aprovação de cadastro"
 		  	end
 		else
-			redirect_to :login, notice: 'Matrícula ou senha incorretas'
+			@aluno = Aluno.new
+			flash[:alert] = 'Matrícula ou senha incorretas'
+        	render 'login'
 		end
 
 	end
