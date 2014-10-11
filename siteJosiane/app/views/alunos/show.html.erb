@@ -1,11 +1,11 @@
-<div style="width:70%;padding:10px;">
+<div class="container" style="width:60%;margin-left:auto;margin-right:auto;">
 	
 	<h1><%= @aluno.nome %></h1>
 
-	<hr><br>
+	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: name %><br>
+		<%= content_tag :div, msg, class: "text-success" %><br>
 	<% end %>
 	
 	<br>

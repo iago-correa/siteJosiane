@@ -108,11 +108,11 @@ class AlunosController < ApplicationController
 	def troca_senha
 
 		@aluno = Aluno.find(params[:id])
-		old_senha = params[:senha_antiga]
-		
+		old_senha = Digest::MD5.hexdigest(params[:senha_antiga])
+
 		if @aluno.senha.eql? old_senha
 	  		
-			new_senha = params[:senha]
+			new_senha = Digest::MD5.hexdigest(params[:senha])
 
 	  		if @aluno.update(senha: new_senha)
 	  			redirect_to @aluno, notice: "Troca de senha efetuada com sucesso"

@@ -12,11 +12,11 @@
 			:class => 'form-signin' do |f| %>
 			<div class="form-group">
 			<label for="antiga">Antiga senha: </label> 
-			<%= password_field_tag :senha_antiga, :class => "form-control" %>
+			<%= password_field_tag :senha_antiga, nil, :class => "form-control" %>
 			</div>
 			<div class="form-group">
 			<label for="nova">Nova senha: </label>
-			<%= password_field_tag :senha, :class => "form-control" %>
+			<%= password_field_tag :senha, nil, :class => "form-control" %>
 			</div>
 			<br>
 			<%= link_to "Cancelar", @aluno, class:"btn btn-default" %> 
