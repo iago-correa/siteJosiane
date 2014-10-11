@@ -5,7 +5,7 @@
 	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "bg-danger" %><br>
+		<%= content_tag :div, msg, class: "text-danger" %><br>
 	<% end %>
 
 		<%= form_for @aluno, :class => 'form-signin' do |f| %>
@@ -25,8 +25,10 @@
 			<label for="turma">Turma: </label>
 			<%= collection_select(:aluno, :turma_id, Turma.all.order(:codigo), :id, :codigo, {:selected => @aluno.turma_id }) %>
 		</div>
-		<%= link_to "Cancelar", @aluno, class:"btn btn-primary" %> 
+		<%= link_to "Cancelar", @aluno, class:"btn btn-default" %> 
 		<%= submit_tag 'Atualizar', class:"btn btn-default" %>
 		<% end %>
+
+	<hr>
 
 </div>
