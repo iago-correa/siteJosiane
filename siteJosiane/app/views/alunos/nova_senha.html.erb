@@ -5,7 +5,7 @@
 	<hr>
 
 	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "bg-danger" %><br>
+		<%= content_tag :div, msg, class: "text-danger" %><br>
 	<% end %>
 
 		<%= form_for @aluno, :url => url_for(:controller => 'alunos', :action => 'troca_senha'), 
@@ -18,10 +18,10 @@
 			<label for="nova">Nova senha: </label>
 			<%= password_field_tag :senha, nil, :class => "form-control" %>
 			</div>
-			<br>
+			<hr>
 			<%= link_to "Cancelar", @aluno, class:"btn btn-default" %> 
 			<%= submit_tag 'Trocar', class:"btn btn-default" %>
 		<% end %>
 
-</div>
 
+</div>
