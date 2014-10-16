@@ -1,40 +1,50 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/contato">Contato</a>
+          <a class="navbar-brand" href="/listas">Listas</a>
+          <a class="navbar-brand" href="/resolucoes">Resoluções</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <%= text_field_tag :pesquisa, nil, :class => "form-control" %>
+			<% if session[:usuario] %>
+				<%= link_to "Logout", "home/logout", class:"btn btn-default" %>
+			<% else %>
+				<%= link_to "Login", "home/login", class:"btn btn-default" %>
+			<% end %>
+          </form>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+
 <div class="container">
-
-	<div class="navbar navbar-default">
-  		<div class="container">
-    		<ul class="nav navbar-nav">
-      			<li class="active"><%= link_to "Contato", "/contato" %></li>
-      		</ul>
-      		<ul class="nav navbar-nav">
-      			<li class="active"><%= link_to "Listas", "/listas" %></li>
-      		</ul>
-      		<ul class="nav navbar-nav">
-      			<li class="active"><%= link_to "Resoluções", "/resolucoes" %></li>
-    		</ul>
-    		<p class="navbar-text pull-right">
-    			<%= text_field_tag :pesquisa %>
-    			<% if session[:usuario] %>
-	  				<%= link_to "Logout", "home/logout", class:"btn btn-default" %>
-				<% else %>
-					<%= link_to "Login", "home/login", class:"btn btn-default" %>
-				<% end %>
-    		</p>
-  		</div>
-	</div>
-
 	<%= image_tag "http://ww1.prweb.com/prfiles/2010/09/20/1875904/fisicaLogo.png", 
 		:style => "width: 30%; float :left; position: relative;"%>
 
-	<ul style="width: 40%; border: 1px double; float: left; position: relative;">
-		Atividade recente:
-		<li>Demonstração1   |   22/09</li>
-		<li>Demonstração2   |   19/09</li>
-		<li>Demonstração3   |   16/09</li>
-		<li>Demonstração4   |   14/09</li>
-	</ul>
 
-
-	<br><br><br><br><br><br><br><br><br>
-	**** SOMENTE PARA VIA DE TESTES: <%= link_to "Listagem de alunos", alunos_path %>
+	<div class="col-sm-4">
+        <div class="list-group">
+ 			<a class="list-group-item disabled">
+    			Atividade recente
+  			</a>
+ 			<a href="#" class="list-group-item"><span class="badge">14/10</span>D1</a>
+  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D2</a>
+  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D3</a>
+  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D4</a>
+		</div>
+	</div>
 
 </div>
+
+
+	<br><br><br><br><br><br>
+	**** SOMENTE PARA VIA DE TESTES: <%= link_to "Listagem de alunos", alunos_path %>
