@@ -10,28 +10,32 @@
           <a class="navbar-brand" href="/contato">Contato</a>
           <a class="navbar-brand" href="/listas">Listas</a>
           <a class="navbar-brand" href="/resolucoes">Resoluções</a>
+          <a class="navbar-brand" href="/videos">Vídeos</a>
+          <% if session[:usuario] %>
+            <a class="navbar-brand" href="/notas">Notas</a>
+          <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <%= text_field_tag :pesquisa, nil, :class => "form-control" %>
-			<% if session[:usuario] %>
-				<%= link_to "Logout", "home/logout", class:"btn btn-default" %>
-			<% else %>
-				<%= link_to "Login", "home/login", class:"btn btn-default" %>
-			<% end %>
+			      <% if session[:usuario] %>
+				      <%= link_to "Logout", "home/logout", class:"btn btn-default" %>
+			      <% else %>
+				      <%= link_to "Login", "home/login", class:"btn btn-default" %>
+			      <% end %>
           </form>
         </div>
     </div>
 </div>
 
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 
 <div class="container">
 	<%= image_tag "http://ww1.prweb.com/prfiles/2010/09/20/1875904/fisicaLogo.png", 
 		:style => "width: 30%; float :left; position: relative;"%>
 
 
-	<div class="col-sm-4">
+	<div class="col-sm-5">
         <div class="list-group">
  			<a class="list-group-item disabled">
     			Atividade recente
@@ -48,3 +52,12 @@
 
 	<br><br><br><br><br><br>
 	**** SOMENTE PARA VIA DE TESTES: <%= link_to "Listagem de alunos", alunos_path %>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="footer" style="opacity:0.4;">
+  <center>
+    <ul class="bs-docs-footer-links muted">
+      <p>Ana Carolina Pacheco e Iago Lourenço Corrêa | 2014</p>
+    </ul>
+  </center>
+</div>
