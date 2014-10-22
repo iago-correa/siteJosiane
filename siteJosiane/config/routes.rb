@@ -58,6 +58,16 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+ # get '/acessorestritojosi' => 'acessorestritojosi', :as => 'acessorestritojosi'
+
+ # get '/acessorestritojosi/arquivo' => 'acessorestritojosi#arquivo', :as => 'arquivo'
+
+ # get '/acessorestritojosi/atendimento' => 'acessorestritojosi#atendimento', :as => 'atendimento'
+
+ # get '/acessorestritojosi/disciplina' => 'acessorestritojosi#disciplina', :as => 'disciplina'
+
+ # get '/acessorestritojosi/notas_presencas' => 'acessorestritojosi#notas_presencas', :as => 'notas_presencas'
+
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
 
   get '/home/login' => 'home#login', :as => 'login'
