@@ -90,4 +90,6 @@ Rails.application.routes.draw do
 
   resources :arquivos
 
+  resources :turmas
+
 end
