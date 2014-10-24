@@ -1,18 +1,19 @@
 # encoding: UTF-8
 
-class DisciplinasController < ApplicationController
+class PostsController < ApplicationController
 
 	def index
-		@disciplina = Disciplina.all
+		@post = Post.all
 	end
 
 	def new
-		@disciplina = Disciplina.new
+		@post = Post.new
 	end
 
 	def create
-			
-		@disciplina = Disciplina.new params.require(:disciplina).permit(:nome, :chs, :cht, :profid)
+		
+		@data = Time.now	
+		@post = Post.new params.require(:post).permit(:conteudo, :tipo, @data, :profid)
 			
 		if @disciplina.save
 			redirect_to @disciplina, notice: "Disciplina inserida!"

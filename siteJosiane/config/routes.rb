@@ -86,4 +86,6 @@ Rails.application.routes.draw do
 
   resources :professores
 
+  resources :posts
+
 end

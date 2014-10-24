@@ -1,0 +1,27 @@
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
+	
+	<h1>Inserir post</h1>
+
+	<hr>
+
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: "text-danger" %><br>
+	<% end %>
+
+	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin' do |f| %>
+		<div class="form-group">
+			<label for="conteudo">Conteúdo:</label>
+			<%= text_field_tag :conteudo, nil,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="tipo">Tipo: </label>
+			<%= text_field_tag :tipo, nil,
+			 :class => "form-control" %>
+		</div><br>
+		<%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
+		<%= submit_tag 'Inserir', class:"btn btn-default" %>
+		<br>
+	<% end %>	
+
+</div>
