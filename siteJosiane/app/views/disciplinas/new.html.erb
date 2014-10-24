@@ -8,7 +8,7 @@
 		<%= content_tag :div, msg, class: "text-danger" %><br>
 	<% end %>
 
-	<%= form_for @disciplina, :url => url_for(:controller => 'professor', :action => 'disciplina'), :class => 'form-signin' do |f| %>
+	<%= form_for @disciplina, :url => url_for(:controller => 'disciplinas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="nome">Nome:</label>
 			<%= text_field_tag :nome, nil,
@@ -24,7 +24,8 @@
 			<%= text_field_tag :cht, nil,
 			 :class => "form-control" %>
 		</div>
-		<%= link_to "Voltar", root_path(:acessorestritojosi), 
+		<br>
+		<%= link_to "Voltar", :acessorestritojosi, 
 			class:"btn btn-default" %> 
 		<%= submit_tag 'Inserir', 
 			class:"btn btn-default" %>

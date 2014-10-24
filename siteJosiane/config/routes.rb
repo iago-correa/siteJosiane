@@ -58,15 +58,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
- # get '/acessorestritojosi' => 'acessorestritojosi', :as => 'acessorestritojosi'
+  get '/acessorestritojosi/arquivo' => 'arquivo#x', :as => 'arquivo'
 
- # get '/acessorestritojosi/arquivo' => 'acessorestritojosi#arquivo', :as => 'arquivo'
+  get '/acessorestritojosi/atendimento' => 'atendimento#x', :as => 'atendimento'
 
- # get '/acessorestritojosi/atendimento' => 'acessorestritojosi#atendimento', :as => 'atendimento'
-
- # get '/acessorestritojosi/disciplina' => 'acessorestritojosi#disciplina', :as => 'disciplina'
-
- # get '/acessorestritojosi/notas_presencas' => 'acessorestritojosi#notas_presencas', :as => 'notas_presencas'
+  get '/acessorestritojosi/notas_presencas' => 'notasepresencas#x', :as => 'notas_presencas'
 
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
 
@@ -80,6 +76,14 @@ Rails.application.routes.draw do
 
   patch '/alunos/:id/troca_senha' => 'alunos#troca_senha', :as => 'troca_senha'
 
+  get '/professores/login' => 'professores#login', :as => 'logar'
+
+  post '/professores/log' => 'professores#log', :as => 'loga'
+
   resources :alunos
+
+  resources :disciplinas
+
+  resources :professores
 
 end

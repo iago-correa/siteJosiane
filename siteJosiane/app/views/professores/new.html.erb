@@ -1,0 +1,36 @@
+<!doctype html>
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
+	
+	<h1>Dados cadastrais</h1>
+
+	<hr>
+
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, class: "text-danger" %><br>
+	<% end %>
+
+		<%= form_for @professor, :class => 'form-signin' do |f| %>
+		<div class="form-group">
+			<label for="nome">Nome: </label>
+			<%= f.text_field :nome, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="email">E-mail: </label>
+			<%= f.text_field :email, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="siape">Siape: </label>
+			<%= f.text_field :siape, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="senha">Senha: </label>
+			<%= f.password_field :senha, :class => "form-control" %>
+		</div>
+		<br>
+		<%= link_to "Cancelar", url_for(:controller => 'professores', :action => 'login'), class:"btn btn-default" %> 
+		<%= submit_tag 'Cadastrar', class:"btn btn-default" %>
+		<% end %>
+
+		<hr>
+
+</div>
