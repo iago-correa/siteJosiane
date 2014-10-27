@@ -15,7 +15,7 @@ class TurmasController < ApplicationController
 		@turma = Turma.new params.require(:turma).permit(:codigo)
 			
 		if @turma.save
-			redirect_to @turma, notice: "Turma inserida!"
+			redirect_to professores_path, notice: "Turma inserida!"
 		else		
 			message = "Falha na inserção: "
 			@turma.errors.full_messages.each do |m|

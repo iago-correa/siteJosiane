@@ -11,7 +11,7 @@
 	<%= form_for @turma, :url => url_for(:controller => 'turmas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="codigo">Código:</label>
-			<%= text_field_tag :codigo, nil,
+			<%= f.text_field :codigo,
 			 :class => "form-control" %>
 		</div>
 		<br>
