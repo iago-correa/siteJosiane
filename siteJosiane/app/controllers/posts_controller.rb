@@ -13,10 +13,13 @@ class PostsController < ApplicationController
 	def create
 		
 		@data = Time.now	
-		@post = Post.new params.require(:post).permit(:conteudo, :tipo, @data, :profid)
+		@profid = Professor.first
+		@post = Post.new params.require(:post).permit(:conteudo, :tipo)
+		@post.data = @data
+		@post.professor = @profid
 			
 		if @disciplina.save
-			redirect_to @disciplina, notice: "Disciplina inserida!"
+			redirect_to professores_path, notice: "Disciplina inserida!"
 		else		
 			message = "Falha na inserção: "
 			@disciplina.errors.full_messages.each do |m|

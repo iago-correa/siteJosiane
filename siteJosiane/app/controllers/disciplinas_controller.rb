@@ -11,11 +11,13 @@ class DisciplinasController < ApplicationController
 	end
 
 	def create
-			
-		@disciplina = Disciplina.new params.require(:disciplina).permit(:nome, :chs, :cht, :profid)
+		
+		@prof = Professor.first
+		@disciplina = Disciplina.new params.require(:disciplina).permit(:nome, :chs, :cht)
+		@disciplina.professor = @prof
 			
 		if @disciplina.save
-			redirect_to @disciplina, notice: "Disciplina inserida!"
+			redirect_to professores_path, notice: "Disciplina inserida!"
 		else		
 			message = "Falha na inserção: "
 			@disciplina.errors.full_messages.each do |m|

@@ -11,17 +11,17 @@
 	<%= form_for @disciplina, :url => url_for(:controller => 'disciplinas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="nome">Nome:</label>
-			<%= text_field_tag :nome, nil,
+			<%= f.text_field :nome,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
 			<label for="chs">Carga horária semanal:</label>
-			<%= text_field_tag :chs, nil,
+			<%= f.text_field :chs,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
 			<label for="cht">Carga horária total:</label>
-			<%= text_field_tag :cht, nil,
+			<%= f.text_field :cht,
 			 :class => "form-control" %>
 		</div>
 		<br>
