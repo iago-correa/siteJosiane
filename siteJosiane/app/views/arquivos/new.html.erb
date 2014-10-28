@@ -21,8 +21,7 @@
 		</div>
 		<div class="form-group">
 			<label for="tipo">Tipo: </label>
-			<%= collection_select (:tipo, "Vídeo", "Lista", "Resolução", "Material", {}, 
-			 {:class => "form-control"}) %>
+			<%= f.select :tipo, ([["Vídeo"], ["Lista"], ["Resolução"], ["Material"]]) %>
 		</div>
 		<div class="form-group">
 			<label for="extensao">Extensão: </label>

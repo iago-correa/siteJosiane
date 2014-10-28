@@ -60,8 +60,6 @@ Rails.application.routes.draw do
 
   get '/acessorestritojosi/arquivo' => 'arquivo#x', :as => 'arquivo'
 
-  get '/acessorestritojosi/atendimento' => 'atendimento#x', :as => 'atendimento'
-
   get '/acessorestritojosi/notas_presencas' => 'notasepresencas#x', :as => 'notas_presencas'
 
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
@@ -91,5 +89,7 @@ Rails.application.routes.draw do
   resources :arquivos
 
   resources :turmas
+
+  resources :atendimentos
 
 end
