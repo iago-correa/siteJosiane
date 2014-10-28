@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 		@profid = Professor.first
 		@post = Post.new params.require(:post).permit(:conteudo, :tipo)
 		@post.data = @data
-		@post.professor = @profid
+		@post.professor_id = @profid
 			
 		if @disciplina.save
 			redirect_to professores_path, notice: "Disciplina inserida!"

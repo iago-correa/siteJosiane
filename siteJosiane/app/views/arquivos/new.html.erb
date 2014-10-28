@@ -8,15 +8,15 @@
 		<%= content_tag :div, msg, class: "text-danger" %><br>
 	<% end %>
 
-	<%= form_for @disciplina, :url => url_for(:controller => 'professor', :action => 'arquivo'), :class => 'form-signin' do |f| %>
+	<%= form_for @arquivo, :url => url_for(:controller => 'arquivos', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="nome">Nome:</label>
-			<%= text_field_tag :nome, nil,
+			<%= f.text_field :nome,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
 			<label for="conteudo">Conteúdo:</label>
-			<%= text_field_tag :conteudo, nil,
+			<%= f.text_field :conteudo,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
@@ -26,7 +26,7 @@
 		</div>
 		<div class="form-group">
 			<label for="extensao">Extensão: </label>
-			<%= text_field_tag :extensao, nil,
+			<%= f.text_field :extensao,
 			 :class => "form-control" %>
 		</div>
 		<%= link_to "Voltar", professores_path, class:"btn btn-default" %> 

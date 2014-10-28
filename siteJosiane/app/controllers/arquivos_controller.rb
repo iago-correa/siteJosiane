@@ -1,25 +1,24 @@
 # encoding: UTF-8
 
-class PostsController < ApplicationController
+class ArquivosController < ApplicationController
 
 	def index
-		@post = Post.all
+		@arquivo = Arquivo.all
 	end
 
 	def new
-		@post = Post.new
+		@arquivo = Arquivo.new
 	end
 
 	def create
-		
-		@data = Time.now	
-		@post = Post.new params.require(:post).permit(:conteudo, :tipo, @data, :profid)
 			
-		if @disciplina.save
-			redirect_to @disciplina, notice: "Disciplina inserida!"
+		@arquivo = Arquivo.new params.require(:arquivo).permit(:conteudo, :nome, :tipo, :extensao)
+			
+		if @arquivo.save
+			redirect_to professores_path, notice: "Arquivo inserido!"
 		else		
 			message = "Falha na inserção: "
-			@disciplina.errors.full_messages.each do |m|
+			@arquivo.errors.full_messages.each do |m|
 				message += m
 			end
 
