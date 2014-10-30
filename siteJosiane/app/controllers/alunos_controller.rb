@@ -36,14 +36,14 @@ class AlunosController < ApplicationController
 						message += m
 				    end
 
-				    flash[:alert] = message
+				    flash.now[:alert] = message
 	        		render 'new'
 
 		  		end
 
 	  		else
 
-	  			flash[:alert] = "Senhas não verificam"
+	  			flash.now[:alert] = "Senhas não verificam"
 	        	render 'new'
 
 	  		end
@@ -78,7 +78,8 @@ class AlunosController < ApplicationController
 					message += m
 				   end
 
-		  		redirect_to edit_aluno_path, notice: message
+		  		flash.now[:alert] = message
+		  		render :edit
 	            
 	        end
 
@@ -147,12 +148,14 @@ class AlunosController < ApplicationController
 		  		if @aluno.update(senha: new_senha)
 		  			redirect_to @aluno, notice: "Troca de senha efetuada com sucesso"
 		  		else
-		  			redirect_to :nova_senha, notice: "Falha na troca de senha"
+		  			flash.now[:alert] = "Falha na troca de senha"
+		  			render :nova_senha
 		  		end
 
 	  		else
 
-	  			redirect_to :nova_senha, notice: "Senha antiga incorreta"
+	  			flash.now[:alert] = "Senha antiga incorreta"
+	  			render :nova_senha
 
 	  		end
 

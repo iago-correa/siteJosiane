@@ -19,9 +19,9 @@
           <form class="navbar-form navbar-right" role="form">
             <%= text_field_tag :pesquisa, nil, :class => "form-control" %>
 			      <% if session[:usuario] %>
-				      <%= link_to "Logout", "home/logout", class:"btn btn-default" %>
+				      <%= link_to "Logout",{ controller: "home", action: "logout" }, class:"btn btn-default" %>
 			      <% else %>
-				      <%= link_to "Login", "home/login", class:"btn btn-default" %>
+              <%= link_to "Login",{ controller: "home", action: "login" }, class:"btn btn-default" %>
 			      <% end %>
           </form>
         </div>

@@ -19,14 +19,15 @@ class HomeController < ApplicationController
 		if !@aluno.nil?
 			if @aluno.confirmado
 				session[:usuario] = @aluno.matricula
-				redirect_to root_path
+				redirect_to :home
 		  	else
-		  		redirect_to :login, notice: "Ainda em espera de aprovação de cadastro"
+		  		flash.now[:alert] = "Ainda em espera de aprovação de cadastro"
+        		render :login
 		  	end
 		else
 			@aluno = Aluno.new
-			flash[:alert] = 'Matrícula ou senha incorretas'
-        	render 'login'
+			flash.now[:alert] = 'Matrícula ou senha incorretas'
+        	render :login
 		end
 
 	end

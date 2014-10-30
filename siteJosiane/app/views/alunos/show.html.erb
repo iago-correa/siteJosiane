@@ -4,10 +4,6 @@
 
 	<hr>
 
-	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "text-success" %><br>
-	<% end %>
-
 	<div style="margin-left:20px;font-size:16px;">
 		E-mail: <%= @aluno.email %><br/>
 		Matrícula: <%= @aluno.matricula %><br/>

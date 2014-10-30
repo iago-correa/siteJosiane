@@ -4,10 +4,6 @@
 
 	<hr>
 
-	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "text-danger" %><br>
-	<% end %>
-
 	<%= form_for @arquivo, :url => url_for(:controller => 'arquivos', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="nome">Nome:</label>

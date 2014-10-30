@@ -24,7 +24,7 @@ class AtendimentosController < ApplicationController
 				message += m
 			end
 
-			flash[:alert] = message
+			flash.now[:alert] = message
 	    	render 'new'
   		end
  

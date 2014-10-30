@@ -5,10 +5,6 @@
 
 	<hr>
 
-	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: "text-danger" %><br>
-	<% end %>
-
 		<%= form_for @professor, :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="nome">Nome: </label>

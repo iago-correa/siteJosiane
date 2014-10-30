@@ -19,8 +19,8 @@ class ProfessoresController < ApplicationController
 			redirect_to professores_path
 		else
 			@professor = Professor.new
-			flash[:alert] = 'Siape ou senha incorretas'
-        	render 'login'
+			flash.now[:alert] = 'Siape ou senha incorretas'
+        	render :login
 		end
 
 	end
@@ -29,7 +29,7 @@ class ProfessoresController < ApplicationController
 		if not session[:prof]
 			@professor = Professor.new
 		else
-			redirect_to :index
+			redirect_to professores_path
 		end
 	end
 
@@ -47,7 +47,7 @@ class ProfessoresController < ApplicationController
 				@professor.errors.full_messages.each do |m|
 					message += m
 				end
-				flash[:alert] = message
+				flash.now[:alert] = message
 	       		render 'new'
 	       	end
 
@@ -81,11 +81,15 @@ class ProfessoresController < ApplicationController
 		  		if @professor.update(senha: new_senha)
 		  			redirect_to @professor, notice: "Troca de senha efetuada com sucesso"
 		  		else
-		  			redirect_to :nova_senha, notice: "Falha na troca de senha"
+		  			flash.now[:alert] = "Falha na troca de senha"
+		  			render :nova_senha
 		  		end
 
 	  		else
-	  			redirect_to :nova_senha, notice: "Senha antiga incorreta"
+	  			
+	  			flash.now[:alert] = "Senha antiga incorreta"
+	  			render :nova_senha
+
 	  		end
 
 	  	else
