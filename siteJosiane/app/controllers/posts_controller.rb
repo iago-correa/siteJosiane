@@ -14,9 +14,13 @@ class PostsController < ApplicationController
 		
 		if session[:prof]
 
-			@data = Time.now	
-			@profid = Professor.first
+			@data = Time.now
+
+			professor = Professor.find_by(siape: "#{session[:prof]}")
+			@profid = professor.id
+
 			@post = Post.new params.require(:post).permit(:conteudo, :tipo)
+
 			@post.data = @data
 			@post.professor_id = @profid
 			
