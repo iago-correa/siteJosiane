@@ -12,19 +12,26 @@ class TurmasController < ApplicationController
 
 	def create
 			
-		@turma = Turma.new params.require(:turma).permit(:codigo)
-			
-		if @turma.save
-			redirect_to professores_path, notice: "Turma inserida!"
-		else		
-			message = "Falha na inserção: "
-			@turma.errors.full_messages.each do |m|
-				message += m
-			end
+		if session[:prof] 
 
-			flash.now[:alert] = message
-	    	render 'new'
-  		end
+			@turma = Turma.new params.require(:turma).permit(:codigo)
+				
+			if @turma.save
+				redirect_to professores_path, notice: "Turma inserida!"
+			else		
+				message = "Falha na inserção: "
+				@turma.errors.full_messages.each do |m|
+					message += m
+				end
+
+				flash.now[:alert] = message
+	    		render 'new'
+
+	    	end
+
+	    else
+			redirect_to :logar
+	   	end
  
 	end
 

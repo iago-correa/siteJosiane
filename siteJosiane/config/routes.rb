@@ -60,15 +60,13 @@ Rails.application.routes.draw do
 
   get 'home/' => 'home#index'
 
-  get '/acessorestritojosi/arquivo' => 'arquivo#x', :as => 'arquivo'
-
-  get '/acessorestritojosi/notas_presencas' => 'notasepresencas#x', :as => 'notas_presencas'
-
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
 
   get '/home/login' => 'home#login', :as => 'login'
 
   get '/home/logout' => 'home#logout', :as => 'logout'
+
+  get '/professores/logout' => 'professores#logout', :as => 'logoutt'
 
   post '/home/log' => 'home#log', :as => 'log'
 

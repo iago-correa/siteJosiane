@@ -12,21 +12,27 @@ class AtendimentosController < ApplicationController
 
 	def create
 		
-		@prof = Professor.first
-		@atendimento = Atendimento.new params.require(:atendimento).permit(:hora_inicio, :hora_fim, :dia)
-		@atendimento.professor = @prof
-			
-		if @atendimento.save
-			redirect_to professores_path, notice: "Atendimento inserido!"
-		else		
-			message = "Falha na inserção: "
-			@atendimento.errors.full_messages.each do |m|
-				message += m
-			end
+		if session[:prof]
 
-			flash.now[:alert] = message
-	    	render 'new'
-  		end
+			@prof = Professor.first
+			@atendimento = Atendimento.new params.require(:atendimento).permit(:hora_inicio, :hora_fim, :dia)
+			@atendimento.professor = @prof
+			
+			if @atendimento.save
+				redirect_to professores_path, notice: "Atendimento inserido!"
+			else		
+				message = "Falha na inserção: "
+				@atendimento.errors.full_messages.each do |m|
+					message += m
+				end
+
+				flash.now[:alert] = message
+	    		render 'new'
+  			end
+
+  		else
+			redirect_to :logar
+	   	end
  
 	end
 

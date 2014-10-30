@@ -25,6 +25,11 @@ class ProfessoresController < ApplicationController
 
 	end
 
+	def logout
+	    reset_session
+	    redirect_to :logar
+  	end
+
 	def new
 		if not session[:prof]
 			@professor = Professor.new
