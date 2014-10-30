@@ -14,12 +14,14 @@ class AtendimentosController < ApplicationController
 		
 		if session[:prof]
 
-			@prof = Professor.first
+			professor = Professor.find_by(siape: "#{session[:prof]}")
+			@profid = professor.id
+
 			@atendimento = Atendimento.new params.require(:atendimento).permit(:hora_inicio, :hora_fim, :dia)
-			@atendimento.professor = @prof
+			@atendimento.professor_id = @profid
 			
 			if @atendimento.save
-				redirect_to professores_path, notice: "Atendimento inserido!"
+				redirect_to professores_path
 			else		
 				message = "Falha na inserção: "
 				@atendimento.errors.full_messages.each do |m|
