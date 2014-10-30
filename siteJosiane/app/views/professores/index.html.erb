@@ -17,7 +17,6 @@
         <div class="navbar-collapse collapse navbar-right">
           <form class="navbar-form navbar-right" role="form">
         	 <% if session[:prof] %>
-      		  <% professor = Professor.find_by(siape: "#{session[:prof]}") %>
             <%= link_to "Logout",{ controller: "professores", action: "logout" }, class:"btn btn-default" %>
         	 <% end %>
           </form>

@@ -14,14 +14,14 @@ class DisciplinasController < ApplicationController
 		
 		if session[:prof]
 
-			
+			professor = Professor.find_by(siape: "#{session[:prof]}")
+			@profid = professor.id
 
-			@prof = Professor.first
 			@disciplina = Disciplina.new params.require(:disciplina).permit(:nome, :chs, :cht)
-			@disciplina.professor = @prof
+			@disciplina.professor_id = @profid
 			
 			if @disciplina.save
-				redirect_to professores_path, notice: "Disciplina inserida!"
+				redirect_to professores_path
 			else		
 				message = "Falha na inserção: "
 				@disciplina.errors.full_messages.each do |m|
