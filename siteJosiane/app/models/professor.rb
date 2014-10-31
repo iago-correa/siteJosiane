@@ -1,6 +1,8 @@
 # encoding: UTF-8
 class Professor < ActiveRecord::Base
 
+	attr_accessor :senha2
+
 	has_many :disciplinas
 	has_many :atendimentos
 	has_many :posts

@@ -45,6 +45,8 @@ class ProfessoresController < ApplicationController
 			@professor = Professor.new params.require(:professor).permit(:nome, :siape, :senha, :email)
 			senha2 = params[:senha2]
 
+			puts params.inspect
+
 			if @professor.senha.eql? senha2
 
 				@professor.senha = Digest::MD5.hexdigest(@professor.senha)
