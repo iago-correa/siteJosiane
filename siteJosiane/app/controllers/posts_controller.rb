@@ -14,21 +14,18 @@ class PostsController < ApplicationController
 		
 		if session[:prof]
 
-			@data = Time.now
-
 			professor = Professor.find_by(siape: "#{session[:prof]}")
 			@profid = professor.id
 
 			@post = Post.new params.require(:post).permit(:conteudo, :tipo)
 
-			@post.data = @data
 			@post.professor_id = @profid
 			
-			if @disciplina.save
-				redirect_to professores_path, notice: "Disciplina inserida!"
+			if @post.save
+				redirect_to professores_path
 			else		
 				message = "Falha na inserção: "
-				@disciplina.errors.full_messages.each do |m|
+				@post.errors.full_messages.each do |m|
 					message += m
 				end
 

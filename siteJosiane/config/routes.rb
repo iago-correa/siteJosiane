@@ -66,8 +66,6 @@ Rails.application.routes.draw do
 
   get '/home/logout' => 'home#logout', :as => 'logout'
 
-  get '/professores/logout' => 'professores#logout', :as => 'logoutt'
-
   post '/home/log' => 'home#log', :as => 'log'
 
   get '/alunos/:id/nova_senha' => 'alunos#nova_senha', :as => 'nova_senha'
@@ -77,6 +75,8 @@ Rails.application.routes.draw do
   get '/professores/login' => 'professores#login', :as => 'logar'
 
   post '/professores/log' => 'professores#log', :as => 'loga'
+
+  get '/professores/logout' => 'professores#logout', :as => 'logoutt'
 
   resources :alunos
 

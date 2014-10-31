@@ -34,7 +34,7 @@ class ProfessoresController < ApplicationController
 		if not session[:prof]
 			@professor = Professor.new
 		else
-			redirect_to new_professor_path
+			redirect_to professores_path
 		end
 	end
 
