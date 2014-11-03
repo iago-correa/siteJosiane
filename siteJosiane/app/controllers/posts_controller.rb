@@ -2,12 +2,16 @@
 
 class PostsController < ApplicationController
 
-	def index
-		@post = Post.all
-	end
-
 	def new
-		@post = Post.new
+		if session[:prof]
+		
+			@post = Post.new
+
+		else
+
+			redirect_to :logar
+			
+		end
 	end
 
 	def create
@@ -34,7 +38,9 @@ class PostsController < ApplicationController
   			end
 
   		else
+
 			redirect_to :logar
+
 		end
  
 	end
