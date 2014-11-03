@@ -52,13 +52,10 @@
 			}
 		},
 		{
-			"contents": "# encoding: UTF-8\n\nclass AlunosController < ApplicationController\n\n	def index\n		@alunos = Aluno.all\n	end\n\n	def new\n		if not session[:usuario]\n			@aluno = Aluno.new\n		else\n			redirect_to root_path\n		end\n	end\n\n	def create\n		\n		if not session[:usuario]\n			\n			@aluno = Aluno.new params.require(:aluno).permit(:nome, :matricula, :senha, :email, :turma_id)\n			senha2 = params[:senha2]\n			\n			if @aluno.senha.eql? senha2\n\n		  		@aluno.confirmado = false\n		  		@aluno.senha = Digest::MD5.hexdigest(@aluno.senha)\n		  		\n		  		if @aluno.save\n		  			redirect_to @aluno, notice: \"Bem vindo(a) #{@aluno.nome}!\"\n		  		else\n		  			\n		  			message = \"Falha no cadastro: \"\n\n		  			@aluno.errors.full_messages.each do |m|\n						message += m\n				    end\n\n				    flash.now[:alert] = message\n	        		render 'new'\n\n		  		end\n\n	  		else\n\n	  			flash.now[:alert] = \"Senhas não verificam\"\n	        	render 'new'\n\n	  		end\n\n	  	else\n			redirect_to root_path\n		end\n\n	end\n\n	def edit\n\n		@aluno = Aluno.find(params[:id])\n		if not session[:usuario] && @aluno.matricula==session[:usuario]\n			redirect_to root_path\n		end\n\n	end\n\n	def update\n\n		@aluno = Aluno.find(params[:id])\n		if session[:usuario] && @aluno.matricula==session[:usuario]\n		\n			if @aluno.update(params.require(:aluno).permit(:nome, :matricula, :email, :turma_id))\n	            redirect_to @aluno, notice: \"Alterações efetivadas com sucesso\"\n	        else\n\n	        	message = \"Falha nas alterações: \"\n\n		  		@aluno.errors.full_messages.each do |m|\n					message += m\n				   end\n\n		  		flash.now[:alert] = message\n		  		render :edit\n	            \n	        end\n\n	    else\n			redirect_to root_path\n	    end\n\n	end\n\n	def show\n\n		@aluno = Aluno.find(params[:id])\n		if not session[:usuario] && @aluno.matricula==session[:usuario]\n			redirect_to root_path\n		end\n\n	end\n\n	def destroy\n\n		#Como so o professor deleta o aluno, necessario\n		#verificar login desse\n        @aluno = Aluno.find(params[:id])\n        if @aluno.destroy\n        	redirect_to :alunos, notice: \"Aluno #{@aluno.nome} foi excluído\"\n        else\n        	redirect_to :alunos, notice: \"Falha na exclusão do aluno #{@aluno.nome}\"\n        end\n        \n\n    end\n\n	def aprovar\n\n		#Como so o professor aprova o cadastro do aluno\n		#necessario verificar login desse\n		@aluno = Aluno.find(params[:id])\n\n		if @aluno.update(confirmado: true)\n	  		redirect_to :alunos, notice: \"Aluno #{@aluno.nome} teve cadastro confirmado\"\n	  	else\n	  		redirect_to :alunos, notice: \"Falha na confirmação do cadastro do aluno #{@aluno.nome}\"\n	  	end\n\n	end\n\n	def nova_senha\n\n		@aluno = Aluno.find(params[:id])\n		if not session[:usuario] && @aluno.matricula==session[:usuario]\n			redirect_to root_path\n		end\n\n	end\n\n	def troca_senha\n\n		@aluno = Aluno.find(params[:id])\n		if session[:usuario] && @aluno.matricula==session[:usuario]\n			old_senha = Digest::MD5.hexdigest(params[:senha_antiga])\n\n			if @aluno.senha.eql? old_senha\n		  		\n				new_senha = Digest::MD5.hexdigest(params[:senha])\n\n		  		if @aluno.update(senha: new_senha)\n		  			redirect_to @aluno, notice: \"Troca de senha efetuada com sucesso\"\n		  		else\n		  			flash.now[:alert] = \"Falha na troca de senha\"\n		  			render :nova_senha\n		  		end\n\n	  		else\n\n	  			flash.now[:alert] = \"Senha antiga incorreta\"\n	  			render :nova_senha\n\n	  		end\n\n	  	else\n			redirect_to root_path\n	    end\n\n	end\n\n	def encontra_id\n		@aluno = Aluno.find(params[:matricula])\n	end\n\nend\n\n",
-			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
-			"file_size": 3331,
-			"file_write_time": 130591150017129424,
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 			"settings":
 			{
-				"buffer_size": 3387,
+				"buffer_size": 1262,
 				"line_ending": "Unix"
 			}
 		}
@@ -94,12 +91,12 @@
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
 		"/home/iago/siteJosiane/siteJosiane/app/views",
-		"/home/iago/siteJosiane/siteJosiane/app/views/layouts",
-		"/home/iago/siteJosiane/siteJosiane/app/views/professores",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
@@ -115,7 +112,6 @@
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/login.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/edit.html.erb",
@@ -283,7 +279,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -342,36 +338,36 @@
 						"translation.y": 149.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
-					"semi_transient": false,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3387,
+						"buffer_size": 1262,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3356,
-								3356
+								1005,
+								1005
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3263.0,
+						"translation.y": 277.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
