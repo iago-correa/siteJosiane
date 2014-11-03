@@ -22,6 +22,10 @@
 			<label for="senha">Senha: </label>
 			<%= f.password_field :senha, :class => "form-control" %>
 		</div>
+		<div class="form-group">
+			<label for="senha2">Confirmar senha: </label>
+			<%= password_field_tag :senha2, nil, :class => "form-control" %><br/>
+		</div>
 		<br>
 		<%= link_to "Cancelar", url_for(:controller => 'professores', :action => 'login'), class:"btn btn-default" %> 
 		<%= submit_tag 'Cadastrar', class:"btn btn-default" %>

@@ -11,20 +11,26 @@ class ArquivosController < ApplicationController
 	end
 
 	def create
-			
-		@arquivo = Arquivo.new params.require(:arquivo).permit(:conteudo, :nome, :tipo, :extensao)
-			
-		if @arquivo.save
-			redirect_to professores_path, notice: "Arquivo inserido!"
-		else		
-			message = "Falha na inserção: "
-			@arquivo.errors.full_messages.each do |m|
-				message += m
-			end
+		
+		if not session[:prof]
 
-			flash.now[:alert] = message
-	    	render 'new'
-  		end
+			@arquivo = Arquivo.new params.require(:arquivo).permit(:conteudo, :nome, :tipo, :extensao)
+				
+			if @arquivo.save
+				redirect_to professores_path, notice: "Arquivo inserido!"
+			else		
+				message = "Falha na inserção: "
+				@arquivo.errors.full_messages.each do |m|
+					message += m
+				end
+
+				flash.now[:alert] = message
+	    		render 'new'
+  			end
+
+  		else
+			redirect_to :logar
+	   	end
  
 	end
 

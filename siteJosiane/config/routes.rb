@@ -60,10 +60,6 @@ Rails.application.routes.draw do
 
   get 'home/' => 'home#index'
 
-  get '/acessorestritojosi/arquivo' => 'arquivo#x', :as => 'arquivo'
-
-  get '/acessorestritojosi/notas_presencas' => 'notasepresencas#x', :as => 'notas_presencas'
-
   get '/alunos/:id/aprovar' => 'alunos#aprovar', :as => 'aluno_aprova'
 
   get '/home/login' => 'home#login', :as => 'login'
@@ -79,6 +75,8 @@ Rails.application.routes.draw do
   get '/professores/login' => 'professores#login', :as => 'logar'
 
   post '/professores/log' => 'professores#log', :as => 'loga'
+
+  get '/professores/logout' => 'professores#logout', :as => 'logoutt'
 
   resources :alunos
 

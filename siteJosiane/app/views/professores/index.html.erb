@@ -1,17 +1,43 @@
-<div class="container" style="width:40%;margin-left:auto;margin-right:auto;">
-	
-	<h1>Acesso do Professor</h1>
-	<br>
-	<%= link_to "Inserir disciplina", :new_disciplina %>
-	<br>
-	<%= link_to "Inserir atendimento", :new_atendimento %>
-	<br>
-	<%= link_to "Inserir post", :new_post %>
-	<br>
-	<%= link_to "Inserir arquivo", :new_arquivo %>
-	<br>
-	<%= link_to "Inserir turma", :new_turma %>
-	<br>
-	<%= link_to "Inserir notas e presenças", "" %>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/disciplinas/new">Inserir disciplina</a>
+          <a class="navbar-brand" href="/atendimentos/new">Inserir atendimento</a>
+          <a class="navbar-brand" href="/turmas/new">Inserir turma</a>
+          <a class="navbar-brand" href="">Inserir notas e presenças</a>
+          <a class="navbar-brand" href="/posts/new">Adicionar post</a>
+          <a class="navbar-brand" href="/arquivos/new">Adicionar arquivo</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <form class="navbar-form navbar-right" role="form">
+        	 <% if session[:prof] %>
+            <%= link_to "Logout",{ controller: "professores", action: "logout" }, class:"btn btn-default" %>
+        	 <% end %>
+          </form>
+        </div>
+    </div>
+</div>
 
+<br><br><br><br><br><br><br><br><br>
+
+<h1>Acesso do professor</h1>
+<div class="container">
+	<%= image_tag "http://ww1.prweb.com/prfiles/2010/09/20/1875904/fisicaLogo.png", 
+		:style => "width: 32%; float :left; position: relative;"%>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="footer" style="opacity:0.4;">
+  <center>
+    <ul class="bs-docs-footer-links muted">
+      <p>Ana Carolina Pacheco e Iago Lourenço Corrêa | 2014</p>
+    </ul>
+  </center>
 </div>

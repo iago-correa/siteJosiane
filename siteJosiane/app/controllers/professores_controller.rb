@@ -25,6 +25,11 @@ class ProfessoresController < ApplicationController
 
 	end
 
+	def logout
+	    reset_session
+	    redirect_to :logar
+  	end
+
 	def new
 		if not session[:prof]
 			@professor = Professor.new
@@ -38,18 +43,31 @@ class ProfessoresController < ApplicationController
 		if not session[:prof]
 			
 			@professor = Professor.new params.require(:professor).permit(:nome, :siape, :senha, :email)
+			senha2 = params[:senha2]
 
-			@professor.senha = Digest::MD5.hexdigest(@professor.senha)
-		  	if @professor.save
-		  		redirect_to professores_path
-		  	else
-		  		message = "Falha no cadastro: "
-				@professor.errors.full_messages.each do |m|
-					message += m
-				end
-				flash.now[:alert] = message
-	       		render 'new'
-	       	end
+			puts params.inspect
+
+			if @professor.senha.eql? senha2
+
+				@professor.senha = Digest::MD5.hexdigest(@professor.senha)
+				
+		  		if @professor.save
+		  			redirect_to professores_path
+		  		else
+		  			message = "Falha no cadastro: "
+					@professor.errors.full_messages.each do |m|
+						message += m
+					end
+					flash.now[:alert] = message
+	       			render 'new'
+	       		end
+
+	       	else
+
+	  			flash.now[:alert] = "Senhas não verificam"
+	        	render 'new'
+
+	  		end
 
 	  	else
 
