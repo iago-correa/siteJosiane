@@ -39,14 +39,20 @@ class HomeController < ApplicationController
 		else
 
 			redirect_to root_path
-			
+
 		end
 
 	end
 
 	def logout
-	    reset_session
-	    redirect_to root_path
+
+		if session[:usuario]
+		    reset_session
+		    redirect_to :logar
+		else
+			redirect_to action: 'login'
+		end
+
   	end
 
 end

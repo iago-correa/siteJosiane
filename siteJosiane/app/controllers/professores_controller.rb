@@ -3,39 +3,66 @@
 class ProfessoresController < ApplicationController
 
 	def index
-		@professor = Professor.all
+
+		if not session[:prof]
+			redirect_to action: 'login'
+		else
+			@professor = Professor.all
+		end
+		
 	end
 
 	def login
-		@professor = Professor.new
-	end
 
-	def log
-		
-		@professor = Professor.find_by_siape_and_senha(params[:siape],Digest::MD5.hexdigest(params[:senha]))	
-		
-		if !@professor.nil?
-			session[:prof] = @professor.siape
-			redirect_to professores_path
-		else
-			@professor = Professor.new
-			flash.now[:alert] = 'Siape ou senha incorretas'
-        	render :login
-		end
-
-	end
-
-	def logout
-	    reset_session
-	    redirect_to :logar
-  	end
-
-	def new
 		if not session[:prof]
 			@professor = Professor.new
 		else
 			redirect_to professores_path
 		end
+
+		
+	end
+
+	def log
+		
+		if not session[:prof]
+
+			@professor = Professor.find_by_siape_and_senha(params[:siape],Digest::MD5.hexdigest(params[:senha]))	
+			
+			if !@professor.nil?
+				session[:prof] = @professor.siape
+				redirect_to professores_path
+			else
+				@professor = Professor.new
+				flash.now[:alert] = 'Siape ou senha incorretas'
+	        	render :login
+			end
+
+		else
+			redirect_to professores_path
+		end
+
+	end
+
+	def logout
+
+		if session[:prof]
+		    reset_session
+		    redirect_to :logar
+		else
+			redirect_to professores_path
+		end
+
+  	end
+
+	def new
+
+		if not session[:prof]
+			@professor = Professor.new
+		else
+			redirect_to professores_path
+		end
+		
 	end
 
 	def create
