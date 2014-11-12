@@ -40,14 +40,19 @@
 
 
 	<div class="col-sm-5">
-        <div class="list-group">
- 			<a class="list-group-item disabled">
-    			Atividade recente
-  			</a>
- 			<a href="#" class="list-group-item"><span class="badge">14/10</span>D1</a>
-  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D2</a>
-  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D3</a>
-  			<a href="#" class="list-group-item"><span class="badge">14/10</span>D4</a>
+      <div class="list-group">
+   			<a href="#" class="list-group-item">
+      		<b>Atividade recente</b>
+    		</a>
+        <% @posts.each do |p| %>
+
+   			  <a href="#" class="list-group-item">
+            <span class="badge"><%= p.created_at.strftime('%b %d') %></span>
+            <%= p.conteudo[0,50] %>
+          </a>
+
+        <% end %>
+
 		</div>
 	</div>
 

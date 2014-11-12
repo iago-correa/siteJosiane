@@ -66,16 +66,17 @@
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
-		"/home/iago/siteJosiane/siteJosiane/app/views",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
-		"/home/iago/siteJosiane/siteJosiane/app/views/turmas"
+		"/home/iago/siteJosiane/siteJosiane/config"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/home_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/disciplinas/new.html.erb",
@@ -83,7 +84,6 @@
 		"/home/iago/siteJosiane/siteJosiane/app/views/arquivos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/arquivos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/turmas_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/atendimentos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/disciplinas_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/new.html.erb",
@@ -96,7 +96,6 @@
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home/login.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/turma.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141009043059_set_limit_senha.rb",
@@ -211,6 +210,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"alunos",
 			"logout",
 			"logar",
 			"flash",

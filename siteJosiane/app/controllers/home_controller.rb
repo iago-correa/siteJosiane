@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
 
 	def index
-		
+		@posts = Post.all.limit(4)
 	end
 
   	def login
