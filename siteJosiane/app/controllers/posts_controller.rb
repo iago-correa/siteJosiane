@@ -45,4 +45,58 @@ class PostsController < ApplicationController
  
 	end
 
+	def update
+
+		@post = Post.find(params[:id])
+		if session[:prof] && @professor.siape==session[:prof]
+		
+			if @post.update(params.require(:post).permit(:conteudo, :tipo))
+	            redirect_to professores_path, notice: "Alterações efetivadas com sucesso"
+	        else
+
+	        	message = "Falha nas alterações: "
+
+		  		@post.errors.full_messages.each do |m|
+					message += m
+				   end
+
+		  		flash.now[:alert] = message
+		  		render :edit
+	            
+	        end
+
+	    else
+			redirect_to :logar
+	    end
+
+	end
+
+	def show
+
+		@post = Post.find(params[:id])
+		if not session[:prof] && @professor.siape==session[:prof]
+			redirect_to :logar
+		end
+
+	end
+
+	def destroy
+
+        @post = Post.find(params[:id])
+        if session[:prof] && @professor.siape==session[:prof]
+
+        	if @post.destroy
+        		redirect_to professores_path, notice: "Post foi excluído"
+        	else
+        		redirect_to professores_path, notice: "Falha na exclusão do post"
+        	end 
+
+        else
+
+			redirect_to :logar
+
+		end
+
+    end
+
 end
