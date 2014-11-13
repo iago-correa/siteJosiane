@@ -92,4 +92,6 @@ Rails.application.routes.draw do
 
   resources :atendimentos
 
+  resources :notaspresencas
+
 end
