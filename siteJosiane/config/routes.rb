@@ -84,14 +84,18 @@ Rails.application.routes.draw do
 
   resources :professores
 
-  resources :posts
+  resources :posts do
 
-  resources :arquivos
+    resources :arquivos
+  
+  end
 
   resources :turmas
 
   resources :atendimentos
 
-  resources :notaspresencas
+  resources :notas
+
+  resources :presencas
 
 end
