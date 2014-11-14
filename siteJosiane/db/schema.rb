@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009043059) do
+ActiveRecord::Schema.define(version: 20141114130127) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20141009043059) do
     t.datetime "updated_at"
     t.string   "tipo",         limit: 3
     t.integer  "professor_id"
+    t.string   "titulo"
   end
 
   create_table "presencas", force: true do |t|
