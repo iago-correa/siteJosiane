@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"come",
+				"comentario"
+			],
+			[
 				"matricula",
 				"matricula"
 			],
@@ -66,14 +70,17 @@
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
+		"/home/iago/siteJosiane/siteJosiane/app/views",
+		"/home/iago/siteJosiane/siteJosiane/app/views/home",
 		"/home/iago/siteJosiane/siteJosiane/config"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/comentarios_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/home_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas/new.html.erb",
@@ -209,6 +216,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"by",
+			"find",
 			"alunos",
 			"logout",
 			"logar",

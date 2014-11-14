@@ -18,7 +18,7 @@
         <div class="navbar-collapse collapse navbar-right">
         <% if session[:usuario] %>
           <% aluno = Aluno.find_by(matricula: "#{session[:usuario]}") %>
-          <%= link_to "Profile", aluno, class:"navbar-brand" %>
+          <%= link_to "Perfil", aluno, class:"navbar-brand" %>
         <% end %>
           <form class="navbar-form navbar-right" role="form">
             <%= text_field_tag :pesquisa, nil, :class => "form-control" %>
