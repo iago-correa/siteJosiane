@@ -22,7 +22,7 @@ class ComentariosController < ApplicationController
 			@comentario.aluno_id = usuario.id
 
 			if @comentario.save
-				redirect_to @post, notice: "Comentário realizado"
+				redirect_to post, notice: "Comentário realizado"
 			else		
 				message = "Falha no comentário: "
 				@comentario.errors.full_messages.each do |m|
@@ -43,12 +43,23 @@ class ComentariosController < ApplicationController
 
 	def destroy
 
-        @aluno = Aluno.find(params[:id])
-        if @aluno.destroy
-        	redirect_to :alunos, notice: "Aluno #{@aluno.nome} foi excluído"
-        else
-        	redirect_to :alunos, notice: "Falha na exclusão do aluno #{@aluno.nome}"
-        end
+        @comentario = Comentario.find(params[:id])
+        post = Post.find(session[:post])
+        usuario = Aluno.find_by_matricula(session[:usuario])
+
+        if session[:usuario] && @comentario.aluno_id==usuario.id
+	        
+	        if @comentario.destroy
+	        	redirect_to post, notice: "Comentário removido"
+	        else
+	        	redirect_to post, notice: "Falha na exclusão do comentario"
+	        end
+
+    	else
+
+			redirect_to root_path
+
+    	end
         
     end
 
