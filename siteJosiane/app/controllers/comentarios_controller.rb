@@ -41,4 +41,15 @@ class ComentariosController < ApplicationController
 
 	end
 
+	def destroy
+
+        @aluno = Aluno.find(params[:id])
+        if @aluno.destroy
+        	redirect_to :alunos, notice: "Aluno #{@aluno.nome} foi excluído"
+        else
+        	redirect_to :alunos, notice: "Falha na exclusão do aluno #{@aluno.nome}"
+        end
+        
+    end
+
 end

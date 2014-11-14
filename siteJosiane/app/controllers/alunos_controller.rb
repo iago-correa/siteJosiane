@@ -100,16 +100,22 @@ class AlunosController < ApplicationController
 
 	def destroy
 
-		#Como so o professor deleta o aluno, necessario
-		#verificar login desse
         @aluno = Aluno.find(params[:id])
-        if @aluno.destroy
-        	redirect_to :alunos, notice: "Aluno #{@aluno.nome} foi excluído"
-        else
-        	redirect_to :alunos, notice: "Falha na exclusão do aluno #{@aluno.nome}"
-        end
-        
+        if session[:usuario] && @aluno.matricula==session[:usuario]
+	        
+	        if @aluno.destroy
+	        	reset_session
+		    	redirect_to :logar, notice: "Conta de usuário deletada"
+	        else
+	        	redirect_to :alunos, notice: "Falha na exclusão de conta"
+	        end
 
+    	else
+
+			redirect_to root_path
+
+    	end
+        
     end
 
 	def aprovar
