@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
 
 	def index
-		@posts = Post.all.limit(4)
+		@posts = Post.all.limit(4).order('created_at')
 	end
 
   	def login

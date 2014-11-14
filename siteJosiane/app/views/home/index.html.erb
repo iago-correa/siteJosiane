@@ -46,9 +46,9 @@
     		</a>
         <% @posts.each do |p| %>
 
-   			  <a href="#" class="list-group-item">
+   			  <a href="../posts/<%= p.id %>" class="list-group-item">
             <span class="badge"><%= p.created_at.strftime('%b %d') %></span>
-            <%= p.conteudo[0,50] %>
+            <%= p.titulo %>
           </a>
 
         <% end %>
