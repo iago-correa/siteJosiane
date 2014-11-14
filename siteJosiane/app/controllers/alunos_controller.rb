@@ -105,7 +105,7 @@ class AlunosController < ApplicationController
 	        
 	        if @aluno.destroy
 	        	reset_session
-		    	redirect_to :logar, notice: "Conta de usuário deletada"
+		    	redirect_to root_path, notice: "Conta de usuário deletada"
 	        else
 	        	redirect_to :alunos, notice: "Falha na exclusão de conta"
 	        end

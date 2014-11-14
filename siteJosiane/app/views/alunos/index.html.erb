@@ -21,7 +21,6 @@
 				<td><%= a.nome %></td>
 				<td><%= a.matricula %></td>
 				<td><%= Turma.find(a.turma_id).codigo %></td>
-				<td><%= link_to "Excluir", a, method: :delete %></td>
 				<% if not a.confirmado%>
 					<% if session[:prof] %>
 						<td><%= link_to "Aprovar cadastro",
