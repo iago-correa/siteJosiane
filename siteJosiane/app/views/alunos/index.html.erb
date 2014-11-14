@@ -3,20 +3,42 @@
 	<h2>Alunos</h2>
 
 	<hr>
-	<br>
+	
+	<%= link_to "Todas turmas", "alunos/0" %>
+	<% @turmas.each do |t| %>
+		 | <%= link_to "Turma "+t.codigo, "alunos/"+t.codigo %>
+	<% end %>
+
+	<hr>
 
 	<div style="margin-left:20px;">
 
-		<table>
+		<% if @turma %>
 
-		<tr>
-			<td>Nome</td>
-			<td>Matricula</td>
-			<td>Turma</td>
-		</tr>
+			<h4><%= "Turma "+@turma.codigo %></h4>
+
+		<% else %>
+
+			<h4>Todas turmas</h4>
+
+		<% end %>
+
+		<br>
+
+		<table class="table" >
+
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Matricula</th>
+				<th>Turma</th>
+				<th>Cadastro</th>
+			</tr>
+		</thead>
 
 		<% @alunos.each do |a| %>
 
+			<tbody>
 			<tr>
 				<td><%= a.nome %></td>
 				<td><%= a.matricula %></td>
@@ -24,9 +46,11 @@
 				<% if not a.confirmado%>					
 					<td><%= link_to "Aprovar cadastro",
 						aluno_aprova_path(a.id) %></td>
-					<% end %>
+				<% else %>
+					<td>Aprovado</td>
 				<% end %>
 			</tr>
+			</tbody>
 
 		<% end %>
 
@@ -34,7 +58,8 @@
 
 	</div>
 
+	<hr>
+
 	</center>
 
 </div>
-

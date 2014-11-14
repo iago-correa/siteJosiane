@@ -3,7 +3,29 @@
 class AlunosController < ApplicationController
 
 	def index
-		@alunos = Aluno.all
+		if session[:prof]
+			@turmas = Turma.all
+			if session[:turma]
+				if session[:turma]!="0"
+					@turma = Turma.find_by_codigo(session[:turma])
+					@alunos = Aluno.where(turma_id: @turma.id).order('nome')
+				else
+					@alunos = Aluno.all
+				end
+			else
+				@alunos = Aluno.all
+			
+			end
+		else
+			redirect_to professores_path
+	  	end
+	end
+
+	def alunos_turma
+
+		session[:turma] = params[:turma]
+		redirect_to alunos_path
+		
 	end
 
 	def new

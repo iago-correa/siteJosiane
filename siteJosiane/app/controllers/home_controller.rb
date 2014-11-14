@@ -48,7 +48,7 @@ class HomeController < ApplicationController
 
 		if session[:usuario]
 		    reset_session
-		    redirect_to :logar
+		    redirect_to root_path
 		else
 			redirect_to action: 'login'
 		end
