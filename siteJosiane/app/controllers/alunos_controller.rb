@@ -120,14 +120,19 @@ class AlunosController < ApplicationController
 
 	def aprovar
 
-		#Como so o professor aprova o cadastro do aluno
-		#necessario verificar login desse
-		@aluno = Aluno.find(params[:id])
-
-		if @aluno.update(confirmado: true)
-	  		redirect_to :alunos, notice: "Aluno #{@aluno.nome} teve cadastro confirmado"
+		if session[:prof]
+		
+			@aluno = Aluno.find(params[:id])
+			if @aluno.update(confirmado: true)
+		  		redirect_to :alunos, notice: "Aluno #{@aluno.nome} teve cadastro confirmado"
+		  	else
+		  		redirect_to :alunos, notice: "Falha na confirmação do cadastro do aluno #{@aluno.nome}"
+		  	end
+	  	
 	  	else
-	  		redirect_to :alunos, notice: "Falha na confirmação do cadastro do aluno #{@aluno.nome}"
+
+			redirect_to professores_path
+
 	  	end
 
 	end

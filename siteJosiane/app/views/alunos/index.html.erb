@@ -21,9 +21,8 @@
 				<td><%= a.nome %></td>
 				<td><%= a.matricula %></td>
 				<td><%= Turma.find(a.turma_id).codigo %></td>
-				<% if not a.confirmado%>
-					<% if session[:prof] %>
-						<td><%= link_to "Aprovar cadastro",
+				<% if not a.confirmado%>					
+					<td><%= link_to "Aprovar cadastro",
 						aluno_aprova_path(a.id) %></td>
 					<% end %>
 				<% end %>
