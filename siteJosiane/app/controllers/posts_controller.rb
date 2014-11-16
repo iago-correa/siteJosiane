@@ -76,9 +76,7 @@ class PostsController < ApplicationController
 	def show
 
 		@post = Post.find(params[:id])
-		if not session[:prof] && @professor.siape==session[:prof]
-			redirect_to :logar
-		end
+		@coments = Comentario.where(post_id: params[:id]).order('created_at')
 
 	end
 

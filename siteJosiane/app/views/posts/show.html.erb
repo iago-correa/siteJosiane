@@ -1,0 +1,36 @@
+<div class="container" style="width:60%;margin-left:auto;margin-right:auto;">
+	
+	<h1><%= @post.titulo %></h1>
+
+	<hr>
+
+	<span class="badge"><%= @post.created_at.strftime('%b %d') %></span>
+
+	<br><br>
+
+	<div style="margin-left:5px;font-size:16px;">
+		<p><%= @post.conteudo %></p>
+	</div>
+
+	<br><b>Comentários: </b>
+
+	<hr>
+
+	<% @coments.each do |c| %>
+		<div class="thumbnail">
+			<%	a = Aluno.find(c.aluno_id) %>
+			<b><%= a.nome%></b><%= ", "+c.created_at.strftime('%k:%M %d/%m/%Y')  %>
+			<br><br>
+			<%= c.conteudo %>
+			<br><br>
+		</div>
+	<% end %>
+
+	<hr>
+
+	<% if session[:usuario] %>
+		<%= link_to "Comentar", { controller: "comentarios", action:"new" }, class:"btn btn-default"%>
+	<% end %>
+
+</div>
+

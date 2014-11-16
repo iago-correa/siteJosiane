@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114130127) do
+ActiveRecord::Schema.define(version: 20141116051646) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -51,12 +51,11 @@ ActiveRecord::Schema.define(version: 20141114130127) do
   end
 
   create_table "comentarios", force: true do |t|
-    t.string    "conteudo"
-    t.datetime  "created_at"
-    t.datetime  "updated_at"
-    t.timestamp "data"
-    t.integer   "post_id"
-    t.integer   "aluno_id"
+    t.string   "conteudo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "post_id"
+    t.integer  "aluno_id"
   end
 
   create_table "disciplinas", force: true do |t|
