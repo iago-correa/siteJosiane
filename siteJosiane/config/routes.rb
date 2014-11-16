@@ -72,7 +72,7 @@ Rails.application.routes.draw do
 
   patch '/alunos/:id/troca_senha' => 'alunos#troca_senha', :as => 'troca_senha'
 
-  get '/alunos/:turma' => 'alunos#alunos_turma', :as => 'alunos_turma'
+  get '/alunos/turma/:turma' => 'alunos#alunos_turma', :as => 'alunos_turma'
 
   get '/professores/login' => 'professores#login', :as => 'logar'
 

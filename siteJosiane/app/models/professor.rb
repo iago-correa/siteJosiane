@@ -15,11 +15,19 @@ class Professor < ActiveRecord::Base
 		uniqueness:{message: " já cadastrado. "}
 
 	validate :email?
+	validate :siape?
 
  	private 
  	def email?
   		if not email.nil?
 			errors.add(:email, " inválido. ") unless email =~ /[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/
+		end
+  	end
+
+ 	private 
+ 	def siape?
+  		if not siape.blank?
+			errors.add(:siape, " inválido \n") unless email =~ /\s/
 		end
   	end
 

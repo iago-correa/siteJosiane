@@ -14,7 +14,6 @@ class AlunosController < ApplicationController
 				end
 			else
 				@alunos = Aluno.all
-			
 			end
 		else
 			redirect_to professores_path

@@ -4,9 +4,9 @@
 
 	<hr>
 	
-	<%= link_to "Todas turmas", "alunos/0" %>
+	<%= link_to "Todas turmas", "alunos/turma/0" %>
 	<% @turmas.each do |t| %>
-		 | <%= link_to "Turma "+t.codigo, "alunos/"+t.codigo %>
+		 | <%= link_to "Turma "+t.codigo, "alunos/turma/"+t.codigo %>
 	<% end %>
 
 	<hr>
