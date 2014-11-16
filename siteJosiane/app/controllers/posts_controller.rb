@@ -77,6 +77,7 @@ class PostsController < ApplicationController
 
 		@post = Post.find(params[:id])
 		@coments = Comentario.where(post_id: params[:id]).order('created_at')
+		session[:post]=params[:id]
 
 	end
 

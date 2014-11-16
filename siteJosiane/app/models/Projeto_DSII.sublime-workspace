@@ -47,6 +47,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1840,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -80,31 +88,35 @@
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
 		"/home/iago/siteJosiane/siteJosiane/app/views",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
+		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home",
+		"/home/iago/siteJosiane/siteJosiane/app/views/posts",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores",
-		"/home/iago/siteJosiane/siteJosiane/lib/assets",
-		"/home/iago/siteJosiane/siteJosiane/lib/tasks",
-		"/home/iago/siteJosiane/siteJosiane/test/controllers",
-		"/home/iago/siteJosiane/siteJosiane/vendor/assets"
+		"/home/iago/siteJosiane/siteJosiane/db/migrate"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios/new.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/comentarios_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/posts/show.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/home/login.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141116051646_remove_column_data_to_comentarios.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/professores/new.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/edit.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/alunos_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/index.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/professores/new.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home/login.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/home_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/post.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141114130127_add_column_titulo_to_posts.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/index.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/comentarios_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/disciplinas/new.html.erb",
@@ -115,9 +127,7 @@
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/atendimentos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/disciplinas_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/login.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/edit.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/nova_senha.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/turma.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141009043059_set_limit_senha.rb",
@@ -231,6 +241,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"session[:post]",
+			"session",
+			"usuario",
 			"professores",
 			"alunos",
 			"professo",
@@ -284,8 +297,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1461,
+								1461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1524.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -362,7 +405,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 272.0,
+	"side_bar_width": 238.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
