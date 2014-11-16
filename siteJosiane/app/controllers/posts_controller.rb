@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 			professor = Professor.find_by(siape: "#{session[:prof]}")
 			@profid = professor.id
 
-			@post = Post.new params.require(:post).permit(:conteudo, :tipo)
+			@post = Post.new params.require(:post).permit(:titulo, :conteudo, :tipo)
 			@arquivo = Arquivo.new params.requise(:post).permit(:nome, :extensao)
 
 			@post.professor_id = @profid

@@ -6,6 +6,11 @@
 
 	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
+			<label for="titulo">Título:</label>
+			<%= f.text_area :titulo,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
 			<label for="conteudo">Conteúdo:</label>
 			<%= f.text_area :conteudo,
 			 :class => "form-control" %>
