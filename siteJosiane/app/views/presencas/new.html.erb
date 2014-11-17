@@ -1,24 +1,32 @@
 <div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
 	
-	<h1>Inserir presenças</h1>
+	<h1>Inserir presença de aluno</h1>
 
 	<hr>
 
 	<%= form_for @presenca, :url => url_for(:controller => 'presencas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
-			<label for="nome">Nota:</label>
+			<label for="matricula">Matrícula:</label>
+			<%= f.text_field :matricula,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="disciplina">Disciplina:</label>
+			<%= f.text_field :disciplina,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="nome">Data:</label>
 			<%= f.text_field :nota,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
-			<label for="chs">Carga horária semanal:</label>
-			<%= f.text_field :chs,
-			 :class => "form-control" %>
+			<label for="chs">Presente:</label>
+			<%= f.select :presente, options_for_select([["Sim", "true"], ["Não", "false"]]), class: "form-control" %>
 		</div>
 		<div class="form-group">
-			<label for="cht">Carga horária total:</label>
-			<%= f.text_field :cht,
-			 :class => "form-control" %>
+			<label for="cht">Justificado:</label>
+			<%= f.select :presente, options_for_select([["Sim", "true"], ["Não", "false"]]), class: "form-control" %>
 		</div>
 		<br>
 		<%= link_to "Voltar", professores_path, 
