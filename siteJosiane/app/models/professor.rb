@@ -27,7 +27,7 @@ class Professor < ActiveRecord::Base
  	private 
  	def siape?
   		if not siape.blank?
-			errors.add(:siape, " inválido \n") unless email =~ /\s/
+			errors.add(:siape, " inválido \n") if siape =~ /\s/
 		end
   	end
 

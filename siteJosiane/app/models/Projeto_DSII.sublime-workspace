@@ -47,14 +47,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1840,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -91,17 +83,16 @@
 		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts",
-		"/home/iago/siteJosiane/siteJosiane/app/views/professores",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate"
+		"/home/iago/siteJosiane/siteJosiane/app/views/professores"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/comentarios_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts/show.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/home/login.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141116051646_remove_column_data_to_comentarios.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/edit.html.erb",
@@ -297,38 +288,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/iago/siteJosiane/siteJosiane/app/controllers/posts_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1840,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1461,
-								1461
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1524.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
