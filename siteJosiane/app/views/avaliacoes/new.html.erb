@@ -1,0 +1,31 @@
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
+	
+	<h1>Inserir avaliação</h1>
+
+	<hr>
+
+	<%= form_for @avaliacao, :url => url_for(:controller => 'avaliacoes', :action => 'create'), :class => 'form-signin' do |f| %>
+		<div class="form-group">
+			<label for="disciplina">Disciplina:</label>
+			<%= collection_select(:presenca, :disciplina_id, Disciplina.all.order(:nome), :id, :nome, {}, {class: "form-control"}) %>
+		</div>
+		<div class="form-group">
+			<label for="descricao">Descrição:</label>
+			<%= f.text_field :descricao,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="maxima">Máxima:</label>
+			<%= f.text_field :maxima,
+			 :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="peso">Peso: </label>
+			<%= f.text_field :peso,
+			 :class => "form-control" %>
+		</div><br>
+		<%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
+		<%= submit_tag 'Inserir', class:"btn btn-default" %>
+	<% end %>	
+
+</div>
