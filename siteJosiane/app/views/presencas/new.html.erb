@@ -1,31 +1,25 @@
 <div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
 	
-	<h1>Inserir presença de aluno</h1>
+	<h1>Inserir presença</h1>
 
 	<hr>
 
 	<%= form_for @presenca, :url => url_for(:controller => 'presencas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="matricula">Matrícula:</label>
-			<%= f.text_field :matricula,
+			<%= f.text_field :aluno_id,
 			 :class => "form-control" %>
 		</div>
 		<div class="form-group">
 			<label for="disciplina">Disciplina:</label>
-			<%= f.text_field :disciplina,
-			 :class => "form-control" %>
+			<%= collection_select(:presenca, :disciplina_id, Disciplina.all.order(:nome), :id, :codigo, {}, {class: "form-control"}) %>
 		</div>
 		<div class="form-group">
-			<label for="nome">Data:</label>
-			<%= f.text_field :nota,
-			 :class => "form-control" %>
-		</div>
-		<div class="form-group">
-			<label for="chs">Presente:</label>
+			<label for="presente">Presente:</label>
 			<%= f.select :presente, options_for_select([["Sim", "true"], ["Não", "false"]]), class: "form-control" %>
 		</div>
 		<div class="form-group">
-			<label for="cht">Justificado:</label>
+			<label for="justificado">Justificado:</label>
 			<%= f.select :presente, options_for_select([["Sim", "true"], ["Não", "false"]]), class: "form-control" %>
 		</div>
 		<br>

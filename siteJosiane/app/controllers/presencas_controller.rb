@@ -14,13 +14,14 @@ class PresencasController < ApplicationController
 		
 		if session[:prof]
 
-			aluno = Aluno.find_by(matricula: "#{session[:prof]}")
+			@presenca = Presenca.new params.require(:presenca).permit(:presente, :justificado)
+
+			aluno = Aluno.find_by(matricula: :aluno_id)
 			@aid = aluno.id
 
-			disciplina = Disciplina.find_by(nome: "#{session[:prof]}")
+			disciplina = Disciplina.find_by(nome: :disciplina_id)
 			@did = disciplina.id
 
-			@presenca = Presenca.new params.require(:disciplina).permit(:data, :presente, :justificado)
 			@presenca.aluno_id = @aid
 			@presenca.disciplina_id = @did
 			
