@@ -1,7 +1,7 @@
 <!doctype html>
 <div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
 	
-	<h1>Dados cadastrais</h1>
+	<h1>Seu comentário</h1>
 
 	<hr>
 
@@ -10,7 +10,7 @@
 			<%= f.text_area(:conteudo, cols: 35) %>
 		</div>
 		<%= link_to "Cancelar", url_for(:controller => 'home', :action => 'login'), class:"btn btn-default" %> 
-		<%= submit_tag 'Cadastrar', class:"btn btn-default" %>
+		<%= submit_tag 'Comentar', class:"btn btn-default" %>
 		<% end %>
 
 		<hr>
