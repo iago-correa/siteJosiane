@@ -86,11 +86,11 @@ Rails.application.routes.draw do
 
   resources :professores
 
-  resources :posts do
+  resources :posts 
 
     resources :arquivos
+
   
-  end
 
   resources :turmas
 

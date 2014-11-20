@@ -4,14 +4,9 @@ class PostsController < ApplicationController
 
 	def new
 		if session[:prof]
-		
 			@post = Post.new
-			@arquivo = Arquivo.new
-
 		else
-
 			redirect_to :logar
-			
 		end
 	end
 
@@ -23,11 +18,10 @@ class PostsController < ApplicationController
 			@profid = professor.id
 
 			@post = Post.new params.require(:post).permit(:titulo, :conteudo, :tipo)
-			@arquivo = Arquivo.new params.requise(:post).permit(:nome, :extensao)
 
 			@post.professor_id = @profid
 			
-			if @post.save && @arquivo.save
+			if @post.save
 				redirect_to professores_path
 			else		
 				message = "Falha na inserção: "

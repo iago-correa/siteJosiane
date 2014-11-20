@@ -4,13 +4,9 @@ class ArquivosController < ApplicationController
 
 	def new
 		if session[:prof]
-		
 			@arquivo = Arquivo.new
-
 		else
-
 			redirect_to :logar
-			
 		end
 	end
 
