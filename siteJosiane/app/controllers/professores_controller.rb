@@ -72,7 +72,7 @@ class ProfessoresController < ApplicationController
 				@professor.senha = Digest::MD5.hexdigest(@professor.senha)
 				
 		  		if @professor.save
-		  			redirect_to professores_path
+		  			redirect_to '/professores/login'
 		  		else
 		  			message = "Falha no cadastro: "
 					@professor.errors.full_messages.each do |m|

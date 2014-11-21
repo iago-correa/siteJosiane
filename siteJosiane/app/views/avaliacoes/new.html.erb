@@ -6,8 +6,8 @@
 
 	<%= form_for @avaliacao, :url => url_for(:controller => 'avaliacoes', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
-			<label for="disciplina">Disciplina:</label>
-			<%= collection_select(:presenca, :disciplina_id, Disciplina.all.order(:nome), :id, :nome, {}, {class: "form-control"}) %>
+			<label for="turma">Turma:</label>
+			<%= collection_select(:presenca, :turma_id, Turma.all.order(:codigo), :id, :codigo, {}, {class: "form-control"}) %>
 		</div>
 		<div class="form-group">
 			<label for="descricao">Descrição:</label>
