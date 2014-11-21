@@ -11,24 +11,40 @@
 	<hr>
 	<p><b>Atendimentos</b></p>
 
+
+	<% dia_anterior = "0" %>
+	<% horario = "" %>
+
 	<% @atendimentos.each do |a| %>
-		<% if a.dia=="1" %>
-			Segunda-feira
+		<% if a.dia == dia_anterior %>	
+			<% horario = horario+" e das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+		<% else %>
+			<% if a.dia=="1" %>
+				<% horario = horario+"#Segunda-feira das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+			<% end %>
+			<% if a.dia=="2" %>
+				<% horario = horario+"#Terça-feira das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+			<% end %>
+			<% if a.dia=="3" %>
+				<% horario = horario+"#Quarta-feira das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+			<% end %>
+			<% if a.dia=="4" %>
+				<% horario = horario+"#Quinta-feira das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+			<% end %>
+			<% if a.dia=="5" %>
+				<% horario = horario+"#Sexta-feira das "+a.hora_inicio.strftime('%k:%M')+" às "+a.hora_fim.strftime('%k:%M')%>
+			<% end %>
 		<% end %>
-		<% if a.dia=="2" %>
-			Terça-feira
-		<% end %>
-		<% if a.dia=="3" %>
-			Quarta-feira
-		<% end %>
-		<% if a.dia=="4" %>
-			Quinta-feira
-		<% end %>
-		<% if a.dia=="5" %>
-			Sexta-feira
-		<% end %>
-		<%= a.hora_inicio %>
-		<%= a.hora_fim %>
+		<% dia_anterior=a.dia %>
 	<% end %>
+
+	<% horario=horario.split("#") %>
+
+	<% horario.each do |h| %>
+		<% if h != "" %>
+			<%= h %><br>
+		<% end %>
+	<% end %>
+
 
 </div>
