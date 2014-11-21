@@ -90,6 +90,7 @@ class PostsController < ApplicationController
 	def destroy
 
         @post = Post.find(params[:id])
+
         if session[:prof] && @professor.siape==session[:prof]
 
         	if @post.destroy
