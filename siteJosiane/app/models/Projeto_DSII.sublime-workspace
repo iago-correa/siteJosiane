@@ -47,6 +47,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "professor.rb",
+			"settings":
+			{
+				"buffer_size": 856,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presenca.rb",
+			"settings":
+			{
+				"buffer_size": 565,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -78,12 +94,7 @@
 		"/home/iago/siteJosiane/siteJosiane",
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
-		"/home/iago/siteJosiane/siteJosiane/app/views",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
-		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home",
-		"/home/iago/siteJosiane/siteJosiane/app/views/posts",
-		"/home/iago/siteJosiane/siteJosiane/app/views/professores"
+		"/home/iago/siteJosiane/siteJosiane/app/models"
 	],
 	"file_history":
 	[
@@ -288,8 +299,68 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "professor.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "presenca.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

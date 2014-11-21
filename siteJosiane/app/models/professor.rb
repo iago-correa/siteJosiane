@@ -6,6 +6,7 @@ class Professor < ActiveRecord::Base
 	has_many :disciplinas
 	has_many :atendimentos
 	has_many :posts
+	has_many :turmas
 
 	validates :nome, presence: {message: " não pode ficar em branco. "}
 	validates :siape, presence: {message: " não pode ficar em branco. "}, 
