@@ -3,6 +3,7 @@
 class Turma < ActiveRecord::Base
 
 	has_many :alunos	
+	has_many :avaliacoes
 	belongs_to :professor
 
 	validates_associated :professor

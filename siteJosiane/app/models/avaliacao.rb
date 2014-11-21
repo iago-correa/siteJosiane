@@ -2,12 +2,12 @@
 
 class Avaliacao < ActiveRecord::Base
 
-	belongs_to :disciplina
+	belongs_to :turma
 	has_many :notas
 
-	validates_associated :disciplina
+	validates_associated :turma
 
-	validates :disciplina_id, presence: {message: "Não é possível existir uma avaliação sem uma disciplina"}
+	validates :turma_id, presence: {message: "Não é possível existir uma avaliação sem uma turma"}
 	validates :descricao, presence: {message: "Descricão não pode ficar em branco"}
 	validates :peso, presence: {message: "Peso não pode ficar em branco"}, 
 		numericality:{message: "Peso inválido"}

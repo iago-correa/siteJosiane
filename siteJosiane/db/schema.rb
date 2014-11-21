@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121135209) do
+ActiveRecord::Schema.define(version: 20141121135949) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20141121135209) do
     t.float    "maxima"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "turma_id"
   end
 
   create_table "comentarios", force: true do |t|
