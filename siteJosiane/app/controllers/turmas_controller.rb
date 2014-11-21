@@ -14,7 +14,10 @@ class TurmasController < ApplicationController
 			
 		if session[:prof] 
 
+			professor = Professor.find_by(siape: session[:prof])
+
 			@turma = Turma.new params.require(:turma).permit(:codigo)
+			@turma.professor_id = professor.id
 				
 			if @turma.save
 				redirect_to professores_path, notice: "Turma inserida!"
