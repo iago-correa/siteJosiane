@@ -2,7 +2,7 @@
 	
 	<h1><%= @post.titulo %></h1>
 	<% if session[:prof] %>
-		<%= link_to "Editar post", { controller: "posts", action:"edit" }, class:"btn btn-default"%>
+		<%= link_to "Anexar arquivo", { controller: "posts", action:"edit" }, class:"btn btn-default"%>
 	<% end %>
 
 	<hr>

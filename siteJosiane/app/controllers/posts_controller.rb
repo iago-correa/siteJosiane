@@ -43,6 +43,7 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+		@arquivo = Arquivo.new
 		if not session[:prof]
 			redirect_to root_path
 		end
