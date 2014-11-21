@@ -2,19 +2,14 @@
 
 class ArquivosController < ApplicationController
 
-	def new
-		if session[:prof]
-			@arquivo = Arquivo.new
-		else
-			redirect_to :logar
-		end
-	end
-
 	def create
 		
 		if session[:prof]
 
+			post = Post.find(session[:post])
+
 			@arquivo = Arquivo.new params.require(:arquivo).permit(:nome, :extensao)
+			@arquivo.post_id = post.id
 			
 			if @arquivo.save
 				redirect_to professores_path
@@ -25,7 +20,7 @@ class ArquivosController < ApplicationController
 				end
 
 				flash.now[:alert] = message
-	    		render 'new'
+	    		render 'create'
   			end
 
   		else

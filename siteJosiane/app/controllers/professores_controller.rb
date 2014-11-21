@@ -2,6 +2,10 @@
 
 class ProfessoresController < ApplicationController
 
+	def index
+		@posts = Post.all.limit(5).order('created_at')
+	end
+
 	def login
 
 		if not session[:prof]
@@ -10,7 +14,6 @@ class ProfessoresController < ApplicationController
 			redirect_to professores_path
 		end
 
-		
 	end
 
 	def log

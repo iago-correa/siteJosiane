@@ -1,6 +1,9 @@
 <div class="container" style="width:60%;margin-left:auto;margin-right:auto;">
 	
 	<h1><%= @post.titulo %></h1>
+	<% if session[:prof] %>
+		<%= link_to "Editar post", { controller: "posts", action:"edit" }, class:"btn btn-default"%>
+	<% end %>
 
 	<hr>
 
@@ -12,10 +15,13 @@
 		<p><%= @post.conteudo %></p>
 	</div>
 
+	<% if session[:usuario] %>
 	<br><b>Comentários: </b>
+	<% end %>
 
 	<hr>
 
+	<% if session[:usuario] %>
 	<% @coments.each do |c| %>
 		<div class="thumbnail">
 			<%	a = Aluno.find(c.aluno_id) %>
@@ -25,6 +31,7 @@
 			<br><br>
 		</div>
 	<% end %>
+	<% end %>
 
 	<hr>
 
@@ -33,4 +40,3 @@
 	<% end %>
 
 </div>
-

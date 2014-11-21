@@ -80,17 +80,15 @@ Rails.application.routes.draw do
 
   get '/professores/logout' => 'professores#logout', :as => 'logoutt'
 
+  post '/arquivos/create' => 'arquivos#create', :as => 'create'
+
   resources :alunos
 
   resources :disciplinas
 
   resources :professores
 
-  resources :posts 
-
-    resources :arquivos
-
-  
+  resources :posts
 
   resources :turmas
 

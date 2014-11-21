@@ -34,6 +34,20 @@
 		:style => "width: 32%; float :left; position: relative;"%>
 </div>
 
+<div class="col-sm-5">
+  <div class="list-group">
+    <a href="#" class="list-group-item">
+      <b>Atividade recente</b>
+    </a>
+    <% @posts.each do |p| %>
+      <a href="../posts/<%= p.id %>" class="list-group-item">
+        <span class="badge"><%= p.created_at.strftime('%b %d') %></span>
+        <%= p.titulo %>
+      </a>
+    <% end %>
+  </div>
+</div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div class="footer" style="opacity:0.4;">

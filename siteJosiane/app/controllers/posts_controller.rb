@@ -41,6 +41,13 @@ class PostsController < ApplicationController
  
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+		if not session[:prof]
+			redirect_to root_path
+		end
+	end
+
 	def update
 
 		@post = Post.find(params[:id])
