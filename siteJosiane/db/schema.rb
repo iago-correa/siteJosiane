@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121040710) do
+ActiveRecord::Schema.define(version: 20141121135209) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome",       limit: 100
@@ -42,12 +42,11 @@ ActiveRecord::Schema.define(version: 20141121040710) do
   end
 
   create_table "avaliacoes", force: true do |t|
-    t.string   "descricao",     limit: 150
+    t.string   "descricao",  limit: 150
     t.float    "peso"
     t.float    "maxima"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "disciplina_id"
   end
 
   create_table "comentarios", force: true do |t|
@@ -56,15 +55,6 @@ ActiveRecord::Schema.define(version: 20141121040710) do
     t.datetime "updated_at"
     t.integer  "post_id"
     t.integer  "aluno_id"
-  end
-
-  create_table "disciplinas", force: true do |t|
-    t.string   "nome",         limit: 75
-    t.integer  "chs"
-    t.integer  "cht"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "professor_id"
   end
 
   create_table "notas", force: true do |t|
@@ -97,7 +87,6 @@ ActiveRecord::Schema.define(version: 20141121040710) do
     t.datetime "updated_at"
     t.boolean  "presente"
     t.boolean  "justificado"
-    t.integer  "disciplina_id"
     t.integer  "aluno_id"
   end
 
