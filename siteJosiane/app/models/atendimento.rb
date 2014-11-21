@@ -20,10 +20,9 @@ class Atendimento < ActiveRecord::Base
 	end
  
   	def dia?
-  		errors.add(:dia, "Formato de dia inválido") unless dia == "dom" || dia == "seg" ||
-  			dia == "ter" || dia == "qua" ||
-  			dia == "qui" || dia == "sex" ||
-  			dia == "sab" 
+  		errors.add(:dia, "Formato de dia inválido") unless dia == "1" ||
+  			dia == "2" || dia == "3" ||
+  			dia == "4" || dia == "5" 
   	end
 
 end

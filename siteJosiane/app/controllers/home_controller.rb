@@ -3,7 +3,16 @@
 class HomeController < ApplicationController
 
 	def index
+
 		@posts = Post.all.limit(4).order('created_at')
+		@professor = Professor.find(2)
+
+		if session[:usuario]
+			aluno = Aluno.find_by(matricula: session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			@professor = Professor.find(turma.professor_id)
+		end
+
 	end
 
   	def login

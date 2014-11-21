@@ -143,4 +143,15 @@ class ProfessoresController < ApplicationController
 
 	end
 
+	def show
+
+		if session[:usuario]
+			@professor = Professor.find(params[:id])
+			@atendimentos = Atendimento.where(professor_id: @professor.id).order("hora_inicio")
+		else
+			redirect_to root_path
+		end
+
+	end
+
 end

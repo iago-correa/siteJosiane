@@ -1,0 +1,34 @@
+<div class="container" style="width:60%;margin-left:auto;margin-right:auto;">
+	
+	<h1><%= @professor.nome %></h1>
+
+	<hr>
+
+	<div style="margin-left:20px;font-size:16px;">
+		E-mail: <%= @professor.email %><br/>
+	</div>
+
+	<hr>
+	<p><b>Atendimentos</b></p>
+
+	<% @atendimentos.each do |a| %>
+		<% if a.dia=="1" %>
+			Segunda-feira
+		<% end %>
+		<% if a.dia=="2" %>
+			Terça-feira
+		<% end %>
+		<% if a.dia=="3" %>
+			Quarta-feira
+		<% end %>
+		<% if a.dia=="4" %>
+			Quinta-feira
+		<% end %>
+		<% if a.dia=="5" %>
+			Sexta-feira
+		<% end %>
+		<%= a.hora_inicio %>
+		<%= a.hora_fim %>
+	<% end %>
+
+</div>
