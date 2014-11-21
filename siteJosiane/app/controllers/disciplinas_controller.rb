@@ -2,12 +2,13 @@
 
 class DisciplinasController < ApplicationController
 
-	def index
-		@disciplina = Disciplina.all
-	end
 
 	def new
-		@disciplina = Disciplina.new
+		if session[:prof]
+			@disciplina = Disciplina.new
+		else
+			redirect_to :logar
+		end
 	end
 
 	def create

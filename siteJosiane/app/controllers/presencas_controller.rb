@@ -7,7 +7,11 @@ class PresencasController < ApplicationController
 	end
 
 	def new
-		@presenca = Presenca.new
+		if session[:prof]
+			@presenca = Presenca.new
+		else
+			redirect_to :logar
+		end
 	end
 
 	def create

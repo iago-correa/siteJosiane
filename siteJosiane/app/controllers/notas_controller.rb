@@ -7,7 +7,11 @@ class NotasController < ApplicationController
 	end
 
 	def new
-		@nota = Nota.new
+		if session[:prof]
+			@nota = Nota.new
+		else
+			redirect_to :logar
+		end
 	end
 
 	def create

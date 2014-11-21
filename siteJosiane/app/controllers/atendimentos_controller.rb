@@ -2,12 +2,13 @@
 
 class AtendimentosController < ApplicationController
 
-	def index
-		@atendimento = Atendimento.all
-	end
 
 	def new
-		@atendimento = Atendimento.new
+		if session[:prof]
+			@atendimento = Atendimento.new
+		else
+			redirect_to :logar
+		end
 	end
 
 	def create

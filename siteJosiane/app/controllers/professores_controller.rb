@@ -2,16 +2,6 @@
 
 class ProfessoresController < ApplicationController
 
-	def index
-
-		if not session[:prof]
-			redirect_to action: 'login'
-		else
-			@professor = Professor.all
-		end
-		
-	end
-
 	def login
 
 		if not session[:prof]

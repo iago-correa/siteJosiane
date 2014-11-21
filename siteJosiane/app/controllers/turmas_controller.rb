@@ -2,12 +2,12 @@
 
 class TurmasController < ApplicationController
 
-	def index
-		@turma = Turma.all
-	end
-
 	def new
-		@turma = Turma.new
+		if session[:prof]
+			@turma = Turma.new
+		else
+			redirect_to :logar
+		end
 	end
 
 	def create
