@@ -1,31 +1,65 @@
-<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
+<div style="width:70%;padding:10px;">
 	
-	<h1>Inserir nota</h1>
+	<h2>Inserir notas</h2>
+
+	<hr>
+	
+	<%= link_to "Todas turmas", "alunos/turma/0" %>
+	<% @turmas.each do |t| %>
+		 | <%= link_to "Turma "+t.codigo, "alunos/turma/"+t.codigo %>
+	<% end %>
 
 	<hr>
 
-	<%= form_for @nota, :url => url_for(:controller => 'notas', :action => 'create'), :class => 'form-signin' do |f| %>
-		<div class="form-group">
-			<label for="nome">Nota:</label>
-			<%= f.text_field :nota,
-			 :class => "form-control" %>
-		</div>
-		<div class="form-group">
-			<label for="aluno">Aluno: </label>
-			<%= f.text_field :aluno,
-			 :class => "form-control" %>
-		</div>
-		<div class="form-group">
-			<label for="avaliacao">Avaliação:</label>
-			<%= f.text_field :avaliacao,
-			 :class => "form-control" %>
-		</div>
+	<div style="margin-left:20px;">
+
+		<% if @turma %>
+
+			<h4><%= "Turma "+@turma.codigo %></h4>
+
+		<% else %>
+
+			<h4>Todas turmas</h4>
+
+		<% end %>
+
 		<br>
-		<%= link_to "Voltar", professores_path, 
-			class:"btn btn-default" %> 
-		<%= submit_tag 'Inserir', 
-			class:"btn btn-default" %>
-		<br>
-	<% end %>	
+
+		<table class="table">
+
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Matricula</th>
+				<th>Turma</th>
+				<th>Cadastro</th>
+			</tr>
+		</thead>
+
+		<% @alunos.each do |a| %>
+
+			<tbody>
+			<tr>
+				<td><%= a.nome %></td>
+				<td><%= a.matricula %></td>
+				<td><%= Turma.find(a.turma_id).codigo %></td>
+				<% if not a.confirmado%>					
+					<td><%= link_to "Aprovar cadastro",
+						aluno_aprova_path(a.id) %></td>
+				<% else %>
+					<td>Aprovado</td>
+				<% end %>
+			</tr>
+			</tbody>
+
+		<% end %>
+
+		</table> 
+
+	</div>
+
+	<hr>
+
+	</center>
 
 </div>
