@@ -5,22 +5,51 @@
 	<hr>
 
 	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin' do |f| %>
+	
 		<div class="form-group">
 			<label for="titulo">Título:</label>
 			<%= f.text_field :titulo,
 			 :class => "form-control" %>
 		</div>
+	
 		<div class="form-group">
 			<label for="conteudo">Conteúdo:</label>
 			<%= f.text_area :conteudo,
 			 :class => "form-control" %>
 		</div>
-		<div class="form-group">
-			<label for="tipo">Tipo: </label>
-			<%= f.select :tipo, options_for_select([["Lembrete", "Lembrete"], ["Aviso", "Aviso"], ["Video", "Video"], ["Lista", "Lista"], ["Resolucao", "Resolucao"], ["Material", "Material"]]), class: "form-control" %>
-		</div>
-		<%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
+
+		<select name="tipo" class="form-control">
+			<option value="Aviso" onclick="oculta_arquivo()">Aviso</option>
+			<option value="Lembrete" onclick="oculta_arquivo()">Lembrete</option>
+			<option value="Video" onclick="mostra_arquivo()">Video</option>
+			<option value="Lista" onclick="mostra_arquivo()">Lista</option>
+			<option value="Resolução" onclick="mostra_arquivo()">Resolução</option>
+			<option value="Material" onclick="mostra_arquivo()">Material</option>
+		</select>
+
+	  	<div id="arquivo" class="form-group" style="display:none;">
+
+ 			<h3>Arquivo</h3>
+			<hr>
+
+	  		<label for="file">Upload: </label>
+	  		<%= f.file_field :nome %>
+	    
+	    </div>
+
+	    <br>
+	    <%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
 		<%= submit_tag 'Inserir', class:"btn btn-default" %>
+
 	<% end %>
+
+	<script>
+		function mostra_arquivo() {
+		    document.getElementById("arquivo").style.display = 'inline';
+		}
+		function oculta_arquivo() {
+		    document.getElementById("arquivo").style.display = 'none';
+		}
+	</script>
 
 </div>

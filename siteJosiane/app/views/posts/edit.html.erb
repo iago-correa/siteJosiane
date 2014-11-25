@@ -21,23 +21,4 @@
 		</div>
 	<% end %>	
 
-	<h2>Arquivo</h2>
-
-	<hr>
-
-	<%= form_for @arquivo, :url => url_for(:controller => 'arquivos', :action => 'create'), :class => 'form-signin' do |f| %>
-
-  		<div class="form-group">
-  			<label for="nome">Upload: </label>
-  			<%= f.file_field :nome %>
-        </div>
-		<div class="form-group">
-			<label for="extensao">Extensão: </label>
-			<%= f.text_field :extensao,
-			 :class => "form-control" %>
-		</div><br>
-		<%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
-		<%= submit_tag 'Inserir', class:"btn btn-default" %>
-	<% end %>
-
 </div>

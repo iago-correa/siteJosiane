@@ -67,6 +67,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 1118,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -99,16 +107,23 @@
 		"/home/iago/siteJosiane/siteJosiane/app",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers",
 		"/home/iago/siteJosiane/siteJosiane/app/views",
-		"/home/iago/siteJosiane/siteJosiane/app/views/alunos",
-		"/home/iago/siteJosiane/siteJosiane/app/views/atendimentos",
-		"/home/iago/siteJosiane/siteJosiane/app/views/home",
-		"/home/iago/siteJosiane/siteJosiane/app/views/posts",
-		"/home/iago/siteJosiane/siteJosiane/app/views/professores",
-		"/home/iago/siteJosiane/siteJosiane/config",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate"
+		"/home/iago/siteJosiane/siteJosiane/app/views/posts"
 	],
 	"file_history":
 	[
+		"/home/iago/siteJosiane/siteJosiane/app/views/posts/edit.html.erb",
+		"/home/iago/siteJosiane/siteJosiane/app/controllers/arquivos_controller.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/turma.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
+		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121135949_remove_column_turma_id_to_presencas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121135705_add_column_turma_id_to_presencas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121135651_add_column_turma_id_to_avaliacoes.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121134443_drop_discilinas_table.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141114130127_add_column_titulo_to_posts.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121135209_remove_column_disiciplina_id_to_presencas.rb",
+		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121134940_remove_column_disiciplina_id_to_avaliacoes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/turmas_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/professores_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/controllers/presencas_controller.rb",
@@ -122,7 +137,6 @@
 		"/home/iago/siteJosiane/siteJosiane/app/views/atendimentos/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/atendimento.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/show.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/turma.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/professor.rb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141121040710_add_column_professor_id_to_turma.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/comentarios/new.html.erb",
@@ -138,13 +152,11 @@
 		"/home/iago/siteJosiane/siteJosiane/config/routes.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/aluno.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/post.rb",
-		"/home/iago/siteJosiane/siteJosiane/db/migrate/20141114130127_add_column_titulo_to_posts.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/index.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/turmas/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/disciplinas/new.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/arquivos/new.html.erb",
-		"/home/iago/siteJosiane/siteJosiane/app/controllers/arquivos_controller.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/professores/login.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/app/views/alunos/nova_senha.html.erb",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140910184102_create_alunos.rb",
@@ -165,12 +177,9 @@
 		"/home/iago/ds2-2014/rails/frases/config/routes.rb",
 		"/home/iago/ds2-2014/rails/frases/app/controllers/application_controller.rb",
 		"/home/iago/ds2-2014/rails/frases/app/controllers/home_controller.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/presenca.rb",
 		"/home/iago/Área de Trabalho/Rascunhos",
 		"/home/iago/siteJosiane/siteJosiane/db/migrate/20140923002158_create_turmas.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/nota.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/disciplina.rb",
-		"/home/iago/siteJosiane/siteJosiane/app/models/avaliacao.rb",
 		"/home/iago/siteJosiane/siteJosiane/app/models/notificacao.rb",
 		"/home/iago/ds2-2014/rails/crud/app/controllers/application_controller.rb",
 		"/home/iago/ds2-2014/rails/crud/app/controllers/livros_controller.rb",
@@ -229,14 +238,7 @@
 		"/home/iago/projects/smartphone/bin/bundle",
 		"/home/iago/projects/smartphone/bin/rails",
 		"/home/iago/projects/smartphone/bin/rake",
-		"/home/iago/projects/smartphone/bin/spring",
-		"/home/iago/Documentos/DS II/2º Bimestre/Trabalho Eventos/evento.rb",
-		"/home/iago/projects/smartphones/Gemfile",
-		"/home/iago/Área de Trabalho/aula 6-08/teste.php",
-		"/home/iago/Área de Trabalho/aula 6-08/Contador.php",
-		"/home/iago/Área de Trabalho/aula 6-08/Veleiro.php",
-		"/var/www/html/login/php/testa.php",
-		"/var/www/html/login/html/index.html"
+		"/home/iago/projects/smartphone/bin/spring"
 	],
 	"find":
 	{
@@ -310,8 +312,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/iago/siteJosiane/siteJosiane/app/views/posts/new.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								953,
+								953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 41.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -388,7 +420,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 226.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
