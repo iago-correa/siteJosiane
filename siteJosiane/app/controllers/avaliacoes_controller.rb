@@ -14,8 +14,9 @@ class AvaliacoesController < ApplicationController
 		
 		if session[:prof]
 
+			turma = Turma.find(params[:avaliacao][:turma_id])
 			@avaliacao = Avaliacao.new params.require(:avaliacao).permit(:codigo, :descricao, :maxima, :peso)
-
+			@avaliacao.turma = turma
 			if @avaliacao.save
 				redirect_to professores_path
 			else		
