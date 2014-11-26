@@ -18,6 +18,18 @@
 		<p><%= @post.conteudo %></p>
 	</div>
 
+	<% if @arquivos.count > 0 %>
+	
+		<br><b>Arquivos: </b><hr>
+
+		<% @arquivos.each do |a| %>
+			<% file = a.nome+"."+a.extensao %>
+			<%= link_to a.nome, "/uploads/#{file}" %>
+			<br><br>
+		<% end %>
+
+	<% end %>
+
 	<% if session[:usuario] %>
 	<br><b>Comentários: </b>
 	<% end %>

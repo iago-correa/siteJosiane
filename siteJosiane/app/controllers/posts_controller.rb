@@ -122,7 +122,8 @@ class PostsController < ApplicationController
 
 		if session[:usuario] || session[:prof]
 			@post = Post.find(params[:id])
-			@coments = Comentario.where(post_id: params[:id]).order('created_at')
+			@arquivos = Arquivo.where(post_id: @post.id).order('created_at')
+			@coments = Comentario.where(post_id: @post.id).order('created_at')
 			session[:post]=params[:id]
 		else
 			redirect_to root_path
