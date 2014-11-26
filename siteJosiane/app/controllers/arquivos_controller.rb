@@ -66,4 +66,31 @@ class ArquivosController < ApplicationController
  
 	end
 
+	def destroy
+
+        @arquivo = Arquivo.find(params[:id])
+        nome = @arquivo.nome+"."+@arquivo.extensao
+        @post = Post.find(@arquivo.post_id)
+		professor = Professor.find_by(siape: "#{session[:prof]}")
+
+		if session[:prof] && professor.id==@post.professor_id			
+			
+        	if File.delete(File.absolute_path("public/uploads/#{nome}"))
+        		if @arquivo.destroy
+        			redirect_to @post, notice: "Arquivo excluído com sucesso"
+	        	else
+	        		redirect_to @post, notice: "Falha na exclusão do arquivo"
+	        	end
+        	else
+        		redirect_to @post, notice: "Falha na exclusão do arquivo"
+        	end 
+
+        else
+
+			redirect_to :logar
+
+		end
+
+    end
+
 end

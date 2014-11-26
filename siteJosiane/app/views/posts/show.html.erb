@@ -25,6 +25,9 @@
 		<% @arquivos.each do |a| %>
 			<% file = a.nome+"."+a.extensao %>
 			<%= link_to a.nome, "/uploads/#{file}" %>
+			<% if session[:prof] %>
+				<%= link_to "Apagar arquivo", {:controller => :arquivos, :action => :destroy, :id => a.id}, :method => :delete, class:"text-danger"%>
+			<% end %>
 			<br><br>
 		<% end %>
 
