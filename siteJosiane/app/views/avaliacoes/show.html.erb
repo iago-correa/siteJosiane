@@ -1,0 +1,9 @@
+<div class="container" style="width:20%;margin-left:auto;margin-right:auto;">
+	
+	<br><h1><%= @avaliacao.descricao %></h1>
+	<hr>
+	<% if session[:prof] %>
+		<%= button_to "Apagar", {:controller => :avaliacoes, :action => :show, :id => @avaliacao.id}, :method => :delete, class:"btn btn-danger"%>
+	<% end %>
+
+</div>

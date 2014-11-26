@@ -37,4 +37,35 @@ class AvaliacoesController < ApplicationController
  
 	end
 
+	def destroy
+
+        @avaliacao = Avaliacao.find(params[:id])
+		professor = Professor.find_by(siape: "#{session[:prof]}")
+		if session[:prof]
+
+        	if @avaliacao.destroy
+        		redirect_to professores_path, notice: "Avaliação foi excluída"
+        	else
+        		redirect_to professores_path, notice: "Falha na exclusão da avaliação"
+        	end 
+
+        else
+
+			redirect_to :logar
+
+		end
+
+    end
+
+    def show
+
+		if session[:usuario] || session[:prof]
+			@avaliacao = Avaliacao.find(params[:id])
+			session[:avaliacao]=params[:id]
+		else
+			redirect_to root_path
+		end
+
+	end
+
 end

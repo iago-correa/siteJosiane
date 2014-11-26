@@ -4,6 +4,7 @@ class ProfessoresController < ApplicationController
 
 	def index
 		@posts = Post.all.limit(5).order('created_at')
+		@avaliacoes = Avaliacao.limit(25).order('created_at')
 	end
 
 	def login

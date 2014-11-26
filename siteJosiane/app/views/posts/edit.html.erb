@@ -2,7 +2,7 @@
 
 	<h1>Postagem</h1>
 
-	<br>
+	<hr>
 
 	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'update'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
@@ -14,7 +14,7 @@
 			<label for="conteudo">Conteúdo:</label>
 			<%= f.text_area :conteudo,
 			 :class => "form-control" %>
-		</div>
+		</div><br>
 		<%= link_to "Voltar", @post, class:"btn btn-default" %> 
 		<%= submit_tag 'Atualizar', class:"btn btn-default" %>
 	<% end %>	

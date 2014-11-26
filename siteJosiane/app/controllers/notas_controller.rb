@@ -18,9 +18,12 @@ class NotasController < ApplicationController
 		
 		if session[:prof]
 
-			@nota = Nota.new params.require(:nota).permit(:nota, :aluno, :avaliacao)
-			@nota.aluno_id = 
-			@nota.avaliacao_id = 
+			aluno = Aluno.find(params[:nota][:aluno_id])
+			avaliacao = Avaliacao.find(params[:nota][:avaliacao_id])
+
+			@nota = Nota.new params.require(:nota).permit(:nota)
+			@nota.aluno = aluno
+			@nota.avaliacao = avaliacao
 			
 			if @nota.save
 				redirect_to professores_path

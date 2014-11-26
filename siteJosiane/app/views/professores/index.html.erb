@@ -47,6 +47,19 @@
   </div>
 </div>
 
+<div class="col-sm-5">
+  <div class="list-group">
+    <a href="#" class="list-group-item">
+      <b>Avaliações</b>
+    </a>
+    <% @avaliacoes.each do |p| %>
+      <a href="../avaliacoes/<%= p.id %>" class="list-group-item">
+        <%= p.descricao %>
+      </a>
+    <% end %>
+  </div>
+</div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div class="footer" style="opacity:0.4;">
