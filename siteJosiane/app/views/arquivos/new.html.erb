@@ -1,0 +1,25 @@
+<div class="container" style="width:30%;margin-left:auto;margin-right:auto;">
+	
+	<h1>Nova postagem</h1>
+
+	<hr>
+
+	<%= form_for @arquivo, :url => url_for(:controller => 'arquivos', :action => 'create'), :class => 'form-signin', :html => { :multipart => true } do |f| %>
+	
+	  	<div id="arquivo" class="form-group">
+
+ 			<h3>Arquivo</h3>
+			<hr>
+
+	  		<label for="file">Upload: </label>
+	  		<%= file_field_tag 'arquivo' %>
+	    
+	    </div>
+
+	    <br>
+	    <%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
+		<%= submit_tag 'Postar', class:"btn btn-default" %>
+
+	<% end %>
+
+</div>

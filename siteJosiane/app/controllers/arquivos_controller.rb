@@ -2,66 +2,68 @@
 
 class ArquivosController < ApplicationController
 
+	def new
+		if session[:prof] 
+			@arquivo = Arquivo.new
+		else
+			redirect_to :logar
+		end
+	end
+
 	def create
 		
 		if session[:prof]
 
 			post = Post.find(session[:post])
 
-			name = params['arquivo'].original_filename
+			if not params['arquivo'].blank?
 
+				name =  params['arquivo'].original_filename
 
-			@arquivo = Arquivo.new params.require(:arquivo).permit(:nome, :extensao)
-			@arquivo.post_id = post.id
-			
-			if @arquivo.save
-				redirect_to professores_path
-			else		
-				message = "Falha na inserção: "
-				@arquivo.errors.full_messages.each do |m|
-					message += m
+    			path = File.join(Rails.root, "public/uploads", name)
+
+    			File.open(path, "wb") do |f| 
+  					f.write( params['arquivo'].read)
 				end
 
-				flash.now[:alert] = message
-	    		render 'create'
-  			end
+				parts = name.partition(".") 
 
-  		else
+				extensao = parts.last
+
+				file_name = name.delete("."+extensao)
+
+				arquivo = Arquivo.new
+
+				arquivo.nome = file_name
+
+				arquivo.extensao = extensao
+
+				arquivo.post_id = post.id
+
+				if not arquivo.save
+
+					message = "Falha na inserção: "
+						@post.errors.full_messages.each do |m|
+						message += m
+					end
+
+					flash.now[:alert] = message
+			    	render 'new'
+
+			    else
+
+			    	redirect_to post
+
+				end
+
+			end
+
+	  	else
 
 			redirect_to :logar
 
 		end
  
 	end
-
-
-
-
-
-
-  def self.save(upload)
-    name =  upload['datafile'].original_filename
-    directory = "public/data"
-    # create the file path
-    path = File.join(directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 end

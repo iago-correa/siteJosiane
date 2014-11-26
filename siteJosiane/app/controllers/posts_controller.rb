@@ -84,9 +84,9 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find(params[:id])
-		@arquivo = Arquivo.new
-		if not session[:prof]
+		if session[:prof]
+			@post = Post.find(params[:id])
+		else
 			redirect_to root_path
 		end
 	end
@@ -94,9 +94,10 @@ class PostsController < ApplicationController
 	def update
 
 		@post = Post.find(params[:id])
-		if session[:prof] && @professor.siape==session[:prof]
+		professor = Professor.find_by(siape: "#{session[:prof]}")
+		if session[:prof] && professor.id==@post.professor_id
 		
-			if @post.update(params.require(:post).permit(:conteudo, :tipo))
+			if @post.update(params.require(:post).permit(:conteudo, :titulo))
 	            redirect_to professores_path, notice: "Alterações efetivadas com sucesso"
 	        else
 

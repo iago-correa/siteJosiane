@@ -4,7 +4,7 @@
 
 	<br>
 
-	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin' do |f| %>
+	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'update'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="titulo">Título:</label>
 			<%= f.text_field :titulo,
@@ -15,10 +15,8 @@
 			<%= f.text_area :conteudo,
 			 :class => "form-control" %>
 		</div>
-		<div class="form-group">
-			<label for="tipo">Tipo: </label>
-			<%= f.select :tipo, options_for_select([["Lembrete", "Lembrete"], ["Aviso", "Aviso"], ["Video", "Video"], ["Lista", "Lista"], ["Resolucao", "Resolucao"], ["Material", "Material"]]), class: "form-control" %>
-		</div>
+		<%= link_to "Voltar", @post, class:"btn btn-default" %> 
+		<%= submit_tag 'Atualizar', class:"btn btn-default" %>
 	<% end %>	
 
 </div>

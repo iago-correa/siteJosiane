@@ -102,4 +102,6 @@ Rails.application.routes.draw do
 
   resources :avaliacoes
 
+  resources :arquivos
+
 end
