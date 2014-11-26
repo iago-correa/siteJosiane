@@ -4,7 +4,7 @@
 
 	<hr>
 
-	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin' do |f| %>
+	<%= form_for @post, :url => url_for(:controller => 'posts', :action => 'create'), :class => 'form-signin', :html => { :multipart => true } do |f| %>
 	
 		<div class="form-group">
 			<label for="titulo">Título:</label>
@@ -33,13 +33,13 @@
 			<hr>
 
 	  		<label for="file">Upload: </label>
-	  		<%= f.file_field :nome %>
+	  		<%= file_field_tag 'arquivo' %>
 	    
 	    </div>
 
 	    <br>
 	    <%= link_to "Voltar", professores_path, class:"btn btn-default" %> 
-		<%= submit_tag 'Inserir', class:"btn btn-default" %>
+		<%= submit_tag 'Postar', class:"btn btn-default" %>
 
 	<% end %>
 

@@ -17,12 +17,54 @@ class PostsController < ApplicationController
 			professor = Professor.find_by(siape: "#{session[:prof]}")
 			@profid = professor.id
 
-			@post = Post.new params.require(:post).permit(:titulo, :conteudo, :tipo)
+			@post = Post.new params.require(:post).permit(:titulo, :conteudo)
 
 			@post.professor_id = @profid
+
+			@post.tipo = params['tipo']
 			
 			if @post.save
+
+				if not params['arquivo'].blank?
+
+					name =  params['arquivo'].original_filename
+
+    				path = File.join(Rails.root, "public/uploads", name)
+
+    				File.open(path, "wb") do |f| 
+  						f.write( params['arquivo'].read)
+					end
+
+					parts = name.partition(".") 
+
+					extensao = parts.last
+
+					file_name = name.delete("."+extensao)
+
+					arquivo = Arquivo.new
+
+					arquivo.nome = file_name
+
+					arquivo.extensao = extensao
+
+					arquivo.post_id = @post.id
+
+					if not arquivo.save
+
+						message = "Falha na inserção: "
+							@post.errors.full_messages.each do |m|
+							message += m
+						end
+
+						flash.now[:alert] = message
+			    		render 'new'
+
+					end
+
+				end
+
 				redirect_to professores_path
+
 			else		
 				message = "Falha na inserção: "
 				@post.errors.full_messages.each do |m|
