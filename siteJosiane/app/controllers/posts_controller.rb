@@ -133,8 +133,8 @@ class PostsController < ApplicationController
 	def destroy
 
         @post = Post.find(params[:id])
-
-        if session[:prof] && @professor.siape==session[:prof]
+		professor = Professor.find_by(siape: "#{session[:prof]}")
+		if session[:prof] && professor.id==@post.professor_id
 
         	if @post.destroy
         		redirect_to professores_path, notice: "Post foi excluído"

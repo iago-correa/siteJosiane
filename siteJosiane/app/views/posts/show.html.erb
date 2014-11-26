@@ -4,7 +4,8 @@
 	<% if session[:prof] %>
 		<%= link_to "Editar postagem", { controller: "posts", action:"edit" }, class:"btn btn-default"%>
 		<%= link_to "Anexar arquivo", { controller: "arquivos", action:"new" }, class:"btn btn-default"%>
-		<%= link_to "Apagar post", { controller: "posts", action:"destroy" }, class:"btn btn-default"%>
+		<br><br>
+		<%= button_to "Apagar post", {:controller => :posts, :action => :destroy, :id => @post.id}, :method => :delete, class:"btn btn-danger"%>
 	<% end %>
 
 	<hr>
