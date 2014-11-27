@@ -10,8 +10,13 @@
 
 	  		<label for="file">Upload: </label>
 	  		<%= file_field_tag 'arquivo' %>
-	    
-	    </div>
+
+			<br>
+
+			<label for="nome_arquivo">Nome: </label>
+			<%= text_field_tag 'nome_arquivo', nil, class: 'form-control' %>
+
+		</div>
 
 	    <br>
 	    <%= link_to "Voltar", professores_path, class:"btn btn-default" %> 

@@ -29,21 +29,25 @@ class PostsController < ApplicationController
 
 					name =  params['arquivo'].original_filename
 
-    				path = File.join(Rails.root, "public/uploads", name)
-
-    				File.open(path, "wb") do |f| 
-  						f.write( params['arquivo'].read)
-					end
-
-					parts = name.partition(".") 
+					parts = name.partition(".")
 
 					extensao = parts.last
 
-					file_name = name.delete("."+extensao)
+					nome = name.delete("."+extensao)
+
+					file_name = Digest::MD5.hexdigest(nome)
+
+    				path = File.join(Rails.root, "public/uploads", file_name+"."+extensao)
+
+    				File.open(path, "wb") do |f| 
+  						f.write(params['arquivo'].read)
+					end
 
 					arquivo = Arquivo.new
 
-					arquivo.nome = file_name
+					arquivo.nome = params['nome_arquivo']
+
+					arquivo.arquivo_nome = file_name
 
 					arquivo.extensao = extensao
 

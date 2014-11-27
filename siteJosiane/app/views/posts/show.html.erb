@@ -23,7 +23,7 @@
 		<br><b>Arquivos: </b><hr>
 
 		<% @arquivos.each do |a| %>
-			<% file = a.nome+"."+a.extensao %>
+			<% file = a.arquivo_nome+"."+a.extensao %>
 			<%= link_to a.nome, "/uploads/#{file}" %>
 			<% if session[:prof] %>
 				<%= link_to "Apagar arquivo", {:controller => :arquivos, :action => :destroy, :id => a.id}, :method => :delete, class:"text-danger"%>
