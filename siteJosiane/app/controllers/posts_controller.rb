@@ -2,6 +2,14 @@
 
 class PostsController < ApplicationController
 
+	def index
+		if session[:usuario]
+			@posts = Post.all.order('created_at DESC')
+		else
+			redirect_to root_path
+		end
+	end
+
 	def new
 		if session[:prof]
 			@post = Post.new
@@ -161,7 +169,7 @@ class PostsController < ApplicationController
     		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").order('nome')
 
     	else
-			redirect_to :logar
+			redirect_to root_path
 	    end
     end
 
@@ -171,7 +179,7 @@ class PostsController < ApplicationController
     		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Lista'").order('nome')
 
     	else
-			redirect_to :logar
+			redirect_to root_path
 	    end
     end
 
@@ -181,7 +189,7 @@ class PostsController < ApplicationController
     		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").order('nome')
 
     	else
-			redirect_to :logar
+			redirect_to root_path
 	    end
     end
 

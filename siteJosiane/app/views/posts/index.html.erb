@@ -1,0 +1,28 @@
+<div style="width:70%;padding:10px;">
+	
+	<h2>Todas postagens</h2>
+
+	<hr>
+	
+	<div style="margin-left:20px;">
+
+
+		<% @posts.each do |p| %>
+
+
+		   	<a href="../posts/<%= p.id %>" class="list-group-item">
+            	<span class="badge"><%= p.created_at.strftime('%b %d') %></span>
+            	<%= p.titulo %>
+          	</a>
+
+		<% end %>
+
+		</table> 
+
+	</div>
+
+	<hr>
+
+	</center>
+
+</div>
