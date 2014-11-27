@@ -10,7 +10,7 @@
           <%= link_to "Contato", @professor, class:"navbar-brand" %>
           <a class="navbar-brand" href="/listas">Listas</a>
           <a class="navbar-brand" href="/resolucoes">Resoluções</a>
-          <a class="navbar-brand" href="/videos">Vídeos</a>
+          <a class="navbar-brand" href="posts/videos">Vídeos</a>
           <% if session[:usuario] %>
             <a class="navbar-brand" href="/notas">Notas</a>
           <% end %>
@@ -58,9 +58,6 @@
 
 </div>
 
-
-	<br><br><br><br><br><br>
-	**** SOMENTE PARA VIA DE TESTES: <%= link_to "Listagem de alunos", alunos_path %>
 
 <br><br><br><br><br><br><br><br><br><br><br>
 <div class="footer" style="opacity:0.4;">

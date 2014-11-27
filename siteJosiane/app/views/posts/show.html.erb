@@ -23,12 +23,24 @@
 		<br><b>Arquivos: </b><hr>
 
 		<% @arquivos.each do |a| %>
+
 			<% file = a.arquivo_nome+"."+a.extensao %>
-			<%= link_to a.nome, "/uploads/#{file}" %>
-			<% if session[:prof] %>
-				<%= link_to "Apagar arquivo", {:controller => :arquivos, :action => :destroy, :id => a.id}, :method => :delete, class:"text-danger"%>
+
+			<% if @post.tipo == "Video" %>
+
+				<%= a.nome %><br>
+				<%= video_player(flashvars={:file => "/uploads/#{file}", :autostart => false, :skin => "glow"}, attributes={:width => 500}, params={:allowfullscreen => true}) %>
+
+			<% else %>
+			
+				<%= link_to a.nome, "/uploads/#{file}" %>
+				<% if session[:prof] %>
+					<%= link_to "Apagar arquivo", {:controller => :arquivos, :action => :destroy, :id => a.id}, :method => :delete, class:"text-danger"%>
+				<% end %>
+				<br><br>
+
 			<% end %>
-			<br><br>
+
 		<% end %>
 
 	<% end %>

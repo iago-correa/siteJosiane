@@ -1,0 +1,31 @@
+<div style="width:70%;padding:10px;">
+	
+	<h2>Videos</h2>
+
+	<hr>
+	
+	<div style="margin-left:20px;">
+
+
+		<% @arquivos.each do |a| %>
+
+			<% if a.extensao == "mp4" || a.extensao == "flv" || a.extensao == "avi" %>
+
+				<% file = a.arquivo_nome+"."+a.extensao %>
+
+				<%= a.nome %><br>
+				<%= video_player(flashvars={:file => "/uploads/#{file}", :autostart => false, :skin => "glow"}, attributes={:width => 500}, params={:allowfullscreen => true}) %> <br>
+
+			<% end %>
+
+		<% end %>
+
+		</table> 
+
+	</div>
+
+	<hr>
+
+	</center>
+
+</div>

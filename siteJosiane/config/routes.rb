@@ -64,6 +64,8 @@ Rails.application.routes.draw do
 
   get '/home/login' => 'home#login', :as => 'login'
 
+  get '/posts/videos' => 'posts#videos', :as => 'videos'
+
   get '/home/logout' => 'home#logout', :as => 'logout'
 
   post '/home/log' => 'home#log', :as => 'log'

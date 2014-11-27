@@ -47,6 +47,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    jw_player_helper (0.0.1)
+    jwplayer-rails (1.0.1)
+      railties (>= 3.1.1)
     libv8 (3.16.14.5)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -129,6 +132,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  jw_player_helper
+  jwplayer-rails
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

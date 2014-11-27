@@ -155,4 +155,14 @@ class PostsController < ApplicationController
 
     end
 
+    def videos
+    	if session[:usuario] 
+    		
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").order('nome')
+
+    	else
+			redirect_to :logar
+	    end
+    end
+
 end
