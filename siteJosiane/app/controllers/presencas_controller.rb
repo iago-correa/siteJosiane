@@ -8,32 +8,40 @@ class PresencasController < ApplicationController
 
 	def new
 		if session[:prof]
-			@presenca = Presenca.new
+			@turmas = Turma.all
+			if session[:turma]
+				if session[:turma]!="0"
+					@turma = Turma.find_by_codigo(session[:turma])
+					@alunos = Aluno.where(turma_id: @turma.id).order('nome')
+				else
+					@alunos = Aluno.all
+				end
+			else
+				@alunos = Aluno.all
+			end
 		else
 			redirect_to :logar
-		end
+	  	end
+	end
+
+	def turma_alunos
+
+		session[:turma] = params[:turma]
+		redirect_to '/presencas/new'
+		
 	end
 
 	def create
 		
 		if session[:prof]
 
-			@presenca = Presenca.new params.require(:presenca).permit(:presente, :justificado)
-
-			aluno = Aluno.find_by(matricula: :aluno_id)
-			@aid = aluno.id
-
-			disciplina = Disciplina.find_by(nome: :disciplina_id)
-			@did = disciplina.id
-
-			@presenca.aluno_id = @aid
-			@presenca.disciplina_id = @did
+			@p = Presenca.new params.require(:p).permit(:p, :j)
 			
-			if @presenca.save
-				redirect_to professores_path
+			if @p.save
+				redirect_to '/presencas/new'
 			else		
 				message = "Falha na inserção: "
-				@presenca.errors.full_messages.each do |m|
+				@p.errors.full_messages.each do |m|
 					message += m
 				end
 

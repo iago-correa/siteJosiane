@@ -90,6 +90,8 @@ Rails.application.routes.draw do
 
   get '/notas/usuario' => 'notas#usuario', :as => 'usuario'
 
+  get '/turma/:turma' => 'presencas#turma_alunos', :as => 'turma_alunos'
+
   resources :alunos
 
   resources :disciplinas
