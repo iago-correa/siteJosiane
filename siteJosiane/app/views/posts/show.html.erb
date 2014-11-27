@@ -19,10 +19,10 @@
 	</div>
 
 	<% if @arquivos.count > 0 %>
-	
-		<br><b>Arquivos: </b><hr>
 
 		<% @arquivos.each do |a| %>
+
+			<br><b>Arquivos: </b><hr>
 
 			<% file = a.arquivo_nome+"."+a.extensao %>
 
@@ -37,7 +37,7 @@
 				<% if session[:prof] %>
 					<%= link_to "Apagar arquivo", {:controller => :arquivos, :action => :destroy, :id => a.id}, :method => :delete, class:"text-danger"%>
 				<% end %>
-				<br><br>
+				<br>
 
 			<% end %>
 
@@ -45,27 +45,29 @@
 
 	<% end %>
 
-	<% if session[:usuario] %>
-	<br><b>Comentários: </b>
+	<% if @coments.count > 0 %>
+
+		<br><br><b>Comentários: </b><hr>
+
+		<% @coments.each do |c| %>
+			<div class="thumbnail">
+				<% if c.aluno_id != nil%>
+					<%	a = Aluno.find(c.aluno_id) %>
+					<b><%= a.nome%></b><%= ", "+c.created_at.strftime('%k:%M %d/%m/%Y')  %>
+				<% else %>
+					<b><%= "Professor"%></b><%= ", "+c.created_at.strftime('%k:%M %d/%m/%Y')  %>
+				<% end %>
+				<br><br>
+				<%= c.conteudo %>
+				<br><br>
+			</div>
+		<% end %>
+
 	<% end %>
 
 	<hr>
 
-	<% if session[:usuario] %>
-	<% @coments.each do |c| %>
-		<div class="thumbnail">
-			<%	a = Aluno.find(c.aluno_id) %>
-			<b><%= a.nome%></b><%= ", "+c.created_at.strftime('%k:%M %d/%m/%Y')  %>
-			<br><br>
-			<%= c.conteudo %>
-			<br><br>
-		</div>
-	<% end %>
-	<% end %>
-
-	<hr>
-
-	<% if session[:usuario] %>
+	<% if session[:usuario] || session[:prof] %>
 		<%= link_to "Comentar", { controller: "comentarios", action:"new" }, class:"btn btn-default"%>
 	<% end %>
 

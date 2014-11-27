@@ -29,6 +29,10 @@ class HomeController < ApplicationController
 		
 		if not session[:usuario]
 
+			if session[:prof]
+				reset_session
+			end
+
 		@aluno = Aluno.find_by_matricula_and_senha(params[:matricula],Digest::MD5.hexdigest(params[:senha]))
 		
 			if !@aluno.nil?

@@ -3,8 +3,12 @@
 class ProfessoresController < ApplicationController
 
 	def index
-		@posts = Post.all.limit(5).order('created_at')
-		@avaliacoes = Avaliacao.limit(25).order('created_at')
+		if session[:prof]
+			@posts = Post.all.limit(5).order('created_at')
+			@avaliacoes = Avaliacao.limit(25).order('created_at')
+		else
+			redirect_to :logar
+		end
 	end
 
 	def login
@@ -20,6 +24,10 @@ class ProfessoresController < ApplicationController
 	def log
 		
 		if not session[:prof]
+
+			if session[:usuario]
+				reset_session
+			end
 
 			@professor = Professor.find_by_siape_and_senha(params[:siape],Digest::MD5.hexdigest(params[:senha]))	
 			
