@@ -15,6 +15,7 @@
 
 				<%= a.nome %><br>
 				<%= video_player(flashvars={:file => "/uploads/#{file}", :autostart => false, :skin => "glow"}, attributes={:width => 500}, params={:allowfullscreen => true}) %> <br>
+				<%= link_to "Post do vídeo", "../posts/#{a.post_id}" %><br>
 
 			<% end %>
 
