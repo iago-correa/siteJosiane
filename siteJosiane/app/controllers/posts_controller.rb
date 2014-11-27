@@ -175,4 +175,14 @@ class PostsController < ApplicationController
 	    end
     end
 
+    def resolucoes
+    	if session[:usuario] 
+    		
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").order('nome')
+
+    	else
+			redirect_to :logar
+	    end
+    end
+
 end
