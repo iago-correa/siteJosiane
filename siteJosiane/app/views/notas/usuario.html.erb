@@ -1,0 +1,57 @@
+<div style="width:70%;padding:10px;">
+	
+	<h2>Alunos</h2>
+
+	<hr>
+
+	<div style="margin-left:20px;">
+
+		<table class="table">
+
+		<thead>
+			<tr>
+				<th>Avaliação</th>
+				<th>Nota máxima</th>
+				<th>Peso</th>
+				<th>Nota</th>
+				<th>Nota final</th>
+			</tr>
+		</thead>
+
+		<% exibicao= Array.new %>
+
+		<% @avaliacoes.each do |a| %>
+			<% exibicao << a.descricao %>
+			<% exibicao << a.maxima %>
+			<% exibicao << a.peso %>
+			<% @notas.each do |n| %>
+				<% if a.id == n.avaliacao_id%>
+					<% exibicao << n.nota%>
+				<% end %>
+			<% end %>
+		<% end %>
+
+		<% n = (exibicao.count/4)-1 %>
+
+		<tbody>
+			<% for i in 0..n %>
+			<tr>
+				<td><%= exibicao[0+i*4] %></td>
+				<td><%= exibicao[1+i*4] %></td>
+				<td><%= exibicao[2+i*4] %></td>
+				<td><%= exibicao[3+i*4] %></td>
+				<td><%= (exibicao[3+i*4].to_f*exibicao[2+i*4].to_f)/exibicao[1+i*4].to_f%></td>
+			</tr>
+			<% end %>
+		</tbody>
+
+
+	</table> 
+
+	</div>
+
+	<hr>
+
+	</center>
+
+</div>

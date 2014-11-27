@@ -2,8 +2,14 @@
 
 class NotasController < ApplicationController
 
-	def index
-		@nota = Nota.all
+	def usuario
+		if session[:usuario]
+			@avaliacoes = Avaliacao.select('id, descricao, maxima, peso')
+			@aluno = Aluno.find_by_matricula(session[:usuario])
+			@notas = Nota.select('nota, avaliacao_id, aluno_id').where("aluno_id = #{@aluno.id}")
+		else
+			redirect_to root_path
+		end
 	end
 
 	def new

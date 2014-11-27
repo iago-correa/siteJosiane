@@ -88,6 +88,8 @@ Rails.application.routes.draw do
 
   get '/posts/resolucoes' => 'posts#resolucoes', :as => 'resolucoes'
 
+  get '/notas/usuario' => 'notas#usuario', :as => 'usuario'
+
   resources :alunos
 
   resources :disciplinas
