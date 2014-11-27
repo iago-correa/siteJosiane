@@ -17,6 +17,8 @@
 			<h4><%= "Turma "+@turma.codigo %></h4>
 			<br>
 
+			<%= form_for @p, :url => url_for(:controller => 'presencas', :action => 'create'), :class => 'form-signin' do |f| %>
+
 			<table class="table">
 
 			<thead>
@@ -32,24 +34,27 @@
 
 			<tbody>
 
-			<%= form_for @p, :url => url_for(:controller => 'presencas', :action => 'create'), :class => 'form-signin' do |f| %>
-
 				<tr>
 					<td><%= a.nome %></td>
 					<td><%= a.matricula %></td>
 					<td><%= Turma.find(a.turma_id).codigo %></td>
-					<td><%= check_box_tag(:p) %> P <%= check_box_tag(:f) %> F  <%= check_box_tag(:j) %> J</td>
+					<td>
+						<%= check_box_tag(:pr) %>
+						<%= f.label(:pr, "P") %>
+						<%= check_box_tag(:ju) %>
+						<%= f.label(:ju, "J") %>
+					</td>
 				</tr>
-
-			<%= submit_tag 'Inserir presenças', class:"btn btn-default" %>
-
-			<% end %>	
 
 			</tbody>
 
 			<% end %>
 
-			</table> 
+			</table> 	
+
+			<%= submit_tag 'Inserir presenças', class:"btn btn-default" %>
+
+			<% end %>	
 
 			<hr>
 

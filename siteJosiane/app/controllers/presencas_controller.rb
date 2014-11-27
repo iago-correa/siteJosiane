@@ -3,11 +3,12 @@
 class PresencasController < ApplicationController
 
 	def index
-		@presenca = Presenca.all
+		@p = Presenca.all
 	end
 
 	def new
 		if session[:prof]
+			@p = Presenca.new
 			@turmas = Turma.all
 			if session[:turma]
 				if session[:turma]!="0"
@@ -35,7 +36,12 @@ class PresencasController < ApplicationController
 		
 		if session[:prof]
 
-			@p = Presenca.new params.require(:p).permit(:p, :j)
+			aluno = 
+			turma = 
+
+			@p = Presenca.new params.require(:p).permit(:pr, :ju)
+			@p.turma = turma
+			@p.aluno = aluno
 			
 			if @p.save
 				redirect_to '/presencas/new'
