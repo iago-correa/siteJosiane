@@ -8,7 +8,8 @@ class HomeController < ApplicationController
 			aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
 			@professor = Professor.find(turma.professor_id)
-			@posts = Post.all.limit(5).order('created_at DESC')
+			@posts = Post.where("professor_id=#{@professor.id}").limit(5).order('created_at DESC')
+			@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").order('nome')
 		else
 			redirect_to action:'login'
 		end

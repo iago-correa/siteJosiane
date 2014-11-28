@@ -4,9 +4,9 @@ class NotasController < ApplicationController
 
 	def usuario
 		if session[:usuario]
-			@avaliacoes = Avaliacao.select('id, descricao, maxima, peso')
-			@aluno = Aluno.find_by_matricula(session[:usuario])
-			@notas = Nota.select('nota, avaliacao_id, aluno_id').where("aluno_id = #{@aluno.id}")
+			aluno = Aluno.find_by_matricula(session[:usuario])
+			@avaliacoes = Avaliacao.select('id, descricao, maxima, peso').where("turma_id=#{aluno.turma_id}")
+			@notas = Nota.select('nota, avaliacao_id, aluno_id').where("aluno_id = #{aluno.id}")
 		else
 			redirect_to root_path
 		end
@@ -14,6 +14,9 @@ class NotasController < ApplicationController
 
 	def new
 		if session[:prof]
+			@professor = Professor.find_by(siape: session[:prof])
+			@avaliacoes = Avaliacao.joins('JOIN turmas ON turmas.id = avaliacoes.turma_id').where("professor_id=#{@professor.id}")
+			@alunos = Aluno.joins('JOIN turmas ON turmas.id = alunos.turma_id').where("professor_id=#{@professor.id}")
 			@nota = Nota.new
 		else
 			redirect_to :logar

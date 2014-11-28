@@ -9,7 +9,8 @@ class PresencasController < ApplicationController
 	def new
 		if session[:prof]
 			@p = Presenca.new
-			@turmas = Turma.all
+			professor = Professor.find_by(siape: session[:prof])
+			@turmas = Turma.where("professor_id=#{professor.id}")
 			if session[:turma]
 				if session[:turma]!="0"
 					@turma = Turma.find_by_codigo(session[:turma])

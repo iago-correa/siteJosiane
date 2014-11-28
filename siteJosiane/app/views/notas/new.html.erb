@@ -7,11 +7,11 @@
 	<%= form_for @nota, :url => url_for(:controller => 'notas', :action => 'create'), :class => 'form-signin' do |f| %>
 		<div class="form-group">
 			<label for="avaliacao">Avaliação:</label>
-			<%= collection_select(:nota, :avaliacao_id, Avaliacao.all, :id, :descricao, {}, {class: "form-control"}) %>
+			<%= collection_select(:nota, :avaliacao_id, @avaliacoes, :id, :descricao, {}, {class: "form-control"}) %>
 		</div>
 		<div class="form-group">
 			<label for="aluno">Aluno:</label>
-			<%= collection_select(:nota, :aluno_id, Aluno.all, :id, :matricula, {}, {class: "form-control"}) %>
+			<%= collection_select(:nota, :aluno_id, @alunos, :id, :matricula, {}, {class: "form-control"}) %>
 		</div>
 		<div class="form-group">
 			<label for="nota">Nota:</label>

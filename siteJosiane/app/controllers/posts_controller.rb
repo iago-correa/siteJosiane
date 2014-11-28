@@ -4,7 +4,10 @@ class PostsController < ApplicationController
 
 	def index
 		if session[:usuario]
-			@posts = Post.all.order('created_at DESC')
+			aluno = Aluno.find_by(matricula: session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			professor = Professor.find(turma.professor_id)
+			@posts = Post.where("professor_id=#{professor.id}").order('created_at DESC')
 		else
 			redirect_to root_path
 		end
@@ -165,8 +168,12 @@ class PostsController < ApplicationController
 
     def videos
     	if session[:usuario] 
+
+    		aluno = Aluno.find_by(matricula: session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").where("professor_id=#{professor.id}").order('nome')
 
     	else
 			redirect_to root_path
@@ -175,8 +182,12 @@ class PostsController < ApplicationController
 
     def listas
     	if session[:usuario] 
+
+    		aluno = Aluno.find_by(matricula: session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Lista'").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Lista'").where("professor_id=#{professor.id}").order('nome')
 
     	else
 			redirect_to root_path
@@ -185,8 +196,12 @@ class PostsController < ApplicationController
 
     def resolucoes
     	if session[:usuario] 
+
+    		aluno = Aluno.find_by(matricula: session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").where("professor_id=#{professor.id}").order('nome')
 
     	else
 			redirect_to root_path

@@ -4,6 +4,8 @@ class AvaliacoesController < ApplicationController
 
 	def new
 		if session[:prof]
+			professor = Professor.find_by(siape: session[:prof])
+			@turmas = Turma.where("professor_id=#{professor.id}").order(:codigo)
 			@avaliacao = Avaliacao.new
 		else
 			redirect_to :logar

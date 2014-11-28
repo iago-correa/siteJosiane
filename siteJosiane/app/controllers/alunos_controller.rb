@@ -4,7 +4,8 @@ class AlunosController < ApplicationController
 
 	def index
 		if session[:prof]
-			@turmas = Turma.all
+			professor = Professor.find_by(siape: session[:prof])
+			@turmas = Turma.where("professor_id=#{professor.id}")
 			if session[:turma]
 				if session[:turma]!="0"
 					@turma = Turma.find_by_codigo(session[:turma])

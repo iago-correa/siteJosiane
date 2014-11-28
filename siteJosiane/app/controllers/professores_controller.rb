@@ -4,8 +4,9 @@ class ProfessoresController < ApplicationController
 
 	def index
 		if session[:prof]
-			@posts = Post.all.limit(5).order('created_at')
-			@avaliacoes = Avaliacao.limit(25).order('created_at')
+			professor = Professor.find_by(siape: session[:prof])
+			@posts = Post.where("professor_id=#{professor.id}").limit(5).order('created_at')
+			@avaliacoes = Avaliacao.joins('JOIN turmas ON turmas.id = avaliacoes.turma_id').where("professor_id=#{professor.id}").limit(25).order('created_at')
 		else
 			redirect_to :logar
 		end
