@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 			aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
 			@professor = Professor.find(turma.professor_id)
-			@posts = Post.all.limit(4).order('created_at DESC')
+			@posts = Post.all.limit(5).order('created_at DESC')
 		else
 			redirect_to action:'login'
 		end

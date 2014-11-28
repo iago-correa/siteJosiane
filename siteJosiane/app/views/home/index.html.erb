@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to "Contato", @professor, class:"navbar-brand" %>
-          <a class="navbar-brand" href="posts/listas">Listas</a>
+          <a class="navbar-brand" href="posts/listas" >Listas</a>
           <a class="navbar-brand" href="posts/resolucoes">Resoluções</a>
           <a class="navbar-brand" href="posts/videos">Vídeos</a>
           <% if session[:usuario] %>
@@ -32,11 +32,25 @@
     </div>
 </div>
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
-<div class="container">
-	<%= image_tag "http://ww1.prweb.com/prfiles/2010/09/20/1875904/fisicaLogo.png", 
-		:style => "width: 30%; float :left; position: relative;"%>
+<div class="col-md-7">
+  <div class="jumbotron" style="height:30%;background-color:#E23853;">
+    
+    <h1 style="color: #FFFFFF; font-size: 4em; text-shadow: 3px 3px 7px black;"> 
+      <b>Física</b> 
+    </h1>
+    
+    
+    <p class="lead" style="color: white">
+      <small>IFRS - Campus Rio Grande</small>
+      <br>
+      <small>Professora Josiane</small>
+    </p>
+    
+  </div>
+</div>
+
 
 
 	<div class="col-sm-5">
@@ -56,14 +70,4 @@
 		</div>
 	</div>
 
-</div>
-
-
-<br><br><br><br><br><br><br><br><br><br><br>
-<div class="footer" style="opacity:0.4;">
-  <center>
-    <ul class="bs-docs-footer-links muted">
-      <p>Ana Carolina Pacheco e Iago Lourenço Corrêa | 2014</p>
-    </ul>
-  </center>
 </div>
