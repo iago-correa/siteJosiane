@@ -37,10 +37,23 @@ class PresencasController < ApplicationController
 		
 		if session[:prof]
 
-			aluno = 
-			turma = 
+			aluno = "1"
+			turma = "1"
 
-			@p = Presenca.new params.require(:p).permit(:pr, :ju)
+			@p = Presenca.new
+
+			if params[:presente] == "p"
+				@p.presente = true
+			else
+				@p.presente = false
+			end
+
+			if params[:justificado] == "j"
+				@p.justificado = true
+			else
+				@p.justificado = false
+			end
+
 			@p.turma = turma
 			@p.aluno = aluno
 			

@@ -37,12 +37,14 @@
 				<tr>
 					<td><%= a.nome %></td>
 					<td><%= a.matricula %></td>
-					<td><%= Turma.find(a.turma_id).codigo %></td>
+					<td><%= a.turma.codigo %></td>
 					<td>
-						<%= check_box_tag(:pr) %>
-						<%= f.label(:pr, "P") %>
-						<%= check_box_tag(:ju) %>
-						<%= f.label(:ju, "J") %>
+						<%= radio_button_tag(:presente, "p") %>
+						<%= label_tag(:presente, "P") %>
+						<%= radio_button_tag(:presente, "f") %>
+						<%= label_tag(:presente, "F") %>
+						<%= radio_button_tag(:justificado, "j") %>
+						<%= label_tag(:justificado, "J") %>
 					</td>
 				</tr>
 
