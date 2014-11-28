@@ -8,9 +8,9 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to "Contato", @professor, class:"navbar-brand" %>
-          <a class="navbar-brand" href="posts/listas" >Listas</a>
-          <a class="navbar-brand" href="posts/resolucoes">Resoluções</a>
-          <a class="navbar-brand" href="posts/videos">Vídeos</a>
+          <%= link_to "Listas", { controller: "posts", action: "listas" }, class:"navbar-brand" %>
+          <%= link_to "Resoluções", { controller: "posts", action: "resolucoes" }, class:"navbar-brand" %>
+          <%= link_to "Videos", { controller: "posts", action: "videos" }, class:"navbar-brand" %>
           <% if session[:usuario] %>
             <a class="navbar-brand" href="/notas/usuario">Notas</a>
           <% end %>
@@ -21,12 +21,7 @@
           <%= link_to "Perfil", aluno, class:"navbar-brand" %>
         <% end %>
           <form class="navbar-form navbar-right" role="form">
-            <%= text_field_tag :pesquisa, nil, :class => "form-control" %>
-			      <% if session[:usuario] %>
-				      <%= link_to "Logout",{ controller: "home", action: "logout" }, class:"btn btn-default" %>
-			      <% else %>
-              <%= link_to "Login",{ controller: "home", action: "login" }, class:"btn btn-default" %>
-			      <% end %>
+      <%= link_to "Logout",{ controller: "home", action: "logout" }, class:"btn btn-default" %>
           </form>
         </div>
     </div>

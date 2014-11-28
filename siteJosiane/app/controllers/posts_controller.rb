@@ -6,8 +6,8 @@ class PostsController < ApplicationController
 		if session[:usuario]
 			aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
-			professor = Professor.find(turma.professor_id)
-			@posts = Post.where("professor_id=#{professor.id}").order('created_at DESC')
+			@professor = Professor.find(turma.professor_id)
+			@posts = Post.where("professor_id=#{@professor.id}").order('created_at DESC')
 		else
 			redirect_to root_path
 		end
@@ -136,6 +136,11 @@ class PostsController < ApplicationController
 	def show
 
 		if session[:usuario] || session[:prof]
+			if session[:usuario]
+				aluno = Aluno.find_by(matricula: session[:usuario])
+				turma = Turma.find(aluno.turma_id)
+				@professor = Professor.find(turma.professor_id)
+			end
 			@post = Post.find(params[:id])
 			@arquivos = Arquivo.where(post_id: @post.id).order('created_at')
 			@coments = Comentario.where(post_id: @post.id).order('created_at')
@@ -171,9 +176,9 @@ class PostsController < ApplicationController
 
     		aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
-			professor = Professor.find(turma.professor_id)
+			@professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").where("professor_id=#{professor.id}").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Video'").where("professor_id=#{@professor.id}").order('nome')
 
     	else
 			redirect_to root_path
@@ -185,9 +190,9 @@ class PostsController < ApplicationController
 
     		aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
-			professor = Professor.find(turma.professor_id)
+			@professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Lista'").where("professor_id=#{professor.id}").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Lista'").where("professor_id=#{@professor.id}").order('nome')
 
     	else
 			redirect_to root_path
@@ -199,9 +204,9 @@ class PostsController < ApplicationController
 
     		aluno = Aluno.find_by(matricula: session[:usuario])
 			turma = Turma.find(aluno.turma_id)
-			professor = Professor.find(turma.professor_id)
+			@professor = Professor.find(turma.professor_id)
     		
-    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").where("professor_id=#{professor.id}").order('nome')
+    		@arquivos = Arquivo.joins('JOIN posts ON posts.id = arquivos.post_id').where("tipo = 'Resolução'").where("professor_id=#{@professor.id}").order('nome')
 
     	else
 			redirect_to root_path

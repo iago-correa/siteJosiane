@@ -1,3 +1,35 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Home", root_path, class:"navbar-brand" %>
+          <%= link_to "Contato", @professor, class:"navbar-brand" %>
+          <%= link_to "Listas", { controller: "posts", action: "listas" }, class:"navbar-brand" %>
+          <%= link_to "Resoluções", { controller: "posts", action: "resolucoes" }, class:"navbar-brand" %>
+          <%= link_to "Videos", { controller: "posts", action: "videos" }, class:"navbar-brand" %>
+          <% if session[:usuario] %>
+            <a class="navbar-brand" href="/notas/usuario">Notas</a>
+          <% end %>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+        <% if session[:usuario] %>
+          <% aluno = Aluno.find_by(matricula: "#{session[:usuario]}") %>
+          <%= link_to "Perfil", aluno, class:"navbar-brand" %>
+        <% end %>
+          <form class="navbar-form navbar-right" role="form">
+			<%= link_to "Logout",{ controller: "home", action: "logout" }, class:"btn btn-default" %>
+          </form>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br>
+
 <div style="width:70%;padding:10px;">
 	
 	<h2>Alunos</h2>

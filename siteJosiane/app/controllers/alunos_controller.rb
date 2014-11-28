@@ -114,6 +114,8 @@ class AlunosController < ApplicationController
 	def show
 
 		@aluno = Aluno.find(params[:id])
+		turma = Turma.find(@aluno.turma_id)
+		@professor = Professor.find(turma.professor_id)
 		if not session[:usuario] && @aluno.matricula==session[:usuario]
 			redirect_to root_path
 		end

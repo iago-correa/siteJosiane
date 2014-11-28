@@ -5,6 +5,8 @@ class NotasController < ApplicationController
 	def usuario
 		if session[:usuario]
 			aluno = Aluno.find_by_matricula(session[:usuario])
+			turma = Turma.find(aluno.turma_id)
+			@professor = Professor.find(turma.professor_id)
 			@avaliacoes = Avaliacao.select('id, descricao, maxima, peso').where("turma_id=#{aluno.turma_id}")
 			@notas = Nota.select('nota, avaliacao_id, aluno_id').where("aluno_id = #{aluno.id}")
 		else
